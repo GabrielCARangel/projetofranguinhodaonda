@@ -8,16 +8,16 @@ public class Cartao {
 
     }
 
-    public String getNumero() {
-        return numero;
-    }
-
     public Cartao(String numero, String nomeCartao, String codSeguranca, String validade) {
         this.numero = numero;
         this.nomeCartao = nomeCartao;
         this.codSeguranca = codSeguranca;
         this.validade = validade;
 
+    }
+
+    public String getNumero() {
+        return numero;
     }
 
     public void setNumero(String numero) {
