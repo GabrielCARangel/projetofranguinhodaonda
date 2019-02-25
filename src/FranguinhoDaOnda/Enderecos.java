@@ -1,4 +1,4 @@
-package projetointegrador;
+package FranguinhoDaOnda;
 
 public class Enderecos {
 
