@@ -9,6 +9,7 @@ public class ProjetoIntegrador {
         Telefones cl_tel = new Telefones("99968724");
         Produtos prdt = new Produtos(1, "Hambúrger de bacon", 12.99);
         Motoboys mot = new Motoboys("HMG-2040", "425.531.050-53", "99658412");
+        System.out.println("Testando o Github.");
 
     }
 }
