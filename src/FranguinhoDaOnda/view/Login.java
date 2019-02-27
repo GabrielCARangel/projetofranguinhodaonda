@@ -38,6 +38,12 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Franguinho da Onda");
+        setIconImage(getIconImage());
+        setIconImages(null);
+        setResizable(false);
+
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btOK.setText("OK");
         btOK.addActionListener(new java.awt.event.ActionListener() {
@@ -77,11 +83,11 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                     .addComponent(txtSenha))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
+                .addContainerGap(120, Short.MAX_VALUE)
                 .addComponent(btOK)
                 .addGap(109, 109, 109))
         );
@@ -134,6 +140,8 @@ public class Login extends javax.swing.JFrame {
         String senha = String.valueOf(this.txtSenha.getPassword());
         if (nome.equals("admin") && (senha.equals("senha123"))) {
             JOptionPane.showMessageDialog(null, "Seja bem vindo administrador.");
+            JanelaInicial janela = new JanelaInicial();
+            janela.setVisible(true);
         } else if (nome.equals("") || (senha.equals(""))) {
             JOptionPane.showMessageDialog(null, "Por favor preencha toda a tabela de login.");
         } else {
@@ -183,6 +191,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btOK;
