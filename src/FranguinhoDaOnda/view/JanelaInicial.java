@@ -5,7 +5,8 @@
  */
 package FranguinhoDaOnda.view;
 
-import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 /**
  *
@@ -18,7 +19,8 @@ public class JanelaInicial extends javax.swing.JFrame {
      */
     public JanelaInicial() {
         initComponents();
-                ImageIcon img = new ImageIcon("./images/icon.png");
+        Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setIconImage(img);
     }
 
     /**
@@ -30,74 +32,355 @@ public class JanelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        PanelPrincipal = new javax.swing.JPanel();
+        btCadastroClientes = new javax.swing.JButton();
+        btCadastroMotoboys = new javax.swing.JButton();
+        btCadastroProdutos = new javax.swing.JButton();
+        PanelClientes = new javax.swing.JPanel();
+        clCadastroLabel = new javax.swing.JLabel();
+        clCpfLabel = new javax.swing.JLabel();
+        clCpfTextField = new javax.swing.JTextField();
+        clNomeLabel = new javax.swing.JLabel();
+        clNomeTextField = new javax.swing.JTextField();
+        clTelefoneLabel = new javax.swing.JLabel();
+        clTelefoneTextField = new javax.swing.JTextField();
+        clCepLabel = new javax.swing.JLabel();
+        clCepTextField = new javax.swing.JTextField();
+        clRuaLabel = new javax.swing.JLabel();
+        clRuaTextField = new javax.swing.JTextField();
+        clBairroLabel = new javax.swing.JLabel();
+        clBairroTextField = new javax.swing.JTextField();
+        clNumeroLabel = new javax.swing.JLabel();
+        clNumeroTextField = new javax.swing.JTextField();
+        clComplementoLabel = new javax.swing.JLabel();
+        clComplementoTextField = new javax.swing.JTextField();
+        clbtCadastrar = new javax.swing.JButton();
+        PanelMotoboys = new javax.swing.JPanel();
+        motCadastroLabel = new javax.swing.JLabel();
+        motCpfPanel = new javax.swing.JLabel();
+        motCpfTextField = new javax.swing.JTextField();
+        motPlacaLabel = new javax.swing.JLabel();
+        motPlacaTextField = new javax.swing.JTextField();
+        motTelefoneLabel = new javax.swing.JLabel();
+        motTelefoneTextFied = new javax.swing.JTextField();
+        motbtCadastrar = new javax.swing.JButton();
+        PanelProdutos = new javax.swing.JPanel();
+        prdCadastroLabel = new javax.swing.JLabel();
+        prdCodigoLabel = new javax.swing.JLabel();
+        prdCodigoTextField = new javax.swing.JTextField();
+        prdNomeLabel = new javax.swing.JLabel();
+        prdNomeTextField = new javax.swing.JTextField();
+        prdPrecoLabel = new javax.swing.JLabel();
+        prdPrecoTextField = new javax.swing.JTextField();
+        prdbtCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Janela Inicial");
         setIconImages(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 599, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 377, Short.MAX_VALUE)
-        );
+        btCadastroClientes.setText("Cadastrar Clientes");
 
-        jMenu1.setText("Cadastrar");
-
-        jMenuItem3.setText("Clientes");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        btCadastroMotoboys.setText("Cadastrar Motoboys");
+        btCadastroMotoboys.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                btCadastroMotoboysActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
 
-        jMenuItem1.setText("Motoboys");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btCadastroProdutos.setText("Cadastrar Produtos");
+
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btCadastroProdutos)
+                    .addComponent(btCadastroMotoboys)
+                    .addComponent(btCadastroClientes))
+                .addContainerGap(419, Short.MAX_VALUE))
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addGap(182, 182, 182)
+                .addComponent(btCadastroClientes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btCadastroMotoboys)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btCadastroProdutos)
+                .addContainerGap(246, Short.MAX_VALUE))
+        );
+
+        clCadastroLabel.setText("Cadastro de Clientes");
+
+        clCpfLabel.setText("CPF");
+
+        clNomeLabel.setText("Nome");
+
+        clTelefoneLabel.setText("Telefone");
+
+        clCepLabel.setText("CEP");
+
+        clRuaLabel.setText("Rua");
+
+        clBairroLabel.setText("Bairro");
+
+        clNumeroLabel.setText("Numero");
+
+        clComplementoLabel.setText("Complemento");
+
+        clbtCadastrar.setText("Cadastrar");
+
+        javax.swing.GroupLayout PanelClientesLayout = new javax.swing.GroupLayout(PanelClientes);
+        PanelClientes.setLayout(PanelClientesLayout);
+        PanelClientesLayout.setHorizontalGroup(
+            PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelClientesLayout.createSequentialGroup()
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(clbtCadastrar)
+                            .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(PanelClientesLayout.createSequentialGroup()
+                                    .addComponent(clComplementoLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(clComplementoTextField))
+                                .addGroup(PanelClientesLayout.createSequentialGroup()
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(clBairroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clNumeroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(clNumeroTextField)
+                                        .addComponent(clBairroTextField)))
+                                .addGroup(PanelClientesLayout.createSequentialGroup()
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(clCepLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                                        .addComponent(clRuaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(clRuaTextField)
+                                        .addComponent(clCepTextField)))
+                                .addGroup(PanelClientesLayout.createSequentialGroup()
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(clCpfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clNomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(clNomeTextField)
+                                        .addComponent(clTelefoneTextField)
+                                        .addComponent(clCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(PanelClientesLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(clCadastroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 118, Short.MAX_VALUE))
+        );
+        PanelClientesLayout.setVerticalGroup(
+            PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clCadastroLabel)
+                .addGap(22, 22, 22)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clCpfLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clNomeLabel)
+                    .addComponent(clNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clTelefoneLabel)
+                    .addComponent(clTelefoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clCepTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clCepLabel))
+                .addGap(6, 6, 6)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clRuaLabel)
+                    .addComponent(clRuaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clBairroLabel)
+                    .addComponent(clBairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clNumeroLabel)
+                    .addComponent(clNumeroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clComplementoLabel)
+                    .addComponent(clComplementoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(clbtCadastrar)
+                .addContainerGap(185, Short.MAX_VALUE))
+        );
+
+        motCadastroLabel.setText("Cadastro de Motoboys");
+
+        motCpfPanel.setText("CPF");
+
+        motPlacaLabel.setText("Placa");
+
+        motPlacaTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                motPlacaTextFieldActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Produtos");
-        jMenu1.add(jMenuItem2);
+        motTelefoneLabel.setText("Telefone");
 
-        jMenuBar1.add(jMenu1);
+        motbtCadastrar.setText("Cadastrar");
 
-        setJMenuBar(jMenuBar1);
+        javax.swing.GroupLayout PanelMotoboysLayout = new javax.swing.GroupLayout(PanelMotoboys);
+        PanelMotoboys.setLayout(PanelMotoboysLayout);
+        PanelMotoboysLayout.setHorizontalGroup(
+            PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMotoboysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(motbtCadastrar)
+                    .addGroup(PanelMotoboysLayout.createSequentialGroup()
+                        .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(motPlacaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(motTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                            .addComponent(motCpfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(motTelefoneTextFied, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(motPlacaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(motCpfTextField))))
+                .addContainerGap(103, Short.MAX_VALUE))
+            .addGroup(PanelMotoboysLayout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(motCadastroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelMotoboysLayout.setVerticalGroup(
+            PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMotoboysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(motCadastroLabel)
+                .addGap(43, 43, 43)
+                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motCpfPanel)
+                    .addComponent(motCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motPlacaLabel)
+                    .addComponent(motPlacaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motTelefoneTextFied, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motTelefoneLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(motbtCadastrar)
+                .addContainerGap(355, Short.MAX_VALUE))
+        );
+
+        prdCadastroLabel.setText("Cadastro de Produtos");
+
+        prdCodigoLabel.setText("Código");
+
+        prdNomeLabel.setText("Nome");
+
+        prdPrecoLabel.setText("Preço");
+
+        prdbtCadastrar.setText("Cadastrar");
+
+        javax.swing.GroupLayout PanelProdutosLayout = new javax.swing.GroupLayout(PanelProdutos);
+        PanelProdutos.setLayout(PanelProdutosLayout);
+        PanelProdutosLayout.setHorizontalGroup(
+            PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelProdutosLayout.createSequentialGroup()
+                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelProdutosLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(prdbtCadastrar)
+                            .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(PanelProdutosLayout.createSequentialGroup()
+                                    .addComponent(prdPrecoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(prdPrecoTextField))
+                                .addGroup(PanelProdutosLayout.createSequentialGroup()
+                                    .addComponent(prdNomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(prdNomeTextField))
+                                .addGroup(PanelProdutosLayout.createSequentialGroup()
+                                    .addComponent(prdCodigoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(prdCodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(PanelProdutosLayout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addComponent(prdCadastroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+        PanelProdutosLayout.setVerticalGroup(
+            PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelProdutosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(prdCadastroLabel)
+                .addGap(39, 39, 39)
+                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdCodigoLabel)
+                    .addComponent(prdCodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdNomeLabel)
+                    .addComponent(prdNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdPrecoLabel)
+                    .addComponent(prdPrecoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prdbtCadastrar)
+                .addContainerGap(347, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 606, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelMotoboys, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelProdutos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 525, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelMotoboys, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void motPlacaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPlacaTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_motPlacaTextFieldActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void btCadastroMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroMotoboysActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_btCadastroMotoboysActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,11 +418,46 @@ public class JanelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel PanelClientes;
+    private javax.swing.JPanel PanelMotoboys;
+    private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel PanelProdutos;
+    private javax.swing.JButton btCadastroClientes;
+    private javax.swing.JButton btCadastroMotoboys;
+    private javax.swing.JButton btCadastroProdutos;
+    private javax.swing.JLabel clBairroLabel;
+    private javax.swing.JTextField clBairroTextField;
+    private javax.swing.JLabel clCadastroLabel;
+    private javax.swing.JLabel clCepLabel;
+    private javax.swing.JTextField clCepTextField;
+    private javax.swing.JLabel clComplementoLabel;
+    private javax.swing.JTextField clComplementoTextField;
+    private javax.swing.JLabel clCpfLabel;
+    private javax.swing.JTextField clCpfTextField;
+    private javax.swing.JLabel clNomeLabel;
+    private javax.swing.JTextField clNomeTextField;
+    private javax.swing.JLabel clNumeroLabel;
+    private javax.swing.JTextField clNumeroTextField;
+    private javax.swing.JLabel clRuaLabel;
+    private javax.swing.JTextField clRuaTextField;
+    private javax.swing.JLabel clTelefoneLabel;
+    private javax.swing.JTextField clTelefoneTextField;
+    private javax.swing.JButton clbtCadastrar;
+    private javax.swing.JLabel motCadastroLabel;
+    private javax.swing.JLabel motCpfPanel;
+    private javax.swing.JTextField motCpfTextField;
+    private javax.swing.JLabel motPlacaLabel;
+    private javax.swing.JTextField motPlacaTextField;
+    private javax.swing.JLabel motTelefoneLabel;
+    private javax.swing.JTextField motTelefoneTextFied;
+    private javax.swing.JButton motbtCadastrar;
+    private javax.swing.JLabel prdCadastroLabel;
+    private javax.swing.JLabel prdCodigoLabel;
+    private javax.swing.JTextField prdCodigoTextField;
+    private javax.swing.JLabel prdNomeLabel;
+    private javax.swing.JTextField prdNomeTextField;
+    private javax.swing.JLabel prdPrecoLabel;
+    private javax.swing.JTextField prdPrecoTextField;
+    private javax.swing.JButton prdbtCadastrar;
     // End of variables declaration//GEN-END:variables
 }
