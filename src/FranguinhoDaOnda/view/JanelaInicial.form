@@ -305,6 +305,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clbtPesquisarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clCpfLabel">
           <Properties>
@@ -374,16 +377,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inserir"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clbtCadastrarKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clbtAlterar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clbtAlterarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clbtExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clbtExcluirMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

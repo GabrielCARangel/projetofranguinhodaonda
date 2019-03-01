@@ -5,14 +5,25 @@
  */
 package FranguinhoDaOnda.view;
 
+import FranguinhoDaOnda.Clientes;
+import FranguinhoDaOnda.Enderecos;
+import FranguinhoDaOnda.Telefones;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author sala302b
  */
 public class JanelaInicial extends javax.swing.JFrame {
+
+    List<Clientes> clientes = new ArrayList<Clientes>();
+    Enderecos end;
+    Telefones tel;
+    Clientes cl1;
 
     /**
      * Creates new form JanelaInicial
@@ -21,6 +32,7 @@ public class JanelaInicial extends javax.swing.JFrame {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
         setIconImage(img);
+
     }
 
     /**
@@ -153,6 +165,11 @@ public class JanelaInicial extends javax.swing.JFrame {
         clPesquisarLabel.setText("Pesquisar:");
 
         clbtPesquisar.setText("Pesquisar");
+        clbtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtPesquisarMouseClicked(evt);
+            }
+        });
 
         clCpfLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         clCpfLabel.setText("CPF:");
@@ -179,10 +196,25 @@ public class JanelaInicial extends javax.swing.JFrame {
         clComplementoLabel.setText("Complemento:");
 
         clbtCadastrar.setText("Inserir");
+        clbtCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clbtCadastrarKeyPressed(evt);
+            }
+        });
 
         clbtAlterar.setText("Alterar");
+        clbtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtAlterarMouseClicked(evt);
+            }
+        });
 
         clbtExcluir.setText("Excluir");
+        clbtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtExcluirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelClientesLayout = new javax.swing.GroupLayout(PanelClientes);
         PanelClientes.setLayout(PanelClientesLayout);
@@ -482,6 +514,37 @@ public class JanelaInicial extends javax.swing.JFrame {
     private void btCadastroProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroProdutosMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btCadastroProdutosMouseClicked
+
+    private void clbtCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clbtCadastrarKeyPressed
+        //INSERIR USUÁRIO
+        end = new Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
+        tel = new Telefones(clTelefoneTextField.getText());
+        cl1 = new Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
+        clientes.add(cl1);
+
+
+    }//GEN-LAST:event_clbtCadastrarKeyPressed
+
+    private void clbtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtAlterarMouseClicked
+        // ALTERAR USUÁRIO
+    }//GEN-LAST:event_clbtAlterarMouseClicked
+
+    private void clbtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtExcluirMouseClicked
+        // REMOVER USUÁRIO
+    }//GEN-LAST:event_clbtExcluirMouseClicked
+
+    private void clbtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtPesquisarMouseClicked
+        // PESQUISAR USUÁRIO
+        boolean pes = clientes.contains(cl1);
+        if (clientes.contains(cl1)) {
+            // Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
+            //  Telefones(clTelefoneTextField.getText());
+            // Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário não existe no sistema.");
+    }//GEN-LAST:event_clbtPesquisarMouseClicked
+    }
 
     /**
      * @param args the command line arguments
