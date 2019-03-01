@@ -5,8 +5,11 @@
  */
 package FranguinhoDaOnda.view;
 
+import FranguinhoDaOnda.Usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -137,17 +140,66 @@ public class Login extends javax.swing.JFrame {
 
     private void btOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOKActionPerformed
         // TODO add your handling code here:
-        String nome = this.txtUsuario.getText();
-        String senha = String.valueOf(this.txtSenha.getPassword());
-        if (nome.equals("admin") && (senha.equals("senha123"))) {
+
+        //Criando uma lista de usuário
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+
+        Usuario user1 = new Usuario();
+        user1.setUsuario("admin");
+        user1.setSenha("senha12345");
+        user1.setCodigo(1);
+
+        usuarios.add(user1);
+
+        Usuario user2 = new Usuario();
+        user2.setUsuario("joaquim");
+        user2.setSenha("12345");
+        user2.setCodigo(2);
+
+        usuarios.add(user2);
+
+        Usuario user3 = new Usuario();
+        user3.setUsuario("maria");
+        user3.setSenha("12345");
+        user3.setCodigo(3);
+
+        usuarios.add(user3);
+
+        Boolean c = false;
+
+        // Verificar qual o usuário e senha?
+        // ESTRUTURA DE REPETIÇÃO
+        for (int i = 0; i < usuarios.size(); i++) {
+            String user = usuarios.get(i).getUsuario();
+            String senha = usuarios.get(i).getSenha();
+         // PESQUISA
+            if (txtUsuario.getText().equals(user)
+                    && String.valueOf(txtSenha.getPassword()).equals(senha)) {
+                c = true;
+            }
+        }
+        // EXIBIÇÃO
+        if (c == true) {
             JOptionPane.showMessageDialog(null, "Seja bem vindo administrador.");
             JanelaInicial janela = new JanelaInicial();
             janela.setVisible(true);
-        } else if (nome.equals("") || (senha.equals(""))) {
-            JOptionPane.showMessageDialog(null, "Por favor preencha toda a tabela de login.");
         } else {
-            JOptionPane.showMessageDialog(null, "Dados incorretos!");
+            JOptionPane.showMessageDialog(null, "DADOS INCORRETOS!");
         }
+        // if (txtUsuario.getText().equals(user1.getUsuario())) {
+        //   String.valueOf(txtSenha.getPassword()).equals(user1.getSenha());
+        // System.out.println("Usuário Logado");
+        //} else {
+        //  System.out.println("Usuário ou senha inválida");
+        //}
+        //if (nome.equals("admin") && (senha.equals("senha123"))) {
+        // JOptionPane.showMessageDialog(null, "Seja bem vindo administrador.");
+        // JanelaInicial janela = new JanelaInicial();
+        // janela.setVisible(true);
+        //  } else if (nome.equals("") || (senha.equals(""))) {
+        // JOptionPane.showMessageDialog(null, "Por favor preencha toda a tabela de login.");
+        // } else {
+        // JOptionPane.showMessageDialog(null, "Dados incorretos!");
     }//GEN-LAST:event_btOKActionPerformed
 
     /**

@@ -7,6 +7,9 @@
     <Property name="iconImages" type="java.util.List" editor="org.netbeans.modules.form.ComponentChooserEditor">
       <ComponentRef name="null"/>
     </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[520, 600]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -27,7 +30,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="606" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="PanelMotoboys" alignment="1" max="32767" attributes="0"/>
           </Group>
@@ -44,49 +47,54 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="525" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="700" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="PanelMotoboys" alignment="1" max="32767" attributes="0"/>
+              <Component id="PanelMotoboys" alignment="1" pref="700" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-              <Component id="PanelProdutos" alignment="0" max="32767" attributes="0"/>
+              <Component id="PanelProdutos" alignment="0" pref="700" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
-              <Component id="PanelClientes" alignment="0" max="32767" attributes="0"/>
+              <Component id="PanelClientes" alignment="0" pref="700" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
-              <Component id="PanelPrincipal" alignment="0" max="32767" attributes="0"/>
+              <Component id="PanelPrincipal" alignment="0" pref="700" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="PanelPrincipal">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[520, 600]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btCadastroProdutos" min="-2" max="-2" attributes="0"/>
-                      <Component id="btCadastroMotoboys" min="-2" max="-2" attributes="0"/>
-                      <Component id="btCadastroClientes" min="-2" max="-2" attributes="0"/>
+                      <Component id="btCadastroProdutos" max="32767" attributes="0"/>
+                      <Component id="btCadastroClientes" max="32767" attributes="0"/>
+                      <Component id="btCadastroMotoboys" pref="497" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="419" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="358" max="32767" attributes="0"/>
                   <Component id="btCadastroClientes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btCadastroMotoboys" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btCadastroProdutos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="246" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,85 +102,122 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btCadastroClientes">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="48" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Clientes"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCadastroClientesMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCadastroClientesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btCadastroMotoboys">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="48" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Motoboys"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCadastroMotoboysMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCadastroMotoboysActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btCadastroProdutos">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="48" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Produtos"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCadastroProdutosMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="PanelClientes">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[520, 600]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="clCadastroLabel" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="clbtCadastrar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="clComplementoLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="clComplementoTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="clBairroLabel" max="32767" attributes="0"/>
-                                          <Component id="clNumeroLabel" pref="64" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="clNumeroTextField" max="32767" attributes="0"/>
-                                          <Component id="clBairroTextField" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="clCepLabel" pref="64" max="32767" attributes="0"/>
                                           <Component id="clRuaLabel" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="clRuaTextField" max="32767" attributes="0"/>
                                           <Component id="clCepTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="clCpfLabel" max="32767" attributes="0"/>
-                                          <Component id="clNomeLabel" max="32767" attributes="0"/>
-                                          <Component id="clTelefoneLabel" alignment="1" pref="64" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="clBairroLabel" max="32767" attributes="0"/>
+                                              <Component id="clNumeroLabel" pref="64" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="clComplementoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="clNomeTextField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="clTelefoneTextField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="clCpfTextField" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="clbtCadastrar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="clbtAlterar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="clbtExcluir" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="193" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="clComplementoTextField" max="32767" attributes="0"/>
+                                          <Component id="clBairroTextField" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="clNumeroTextField" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                      <Component id="clPesquisarLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="clbtPesquisar" min="-2" max="-2" attributes="0"/>
+                                          <Component id="clPesquisarTextField" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="clCpfLabel" max="32767" attributes="0"/>
+                                      <Component id="clNomeLabel" max="32767" attributes="0"/>
+                                      <Component id="clTelefoneLabel" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="clNomeTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clTelefoneTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clCpfTextField" alignment="0" pref="400" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="clCadastroLabel" min="-2" pref="132" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="118" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -181,7 +226,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="clCadastroLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="clPesquisarLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clPesquisarTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="clbtPesquisar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="clCpfTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clCpfLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -196,7 +248,7 @@
                       <Component id="clTelefoneLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clTelefoneTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="clCepTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clCepLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -221,9 +273,13 @@
                       <Component id="clComplementoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clComplementoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="clbtCadastrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="185" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="clbtCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clbtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clbtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="84" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -231,103 +287,143 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="clCadastroLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="36" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Clientes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="clPesquisarLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pesquisar:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="clPesquisarTextField">
+        </Component>
+        <Component class="javax.swing.JButton" name="clbtPesquisar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pesquisar"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="clCpfLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CPF"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clCpfTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clNomeLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clNomeTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clTelefoneLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Telefone"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clTelefoneTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clCepLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CEP"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="CEP:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clCepTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clRuaLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Rua"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Rua:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clRuaTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clBairroLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Bairro"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Bairro:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clBairroTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clNumeroLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Numero"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Numero:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clNumeroTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="clComplementoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Complemento"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Complemento:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clComplementoTextField">
         </Component>
         <Component class="javax.swing.JButton" name="clbtCadastrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastrar"/>
+            <Property name="text" type="java.lang.String" value="Inserir"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="clbtAlterar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alterar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="clbtExcluir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="PanelMotoboys">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[520, 600]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="motbtCadastrar" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="motPlacaLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="motTelefoneLabel" pref="64" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="motCadastroLabel" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="motbtCadastrar" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="motPlacaLabel" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="motTelefoneLabel" pref="64" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="motCpfPanel" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="motPlacaTextField" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="motCpfTextField" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="motTelefoneTextFied" min="-2" pref="400" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="motCpfPanel" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="motTelefoneTextFied" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="motPlacaTextField" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="motCpfTextField" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="103" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                  <Component id="motCadastroLabel" min="-2" pref="132" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -336,9 +432,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="motCadastroLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="motCpfPanel" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="motCpfPanel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motCpfTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -353,7 +449,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="motbtCadastrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="355" max="32767" attributes="0"/>
+                  <EmptySpace pref="433" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -361,19 +457,25 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="motCadastroLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="36" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Motoboys"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="motCpfPanel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CPF"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motCpfTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="motPlacaLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Placa"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Placa:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motPlacaTextField">
@@ -383,7 +485,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="motTelefoneLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Telefone"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motTelefoneTextFied">
@@ -396,41 +499,43 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="PanelProdutos">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[520, 600]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="prdbtCadastrar" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="prdPrecoLabel" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="prdPrecoTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="prdNomeLabel" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="prdNomeTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="prdCodigoLabel" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="prdCodigoTextField" min="-2" pref="400" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="prdbtCadastrar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="prdPrecoLabel" min="-2" pref="64" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="prdPrecoTextField" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="prdNomeLabel" min="-2" pref="64" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="prdNomeTextField" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="prdCodigoLabel" min="-2" pref="64" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="prdCodigoTextField" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
-                          <Component id="prdCadastroLabel" min="-2" pref="132" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace pref="118" max="32767" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="prdCadastroLabel" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -439,24 +544,24 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="prdCadastroLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="prdCodigoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="prdCodigoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdNomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdNomeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="prdNomeTextField" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdNomeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdPrecoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdPrecoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="prdPrecoLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPrecoTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="prdbtCadastrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="347" max="32767" attributes="0"/>
+                  <EmptySpace pref="535" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -464,26 +569,33 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="prdCadastroLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="36" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="prdCodigoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="prdCodigoTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="prdNomeLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="prdNomeTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="prdPrecoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="Pre&#xe7;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="prdPrecoTextField">
