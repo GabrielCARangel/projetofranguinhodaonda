@@ -2,11 +2,12 @@ package FranguinhoDaOnda;
 
 public class ItemDePedido {
 
-    private int pedidos_numero, produtos_codigo;
+    private int pedidos_numero, produtos_codigo, quantidade;
 
-    public ItemDePedido(int pedidos_numero, int produtos_codigo) {
+    public ItemDePedido(int pedidos_numero, int produtos_codigo, int quantidade) {
         this.pedidos_numero = pedidos_numero;
         this.produtos_codigo = produtos_codigo;
+        this.quantidade = quantidade;
     }
 
     public int getPedidos_numero() {
@@ -23,6 +24,14 @@ public class ItemDePedido {
 
     public void setProdutos_codigo(int produtos_codigo) {
         this.produtos_codigo = produtos_codigo;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
 }

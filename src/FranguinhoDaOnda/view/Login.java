@@ -10,6 +10,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -172,7 +174,7 @@ public class Login extends javax.swing.JFrame {
         for (int i = 0; i < usuarios.size(); i++) {
             String user = usuarios.get(i).getUsuario();
             String senha = usuarios.get(i).getSenha();
-         // PESQUISA
+            // PESQUISA
             if (txtUsuario.getText().equals(user)
                     && String.valueOf(txtSenha.getPassword()).equals(senha)) {
                 c = true;
@@ -182,7 +184,13 @@ public class Login extends javax.swing.JFrame {
         if (c == true) {
             JOptionPane.showMessageDialog(null, "Seja bem vindo administrador.");
             JanelaInicial janela = new JanelaInicial();
+            Login janelaLogin = new Login();
             janela.setVisible(true);
+            try {
+                janelaLogin.finalize();
+            } catch (Throwable ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             JOptionPane.showMessageDialog(null, "DADOS INCORRETOS!");
         }

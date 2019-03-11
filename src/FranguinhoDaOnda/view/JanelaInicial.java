@@ -5,25 +5,14 @@
  */
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Clientes;
-import FranguinhoDaOnda.Enderecos;
-import FranguinhoDaOnda.Telefones;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author sala302b
  */
 public class JanelaInicial extends javax.swing.JFrame {
-
-    List<Clientes> clientes = new ArrayList<Clientes>();
-    Enderecos end;
-    Telefones tel;
-    Clientes cl1;
 
     /**
      * Creates new form JanelaInicial
@@ -44,11 +33,28 @@ public class JanelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelPrincipal = new javax.swing.JPanel();
-        btCadastroClientes = new javax.swing.JButton();
-        btCadastroMotoboys = new javax.swing.JButton();
-        btCadastroProdutos = new javax.swing.JButton();
-        PanelClientes = new javax.swing.JPanel();
+        CadastroMotoboys = new javax.swing.JFrame();
+        jPanelCadastroMotoboys = new javax.swing.JPanel();
+        motCadastroLabel = new javax.swing.JLabel();
+        motCpfPanel = new javax.swing.JLabel();
+        motCpfTextField = new javax.swing.JTextField();
+        motPlacaLabel = new javax.swing.JLabel();
+        motPlacaTextField = new javax.swing.JTextField();
+        motTelefoneLabel = new javax.swing.JLabel();
+        motTelefoneTextFied = new javax.swing.JTextField();
+        motbtCadastrar = new javax.swing.JButton();
+        CadastroProdutos = new javax.swing.JFrame();
+        jPanelCadastroProdutos = new javax.swing.JPanel();
+        prdCadastroLabel = new javax.swing.JLabel();
+        prdCodigoLabel = new javax.swing.JLabel();
+        prdCodigoTextField = new javax.swing.JTextField();
+        prdNomeLabel = new javax.swing.JLabel();
+        prdNomeTextField = new javax.swing.JTextField();
+        prdPrecoLabel = new javax.swing.JLabel();
+        prdPrecoTextField = new javax.swing.JTextField();
+        prdbtCadastrar = new javax.swing.JButton();
+        CadastroClientes = new javax.swing.JFrame();
+        jPanelCadastroClientes = new javax.swing.JPanel();
         clCadastroLabel = new javax.swing.JLabel();
         clPesquisarLabel = new javax.swing.JLabel();
         clPesquisarTextField = new javax.swing.JTextField();
@@ -72,31 +78,185 @@ public class JanelaInicial extends javax.swing.JFrame {
         clbtCadastrar = new javax.swing.JButton();
         clbtAlterar = new javax.swing.JButton();
         clbtExcluir = new javax.swing.JButton();
-        PanelMotoboys = new javax.swing.JPanel();
-        motCadastroLabel = new javax.swing.JLabel();
-        motCpfPanel = new javax.swing.JLabel();
-        motCpfTextField = new javax.swing.JTextField();
-        motPlacaLabel = new javax.swing.JLabel();
-        motPlacaTextField = new javax.swing.JTextField();
-        motTelefoneLabel = new javax.swing.JLabel();
-        motTelefoneTextFied = new javax.swing.JTextField();
-        motbtCadastrar = new javax.swing.JButton();
-        PanelProdutos = new javax.swing.JPanel();
-        prdCadastroLabel = new javax.swing.JLabel();
-        prdCodigoLabel = new javax.swing.JLabel();
-        prdCodigoTextField = new javax.swing.JTextField();
-        prdNomeLabel = new javax.swing.JLabel();
-        prdNomeTextField = new javax.swing.JTextField();
-        prdPrecoLabel = new javax.swing.JLabel();
-        prdPrecoTextField = new javax.swing.JTextField();
-        prdbtCadastrar = new javax.swing.JButton();
+        jPanelPrincipal = new javax.swing.JPanel();
+        btCadastroClientes = new javax.swing.JButton();
+        btCadastroMotoboys = new javax.swing.JButton();
+        btCadastroProdutos = new javax.swing.JButton();
+
+        CadastroMotoboys.setMaximumSize(new java.awt.Dimension(520, 600));
+        CadastroMotoboys.setMinimumSize(new java.awt.Dimension(520, 600));
+        CadastroMotoboys.setResizable(false);
+        CadastroMotoboys.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelCadastroMotoboys.setPreferredSize(new java.awt.Dimension(520, 178));
+        jPanelCadastroMotoboys.setRequestFocusEnabled(false);
+        jPanelCadastroMotoboys.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        motCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        motCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        motCadastroLabel.setText("Cadastro de Motoboys");
+        jPanelCadastroMotoboys.add(motCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        motCpfPanel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        motCpfPanel.setText("CPF:");
+        jPanelCadastroMotoboys.add(motCpfPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        jPanelCadastroMotoboys.add(motCpfTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        motPlacaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        motPlacaLabel.setText("Placa:");
+        jPanelCadastroMotoboys.add(motPlacaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        motPlacaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                motPlacaTextFieldActionPerformed(evt);
+            }
+        });
+        jPanelCadastroMotoboys.add(motPlacaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        motTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        motTelefoneLabel.setText("Telefone:");
+        jPanelCadastroMotoboys.add(motTelefoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        jPanelCadastroMotoboys.add(motTelefoneTextFied, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        motbtCadastrar.setText("Cadastrar");
+        jPanelCadastroMotoboys.add(motbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        CadastroMotoboys.getContentPane().add(jPanelCadastroMotoboys, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 178));
+
+        CadastroProdutos.setMinimumSize(new java.awt.Dimension(520, 600));
+        CadastroProdutos.setResizable(false);
+        CadastroProdutos.setSize(new java.awt.Dimension(520, 600));
+        CadastroProdutos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelCadastroProdutos.setMaximumSize(new java.awt.Dimension(520, 600));
+        jPanelCadastroProdutos.setMinimumSize(new java.awt.Dimension(520, 600));
+        jPanelCadastroProdutos.setPreferredSize(new java.awt.Dimension(520, 600));
+        jPanelCadastroProdutos.setRequestFocusEnabled(false);
+        jPanelCadastroProdutos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        prdCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        prdCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prdCadastroLabel.setText("Cadastro de Produtos");
+        jPanelCadastroProdutos.add(prdCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        prdCodigoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        prdCodigoLabel.setText("Código:");
+        jPanelCadastroProdutos.add(prdCodigoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        jPanelCadastroProdutos.add(prdCodigoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        prdNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        prdNomeLabel.setText("Nome:");
+        jPanelCadastroProdutos.add(prdNomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        jPanelCadastroProdutos.add(prdNomeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        prdPrecoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        prdPrecoLabel.setText("Preço:");
+        jPanelCadastroProdutos.add(prdPrecoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        jPanelCadastroProdutos.add(prdPrecoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        prdbtCadastrar.setText("Cadastrar");
+        jPanelCadastroProdutos.add(prdbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+
+        CadastroProdutos.getContentPane().add(jPanelCadastroProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        CadastroClientes.setPreferredSize(new java.awt.Dimension(520, 600));
+        CadastroClientes.setResizable(false);
+        CadastroClientes.setSize(new java.awt.Dimension(520, 600));
+        CadastroClientes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelCadastroClientes.setPreferredSize(new java.awt.Dimension(520, 600));
+        jPanelCadastroClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        clCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        clCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clCadastroLabel.setText("Cadastro de Clientes");
+        jPanelCadastroClientes.add(clCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 496, -1));
+
+        clPesquisarLabel.setText("Pesquisar:");
+        jPanelCadastroClientes.add(clPesquisarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 79, -1, -1));
+        jPanelCadastroClientes.add(clPesquisarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 77, 400, -1));
+
+        clbtPesquisar.setText("Pesquisar");
+        clbtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtPesquisarMouseClicked(evt);
+            }
+        });
+        jPanelCadastroClientes.add(clbtPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 102, -1, -1));
+
+        clCpfLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clCpfLabel.setText("CPF:");
+        jPanelCadastroClientes.add(clCpfLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 165, 64, -1));
+        jPanelCadastroClientes.add(clCpfTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 163, 400, -1));
+
+        clNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clNomeLabel.setText("Nome:");
+        jPanelCadastroClientes.add(clNomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 64, -1));
+        jPanelCadastroClientes.add(clNomeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 188, 400, -1));
+
+        clTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clTelefoneLabel.setText("Telefone:");
+        jPanelCadastroClientes.add(clTelefoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 215, 64, -1));
+        jPanelCadastroClientes.add(clTelefoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 213, 400, -1));
+
+        clCepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clCepLabel.setText("CEP:");
+        jPanelCadastroClientes.add(clCepLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 252, 64, -1));
+        jPanelCadastroClientes.add(clCepTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 250, 400, -1));
+
+        clRuaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clRuaLabel.setText("Rua:");
+        jPanelCadastroClientes.add(clRuaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 277, 64, -1));
+        jPanelCadastroClientes.add(clRuaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 275, 400, -1));
+
+        clBairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clBairroLabel.setText("Bairro:");
+        jPanelCadastroClientes.add(clBairroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 302, 64, -1));
+        jPanelCadastroClientes.add(clBairroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 300, 398, -1));
+
+        clNumeroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clNumeroLabel.setText("Numero:");
+        jPanelCadastroClientes.add(clNumeroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 327, 64, -1));
+        jPanelCadastroClientes.add(clNumeroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 325, 395, -1));
+
+        clComplementoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clComplementoLabel.setText("Complemento:");
+        jPanelCadastroClientes.add(clComplementoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
+        jPanelCadastroClientes.add(clComplementoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 350, 395, -1));
+
+        clbtCadastrar.setText("Inserir");
+        clbtCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clbtCadastrarKeyPressed(evt);
+            }
+        });
+        jPanelCadastroClientes.add(clbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 381, -1, -1));
+
+        clbtAlterar.setText("Alterar");
+        clbtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtAlterarMouseClicked(evt);
+            }
+        });
+        jPanelCadastroClientes.add(clbtAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 381, -1, -1));
+
+        clbtExcluir.setText("Excluir");
+        clbtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtExcluirMouseClicked(evt);
+            }
+        });
+        jPanelCadastroClientes.add(clbtExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 381, -1, -1));
+
+        CadastroClientes.getContentPane().add(jPanelCadastroClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Janela Inicial");
         setIconImages(null);
-        setPreferredSize(new java.awt.Dimension(520, 600));
+        setResizable(false);
 
-        PanelPrincipal.setPreferredSize(new java.awt.Dimension(520, 600));
+        jPanelPrincipal.setPreferredSize(new java.awt.Dimension(520, 600));
+        jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btCadastroClientes.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         btCadastroClientes.setText("Cadastrar Clientes");
@@ -110,6 +270,7 @@ public class JanelaInicial extends javax.swing.JFrame {
                 btCadastroClientesActionPerformed(evt);
             }
         });
+        jPanelPrincipal.add(btCadastroClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 11, 497, -1));
 
         btCadastroMotoboys.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         btCadastroMotoboys.setText("Cadastrar Motoboys");
@@ -123,6 +284,7 @@ public class JanelaInicial extends javax.swing.JFrame {
                 btCadastroMotoboysActionPerformed(evt);
             }
         });
+        jPanelPrincipal.add(btCadastroMotoboys, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 497, -1));
 
         btCadastroProdutos.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         btCadastroProdutos.setText("Cadastrar Produtos");
@@ -131,369 +293,21 @@ public class JanelaInicial extends javax.swing.JFrame {
                 btCadastroProdutosMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
-        PanelPrincipal.setLayout(PanelPrincipalLayout);
-        PanelPrincipalLayout.setHorizontalGroup(
-            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btCadastroProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btCadastroClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btCadastroMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        PanelPrincipalLayout.setVerticalGroup(
-            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(358, Short.MAX_VALUE)
-                .addComponent(btCadastroClientes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btCadastroMotoboys)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btCadastroProdutos)
-                .addGap(110, 110, 110))
-        );
-
-        PanelClientes.setPreferredSize(new java.awt.Dimension(520, 600));
-
-        clCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        clCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clCadastroLabel.setText("Cadastro de Clientes");
-
-        clPesquisarLabel.setText("Pesquisar:");
-
-        clbtPesquisar.setText("Pesquisar");
-        clbtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtPesquisarMouseClicked(evt);
-            }
-        });
-
-        clCpfLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCpfLabel.setText("CPF:");
-
-        clNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNomeLabel.setText("Nome:");
-
-        clTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clTelefoneLabel.setText("Telefone:");
-
-        clCepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCepLabel.setText("CEP:");
-
-        clRuaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clRuaLabel.setText("Rua:");
-
-        clBairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clBairroLabel.setText("Bairro:");
-
-        clNumeroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNumeroLabel.setText("Numero:");
-
-        clComplementoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clComplementoLabel.setText("Complemento:");
-
-        clbtCadastrar.setText("Inserir");
-        clbtCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                clbtCadastrarKeyPressed(evt);
-            }
-        });
-
-        clbtAlterar.setText("Alterar");
-        clbtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtAlterarMouseClicked(evt);
-            }
-        });
-
-        clbtExcluir.setText("Excluir");
-        clbtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtExcluirMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout PanelClientesLayout = new javax.swing.GroupLayout(PanelClientes);
-        PanelClientes.setLayout(PanelClientesLayout);
-        PanelClientesLayout.setHorizontalGroup(
-            PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesLayout.createSequentialGroup()
-                        .addComponent(clCadastroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(PanelClientesLayout.createSequentialGroup()
-                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(PanelClientesLayout.createSequentialGroup()
-                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(clCepLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                                        .addComponent(clRuaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(15, 15, 15)
-                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(clRuaTextField)
-                                        .addComponent(clCepTextField)))
-                                .addGroup(PanelClientesLayout.createSequentialGroup()
-                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(clBairroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(clNumeroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                                        .addComponent(clComplementoLabel))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelClientesLayout.createSequentialGroup()
-                                            .addComponent(clbtCadastrar)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(clbtAlterar)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(clbtExcluir)
-                                            .addGap(0, 193, Short.MAX_VALUE))
-                                        .addComponent(clComplementoTextField)
-                                        .addComponent(clBairroTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(clNumeroTextField, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(PanelClientesLayout.createSequentialGroup()
-                                    .addGap(13, 13, 13)
-                                    .addComponent(clPesquisarLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(clbtPesquisar)
-                                        .addComponent(clPesquisarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(PanelClientesLayout.createSequentialGroup()
-                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(clCpfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(clNomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(clTelefoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(clNomeTextField)
-                                    .addComponent(clTelefoneTextField)
-                                    .addComponent(clCpfTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))))
-                        .addGap(0, 29, Short.MAX_VALUE))))
-        );
-        PanelClientesLayout.setVerticalGroup(
-            PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(clCadastroLabel)
-                .addGap(35, 35, 35)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clPesquisarLabel)
-                    .addComponent(clPesquisarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clbtPesquisar)
-                .addGap(77, 77, 77)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clCpfLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clNomeLabel)
-                    .addComponent(clNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clTelefoneLabel)
-                    .addComponent(clTelefoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clCepTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clCepLabel))
-                .addGap(6, 6, 6)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clRuaLabel)
-                    .addComponent(clRuaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clBairroLabel)
-                    .addComponent(clBairroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clNumeroLabel)
-                    .addComponent(clNumeroTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clComplementoLabel)
-                    .addComponent(clComplementoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clbtCadastrar)
-                    .addComponent(clbtAlterar)
-                    .addComponent(clbtExcluir))
-                .addContainerGap(84, Short.MAX_VALUE))
-        );
-
-        PanelMotoboys.setPreferredSize(new java.awt.Dimension(520, 600));
-
-        motCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        motCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        motCadastroLabel.setText("Cadastro de Motoboys");
-
-        motCpfPanel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motCpfPanel.setText("CPF:");
-
-        motPlacaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motPlacaLabel.setText("Placa:");
-
-        motPlacaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motPlacaTextFieldActionPerformed(evt);
-            }
-        });
-
-        motTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motTelefoneLabel.setText("Telefone:");
-
-        motbtCadastrar.setText("Cadastrar");
-
-        javax.swing.GroupLayout PanelMotoboysLayout = new javax.swing.GroupLayout(PanelMotoboys);
-        PanelMotoboys.setLayout(PanelMotoboysLayout);
-        PanelMotoboysLayout.setHorizontalGroup(
-            PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMotoboysLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(motCadastroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelMotoboysLayout.createSequentialGroup()
-                        .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(motbtCadastrar)
-                            .addGroup(PanelMotoboysLayout.createSequentialGroup()
-                                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(motPlacaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(motTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                                    .addComponent(motCpfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(motPlacaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(motCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(motTelefoneTextFied, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 20, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        PanelMotoboysLayout.setVerticalGroup(
-            PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelMotoboysLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(motCadastroLabel)
-                .addGap(8, 8, 8)
-                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motCpfPanel)
-                    .addComponent(motCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motPlacaLabel)
-                    .addComponent(motPlacaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motTelefoneTextFied, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(motTelefoneLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(motbtCadastrar)
-                .addContainerGap(433, Short.MAX_VALUE))
-        );
-
-        PanelProdutos.setPreferredSize(new java.awt.Dimension(520, 600));
-
-        prdCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        prdCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        prdCadastroLabel.setText("Cadastro de Produtos");
-
-        prdCodigoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdCodigoLabel.setText("Código:");
-
-        prdNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdNomeLabel.setText("Nome:");
-
-        prdPrecoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdPrecoLabel.setText("Preço:");
-
-        prdbtCadastrar.setText("Cadastrar");
-
-        javax.swing.GroupLayout PanelProdutosLayout = new javax.swing.GroupLayout(PanelProdutos);
-        PanelProdutos.setLayout(PanelProdutosLayout);
-        PanelProdutosLayout.setHorizontalGroup(
-            PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelProdutosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(prdbtCadastrar)
-                    .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(PanelProdutosLayout.createSequentialGroup()
-                            .addComponent(prdPrecoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(prdPrecoTextField))
-                        .addGroup(PanelProdutosLayout.createSequentialGroup()
-                            .addComponent(prdNomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(prdNomeTextField))
-                        .addGroup(PanelProdutosLayout.createSequentialGroup()
-                            .addComponent(prdCodigoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(prdCodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(PanelProdutosLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(prdCadastroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PanelProdutosLayout.setVerticalGroup(
-            PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelProdutosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(prdCadastroLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdCodigoLabel)
-                    .addComponent(prdCodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prdNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prdNomeLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prdPrecoLabel)
-                    .addComponent(prdPrecoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(prdbtCadastrar)
-                .addContainerGap(535, Short.MAX_VALUE))
-        );
+        jPanelPrincipal.add(btCadastroProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 497, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelMotoboys, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelProdutos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelMotoboys, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void motPlacaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPlacaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motPlacaTextFieldActionPerformed
 
     private void btCadastroMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroMotoboysActionPerformed
         // TODO add your handling code here:
@@ -505,47 +319,39 @@ public class JanelaInicial extends javax.swing.JFrame {
 
     private void btCadastroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroClientesMouseClicked
         // TODO add your handling code here:
+        CadastroClientes.setVisible(true);
     }//GEN-LAST:event_btCadastroClientesMouseClicked
 
     private void btCadastroMotoboysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroMotoboysMouseClicked
         // TODO add your handling code here:
+        CadastroMotoboys.setVisible(true);
     }//GEN-LAST:event_btCadastroMotoboysMouseClicked
 
     private void btCadastroProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroProdutosMouseClicked
         // TODO add your handling code here:
+        CadastroProdutos.setVisible(true);
     }//GEN-LAST:event_btCadastroProdutosMouseClicked
 
-    private void clbtCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clbtCadastrarKeyPressed
-        //INSERIR USUÁRIO
-        end = new Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
-        tel = new Telefones(clTelefoneTextField.getText());
-        cl1 = new Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
-        clientes.add(cl1);
-
-
-    }//GEN-LAST:event_clbtCadastrarKeyPressed
-
-    private void clbtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtAlterarMouseClicked
-        // ALTERAR USUÁRIO
-    }//GEN-LAST:event_clbtAlterarMouseClicked
+    private void motPlacaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPlacaTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_motPlacaTextFieldActionPerformed
 
     private void clbtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtExcluirMouseClicked
         // REMOVER USUÁRIO
     }//GEN-LAST:event_clbtExcluirMouseClicked
 
+    private void clbtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtAlterarMouseClicked
+        // ALTERAR USUÁRIO
+    }//GEN-LAST:event_clbtAlterarMouseClicked
+
+    private void clbtCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clbtCadastrarKeyPressed
+        //INSERIR USUÁRIO
+
+    }//GEN-LAST:event_clbtCadastrarKeyPressed
+
     private void clbtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtPesquisarMouseClicked
-        // PESQUISAR USUÁRIO
-        boolean pes = clientes.contains(cl1);
-        if (clientes.contains(cl1)) {
-            // Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
-            //  Telefones(clTelefoneTextField.getText());
-            // Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
 
-        } else {
-            JOptionPane.showMessageDialog(null, "Usuário não existe no sistema.");
     }//GEN-LAST:event_clbtPesquisarMouseClicked
-    }
-
     /**
      * @param args the command line arguments
      */
@@ -582,10 +388,9 @@ public class JanelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelClientes;
-    private javax.swing.JPanel PanelMotoboys;
-    private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JPanel PanelProdutos;
+    private javax.swing.JFrame CadastroClientes;
+    private javax.swing.JFrame CadastroMotoboys;
+    private javax.swing.JFrame CadastroProdutos;
     private javax.swing.JButton btCadastroClientes;
     private javax.swing.JButton btCadastroMotoboys;
     private javax.swing.JButton btCadastroProdutos;
@@ -612,6 +417,10 @@ public class JanelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton clbtCadastrar;
     private javax.swing.JButton clbtExcluir;
     private javax.swing.JButton clbtPesquisar;
+    private javax.swing.JPanel jPanelCadastroClientes;
+    private javax.swing.JPanel jPanelCadastroMotoboys;
+    private javax.swing.JPanel jPanelCadastroProdutos;
+    private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JLabel motCadastroLabel;
     private javax.swing.JLabel motCpfPanel;
     private javax.swing.JTextField motCpfTextField;
