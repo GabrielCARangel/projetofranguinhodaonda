@@ -137,7 +137,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
 
     private void prdbtCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdbtCadastrarMouseClicked
         // INSERIR PRODUTOS
-        prd = new Produtos(prdCodigoTextField.getText(), prdNomeTextField.getText(), prdPrecoTextField.getText());
+        prd = new Produtos(Integer.parseInt(prdCodigoTextField.getText()), prdNomeTextField.getText(), Double.parseDouble(prdPrecoTextField.getText()));
         produtos.add(prd1);
     }//GEN-LAST:event_prdbtCadastrarMouseClicked
 
