@@ -1,5 +1,6 @@
 package FranguinhoDaOnda;
 
+import FranguinhoDaOnda.view.CadastroClientes;
 import FranguinhoDaOnda.view.Login;
 
 public class ProjetoIntegrador {

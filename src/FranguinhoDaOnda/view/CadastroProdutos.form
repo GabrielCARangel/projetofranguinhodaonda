@@ -2,7 +2,8 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="CADASTRO DE PRODUTOS"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,129 +24,138 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanelCadastroProdutos" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="CadastroProdutos" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanelCadastroProdutos" min="-2" pref="194" max="-2" attributes="0"/>
+          <Component id="CadastroProdutos" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCadastroProdutos">
-      <Properties>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[520, 600]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[520, 600]"/>
-        </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[520, 600]"/>
-        </Property>
-        <Property name="requestFocusEnabled" type="boolean" value="false"/>
-      </Properties>
+    <Container class="javax.swing.JPanel" name="CadastroProdutos">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="prdCodigoLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="prdNomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="prdPrecoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="prdCadastroLabel" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="prdPrecoTextField" min="-2" pref="379" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="prdCodigoTextField" pref="380" max="32767" attributes="0"/>
-                              <Component id="prdNomeTextField" max="32767" attributes="0"/>
+                              <Component id="prdCodigo" pref="43" max="32767" attributes="0"/>
+                              <Component id="prdNome" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="prdbtCadastrar" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="prdNomeText" max="32767" attributes="0"/>
+                              <Component id="prdCodigoText" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="prdCadastrar" min="-2" pref="480" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="prdPreco" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="prdPrecoText" min="-2" pref="433" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="prdBtInserir" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="prdBtAlterar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="prdBtExcluir" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="prdCadastroLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="prdCadastrar" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdCodigoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdCodigoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdCodigoText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdNomeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdNomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdNomeText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdPrecoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdPrecoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPreco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPrecoText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="prdbtCadastrar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="prdBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="prdCadastroLabel">
+        <Component class="javax.swing.JLabel" name="prdCadastrar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="36" style="0"/>
+              <Font name="Tahoma" size="36" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="prdCodigoLabel">
+        <Component class="javax.swing.JLabel" name="prdCodigo">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="prdCodigoTextField">
+        <Component class="javax.swing.JTextField" name="prdCodigoText">
         </Component>
-        <Component class="javax.swing.JLabel" name="prdNomeLabel">
+        <Component class="javax.swing.JLabel" name="prdNome">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="prdNomeTextField">
+        <Component class="javax.swing.JTextField" name="prdNomeText">
         </Component>
-        <Component class="javax.swing.JLabel" name="prdPrecoLabel">
+        <Component class="javax.swing.JLabel" name="prdPreco">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Pre&#xe7;o:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="prdPrecoTextField">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prdPrecoTextFieldActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="prdPrecoText">
         </Component>
-        <Component class="javax.swing.JButton" name="prdbtCadastrar">
+        <Component class="javax.swing.JButton" name="prdBtInserir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Inserir"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdbtCadastrarMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtInserirMouseClicked"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="prdBtAlterar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alterar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="prdBtExcluir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

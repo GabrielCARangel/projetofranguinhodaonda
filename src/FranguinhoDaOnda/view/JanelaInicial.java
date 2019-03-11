@@ -10,7 +10,7 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author sala302b
+ * @author Gabriel C. A. Rangel
  */
 public class JanelaInicial extends javax.swing.JFrame {
 
@@ -21,7 +21,6 @@ public class JanelaInicial extends javax.swing.JFrame {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
         setIconImage(img);
-
     }
 
     /**
@@ -33,325 +32,103 @@ public class JanelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CadastroMotoboys = new javax.swing.JFrame();
-        jPanelCadastroMotoboys = new javax.swing.JPanel();
-        motCadastroLabel = new javax.swing.JLabel();
-        motCpfPanel = new javax.swing.JLabel();
-        motCpfTextField = new javax.swing.JTextField();
-        motPlacaLabel = new javax.swing.JLabel();
-        motPlacaTextField = new javax.swing.JTextField();
-        motTelefoneLabel = new javax.swing.JLabel();
-        motTelefoneTextFied = new javax.swing.JTextField();
-        motbtCadastrar = new javax.swing.JButton();
-        CadastroProdutos = new javax.swing.JFrame();
-        jPanelCadastroProdutos = new javax.swing.JPanel();
-        prdCadastroLabel = new javax.swing.JLabel();
-        prdCodigoLabel = new javax.swing.JLabel();
-        prdCodigoTextField = new javax.swing.JTextField();
-        prdNomeLabel = new javax.swing.JLabel();
-        prdNomeTextField = new javax.swing.JTextField();
-        prdPrecoLabel = new javax.swing.JLabel();
-        prdPrecoTextField = new javax.swing.JTextField();
-        prdbtCadastrar = new javax.swing.JButton();
-        CadastroClientes = new javax.swing.JFrame();
-        jPanelCadastroClientes = new javax.swing.JPanel();
-        clCadastroLabel = new javax.swing.JLabel();
-        clPesquisarLabel = new javax.swing.JLabel();
-        clPesquisarTextField = new javax.swing.JTextField();
-        clbtPesquisar = new javax.swing.JButton();
-        clCpfLabel = new javax.swing.JLabel();
-        clCpfTextField = new javax.swing.JTextField();
-        clNomeLabel = new javax.swing.JLabel();
-        clNomeTextField = new javax.swing.JTextField();
-        clTelefoneLabel = new javax.swing.JLabel();
-        clTelefoneTextField = new javax.swing.JTextField();
-        clCepLabel = new javax.swing.JLabel();
-        clCepTextField = new javax.swing.JTextField();
-        clRuaLabel = new javax.swing.JLabel();
-        clRuaTextField = new javax.swing.JTextField();
-        clBairroLabel = new javax.swing.JLabel();
-        clBairroTextField = new javax.swing.JTextField();
-        clNumeroLabel = new javax.swing.JLabel();
-        clNumeroTextField = new javax.swing.JTextField();
-        clComplementoLabel = new javax.swing.JLabel();
-        clComplementoTextField = new javax.swing.JTextField();
-        clbtCadastrar = new javax.swing.JButton();
-        clbtAlterar = new javax.swing.JButton();
-        clbtExcluir = new javax.swing.JButton();
-        jPanelPrincipal = new javax.swing.JPanel();
-        btCadastroClientes = new javax.swing.JButton();
-        btCadastroMotoboys = new javax.swing.JButton();
-        btCadastroProdutos = new javax.swing.JButton();
+        JanelaInicial = new javax.swing.JPanel();
+        jiBtCadastrarClientes = new javax.swing.JButton();
+        jiBtCadastrarMotoboys = new javax.swing.JButton();
+        jiBtCadastrarProdutos = new javax.swing.JButton();
 
-        CadastroMotoboys.setMaximumSize(new java.awt.Dimension(520, 600));
-        CadastroMotoboys.setMinimumSize(new java.awt.Dimension(520, 600));
-        CadastroMotoboys.setResizable(false);
-        CadastroMotoboys.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelCadastroMotoboys.setPreferredSize(new java.awt.Dimension(520, 178));
-        jPanelCadastroMotoboys.setRequestFocusEnabled(false);
-        jPanelCadastroMotoboys.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        motCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        motCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        motCadastroLabel.setText("Cadastro de Motoboys");
-        jPanelCadastroMotoboys.add(motCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        motCpfPanel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motCpfPanel.setText("CPF:");
-        jPanelCadastroMotoboys.add(motCpfPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        jPanelCadastroMotoboys.add(motCpfTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        motPlacaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motPlacaLabel.setText("Placa:");
-        jPanelCadastroMotoboys.add(motPlacaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        motPlacaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motPlacaTextFieldActionPerformed(evt);
-            }
-        });
-        jPanelCadastroMotoboys.add(motPlacaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        motTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motTelefoneLabel.setText("Telefone:");
-        jPanelCadastroMotoboys.add(motTelefoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        jPanelCadastroMotoboys.add(motTelefoneTextFied, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        motbtCadastrar.setText("Cadastrar");
-        jPanelCadastroMotoboys.add(motbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        CadastroMotoboys.getContentPane().add(jPanelCadastroMotoboys, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 178));
-
-        CadastroProdutos.setMinimumSize(new java.awt.Dimension(520, 600));
-        CadastroProdutos.setResizable(false);
-        CadastroProdutos.setSize(new java.awt.Dimension(520, 600));
-        CadastroProdutos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelCadastroProdutos.setMaximumSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setMinimumSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setPreferredSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setRequestFocusEnabled(false);
-        jPanelCadastroProdutos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        prdCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        prdCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        prdCadastroLabel.setText("Cadastro de Produtos");
-        jPanelCadastroProdutos.add(prdCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        prdCodigoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdCodigoLabel.setText("Código:");
-        jPanelCadastroProdutos.add(prdCodigoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        jPanelCadastroProdutos.add(prdCodigoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        prdNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdNomeLabel.setText("Nome:");
-        jPanelCadastroProdutos.add(prdNomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        jPanelCadastroProdutos.add(prdNomeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        prdPrecoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdPrecoLabel.setText("Preço:");
-        jPanelCadastroProdutos.add(prdPrecoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        jPanelCadastroProdutos.add(prdPrecoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        prdbtCadastrar.setText("Cadastrar");
-        jPanelCadastroProdutos.add(prdbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        CadastroProdutos.getContentPane().add(jPanelCadastroProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        CadastroClientes.setPreferredSize(new java.awt.Dimension(520, 600));
-        CadastroClientes.setResizable(false);
-        CadastroClientes.setSize(new java.awt.Dimension(520, 600));
-        CadastroClientes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelCadastroClientes.setPreferredSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        clCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        clCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clCadastroLabel.setText("Cadastro de Clientes");
-        jPanelCadastroClientes.add(clCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 496, -1));
-
-        clPesquisarLabel.setText("Pesquisar:");
-        jPanelCadastroClientes.add(clPesquisarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 79, -1, -1));
-        jPanelCadastroClientes.add(clPesquisarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 77, 400, -1));
-
-        clbtPesquisar.setText("Pesquisar");
-        clbtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtPesquisarMouseClicked(evt);
-            }
-        });
-        jPanelCadastroClientes.add(clbtPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 102, -1, -1));
-
-        clCpfLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCpfLabel.setText("CPF:");
-        jPanelCadastroClientes.add(clCpfLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 165, 64, -1));
-        jPanelCadastroClientes.add(clCpfTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 163, 400, -1));
-
-        clNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNomeLabel.setText("Nome:");
-        jPanelCadastroClientes.add(clNomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 64, -1));
-        jPanelCadastroClientes.add(clNomeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 188, 400, -1));
-
-        clTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clTelefoneLabel.setText("Telefone:");
-        jPanelCadastroClientes.add(clTelefoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 215, 64, -1));
-        jPanelCadastroClientes.add(clTelefoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 213, 400, -1));
-
-        clCepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCepLabel.setText("CEP:");
-        jPanelCadastroClientes.add(clCepLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 252, 64, -1));
-        jPanelCadastroClientes.add(clCepTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 250, 400, -1));
-
-        clRuaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clRuaLabel.setText("Rua:");
-        jPanelCadastroClientes.add(clRuaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 277, 64, -1));
-        jPanelCadastroClientes.add(clRuaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 275, 400, -1));
-
-        clBairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clBairroLabel.setText("Bairro:");
-        jPanelCadastroClientes.add(clBairroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 302, 64, -1));
-        jPanelCadastroClientes.add(clBairroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 300, 398, -1));
-
-        clNumeroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNumeroLabel.setText("Numero:");
-        jPanelCadastroClientes.add(clNumeroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 327, 64, -1));
-        jPanelCadastroClientes.add(clNumeroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 325, 395, -1));
-
-        clComplementoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clComplementoLabel.setText("Complemento:");
-        jPanelCadastroClientes.add(clComplementoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
-        jPanelCadastroClientes.add(clComplementoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 350, 395, -1));
-
-        clbtCadastrar.setText("Inserir");
-        clbtCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                clbtCadastrarKeyPressed(evt);
-            }
-        });
-        jPanelCadastroClientes.add(clbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 381, -1, -1));
-
-        clbtAlterar.setText("Alterar");
-        clbtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtAlterarMouseClicked(evt);
-            }
-        });
-        jPanelCadastroClientes.add(clbtAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 381, -1, -1));
-
-        clbtExcluir.setText("Excluir");
-        clbtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtExcluirMouseClicked(evt);
-            }
-        });
-        jPanelCadastroClientes.add(clbtExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 381, -1, -1));
-
-        CadastroClientes.getContentPane().add(jPanelCadastroClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Janela Inicial");
-        setIconImages(null);
+        setTitle("JANELA PRINCIPAL");
         setResizable(false);
 
-        jPanelPrincipal.setPreferredSize(new java.awt.Dimension(520, 600));
-        jPanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btCadastroClientes.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        btCadastroClientes.setText("Cadastrar Clientes");
-        btCadastroClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        jiBtCadastrarClientes.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jiBtCadastrarClientes.setText("Cadastrar Clientes");
+        jiBtCadastrarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCadastroClientesMouseClicked(evt);
+                jiBtCadastrarClientesMouseClicked(evt);
             }
         });
-        btCadastroClientes.addActionListener(new java.awt.event.ActionListener() {
+
+        jiBtCadastrarMotoboys.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jiBtCadastrarMotoboys.setText("Cadastrar Motoboys");
+        jiBtCadastrarMotoboys.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jiBtCadastrarMotoboysMouseClicked(evt);
+            }
+        });
+        jiBtCadastrarMotoboys.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastroClientesActionPerformed(evt);
+                jiBtCadastrarMotoboysActionPerformed(evt);
             }
         });
-        jPanelPrincipal.add(btCadastroClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 11, 497, -1));
 
-        btCadastroMotoboys.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        btCadastroMotoboys.setText("Cadastrar Motoboys");
-        btCadastroMotoboys.addMouseListener(new java.awt.event.MouseAdapter() {
+        jiBtCadastrarProdutos.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jiBtCadastrarProdutos.setText("Cadastrar Produtos");
+        jiBtCadastrarProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCadastroMotoboysMouseClicked(evt);
+                jiBtCadastrarProdutosMouseClicked(evt);
             }
         });
-        btCadastroMotoboys.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastroMotoboysActionPerformed(evt);
-            }
-        });
-        jPanelPrincipal.add(btCadastroMotoboys, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 497, -1));
 
-        btCadastroProdutos.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
-        btCadastroProdutos.setText("Cadastrar Produtos");
-        btCadastroProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCadastroProdutosMouseClicked(evt);
-            }
-        });
-        jPanelPrincipal.add(btCadastroProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 497, -1));
+        javax.swing.GroupLayout JanelaInicialLayout = new javax.swing.GroupLayout(JanelaInicial);
+        JanelaInicial.setLayout(JanelaInicialLayout);
+        JanelaInicialLayout.setHorizontalGroup(
+            JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaInicialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        JanelaInicialLayout.setVerticalGroup(
+            JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JanelaInicialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JanelaInicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JanelaInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btCadastroMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroMotoboysActionPerformed
+    private void jiBtCadastrarProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarProdutosMouseClicked
+        // ABRE A JANELA DE CADASTRO DE PRODUTOS
+        CadastroClientes janelaMotoboysCadastro = new CadastroClientes();
+        janelaMotoboysCadastro.setVisible(true);
+    }//GEN-LAST:event_jiBtCadastrarProdutosMouseClicked
+
+    private void jiBtCadastrarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarClientesMouseClicked
+        // ABRE A JANELA DE CADASTRO DE CLIENTES
+        CadastroClientes janelaCadastroClientes = new CadastroClientes();
+        janelaCadastroClientes.setVisible(true);
+    }//GEN-LAST:event_jiBtCadastrarClientesMouseClicked
+
+    private void jiBtCadastrarMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiBtCadastrarMotoboysActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btCadastroMotoboysActionPerformed
+    }//GEN-LAST:event_jiBtCadastrarMotoboysActionPerformed
 
-    private void btCadastroClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCadastroClientesActionPerformed
+    private void jiBtCadastrarMotoboysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarMotoboysMouseClicked
+        // ABRE A JANELA DE CADASTRO DE MOTOBOYS
+        CadastroClientes janelaMotoboysCadastro = new CadastroClientes();
+        janelaMotoboysCadastro.setVisible(true);
+    }//GEN-LAST:event_jiBtCadastrarMotoboysMouseClicked
 
-    private void btCadastroClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroClientesMouseClicked
-        // TODO add your handling code here:
-        CadastroClientes.setVisible(true);
-    }//GEN-LAST:event_btCadastroClientesMouseClicked
-
-    private void btCadastroMotoboysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroMotoboysMouseClicked
-        // TODO add your handling code here:
-        CadastroMotoboys.setVisible(true);
-    }//GEN-LAST:event_btCadastroMotoboysMouseClicked
-
-    private void btCadastroProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCadastroProdutosMouseClicked
-        // TODO add your handling code here:
-        CadastroProdutos.setVisible(true);
-    }//GEN-LAST:event_btCadastroProdutosMouseClicked
-
-    private void motPlacaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPlacaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motPlacaTextFieldActionPerformed
-
-    private void clbtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtExcluirMouseClicked
-        // REMOVER USUÁRIO
-    }//GEN-LAST:event_clbtExcluirMouseClicked
-
-    private void clbtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtAlterarMouseClicked
-        // ALTERAR USUÁRIO
-    }//GEN-LAST:event_clbtAlterarMouseClicked
-
-    private void clbtCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clbtCadastrarKeyPressed
-        //INSERIR USUÁRIO
-
-    }//GEN-LAST:event_clbtCadastrarKeyPressed
-
-    private void clbtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtPesquisarMouseClicked
-
-    }//GEN-LAST:event_clbtPesquisarMouseClicked
     /**
      * @param args the command line arguments
      */
@@ -388,54 +165,9 @@ public class JanelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFrame CadastroClientes;
-    private javax.swing.JFrame CadastroMotoboys;
-    private javax.swing.JFrame CadastroProdutos;
-    private javax.swing.JButton btCadastroClientes;
-    private javax.swing.JButton btCadastroMotoboys;
-    private javax.swing.JButton btCadastroProdutos;
-    private javax.swing.JLabel clBairroLabel;
-    private javax.swing.JTextField clBairroTextField;
-    private javax.swing.JLabel clCadastroLabel;
-    private javax.swing.JLabel clCepLabel;
-    private javax.swing.JTextField clCepTextField;
-    private javax.swing.JLabel clComplementoLabel;
-    private javax.swing.JTextField clComplementoTextField;
-    private javax.swing.JLabel clCpfLabel;
-    private javax.swing.JTextField clCpfTextField;
-    private javax.swing.JLabel clNomeLabel;
-    private javax.swing.JTextField clNomeTextField;
-    private javax.swing.JLabel clNumeroLabel;
-    private javax.swing.JTextField clNumeroTextField;
-    private javax.swing.JLabel clPesquisarLabel;
-    private javax.swing.JTextField clPesquisarTextField;
-    private javax.swing.JLabel clRuaLabel;
-    private javax.swing.JTextField clRuaTextField;
-    private javax.swing.JLabel clTelefoneLabel;
-    private javax.swing.JTextField clTelefoneTextField;
-    private javax.swing.JButton clbtAlterar;
-    private javax.swing.JButton clbtCadastrar;
-    private javax.swing.JButton clbtExcluir;
-    private javax.swing.JButton clbtPesquisar;
-    private javax.swing.JPanel jPanelCadastroClientes;
-    private javax.swing.JPanel jPanelCadastroMotoboys;
-    private javax.swing.JPanel jPanelCadastroProdutos;
-    private javax.swing.JPanel jPanelPrincipal;
-    private javax.swing.JLabel motCadastroLabel;
-    private javax.swing.JLabel motCpfPanel;
-    private javax.swing.JTextField motCpfTextField;
-    private javax.swing.JLabel motPlacaLabel;
-    private javax.swing.JTextField motPlacaTextField;
-    private javax.swing.JLabel motTelefoneLabel;
-    private javax.swing.JTextField motTelefoneTextFied;
-    private javax.swing.JButton motbtCadastrar;
-    private javax.swing.JLabel prdCadastroLabel;
-    private javax.swing.JLabel prdCodigoLabel;
-    private javax.swing.JTextField prdCodigoTextField;
-    private javax.swing.JLabel prdNomeLabel;
-    private javax.swing.JTextField prdNomeTextField;
-    private javax.swing.JLabel prdPrecoLabel;
-    private javax.swing.JTextField prdPrecoTextField;
-    private javax.swing.JButton prdbtCadastrar;
+    private javax.swing.JPanel JanelaInicial;
+    private javax.swing.JButton jiBtCadastrarClientes;
+    private javax.swing.JButton jiBtCadastrarMotoboys;
+    private javax.swing.JButton jiBtCadastrarProdutos;
     // End of variables declaration//GEN-END:variables
 }

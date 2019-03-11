@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package FranguinhoDaOnda.view;
-
 import FranguinhoDaOnda.Produtos;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author sala302b
+ * @author Gabriel C. A. Rangel
  */
 public class CadastroProdutos extends javax.swing.JFrame {
-
     List<Produtos> produtos = new ArrayList<>();
     Produtos prd, prd1;
 
@@ -22,7 +22,9 @@ public class CadastroProdutos extends javax.swing.JFrame {
      * Creates new form CadastroProdutos
      */
     public CadastroProdutos() {
-
+        initComponents();
+        Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setIconImage(img);
     }
 
     /**
@@ -34,90 +36,96 @@ public class CadastroProdutos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroProdutos = new javax.swing.JPanel();
-        prdCadastroLabel = new javax.swing.JLabel();
-        prdCodigoLabel = new javax.swing.JLabel();
-        prdCodigoTextField = new javax.swing.JTextField();
-        prdNomeLabel = new javax.swing.JLabel();
-        prdNomeTextField = new javax.swing.JTextField();
-        prdPrecoLabel = new javax.swing.JLabel();
-        prdPrecoTextField = new javax.swing.JTextField();
-        prdbtCadastrar = new javax.swing.JButton();
+        CadastroProdutos = new javax.swing.JPanel();
+        prdCadastrar = new javax.swing.JLabel();
+        prdCodigo = new javax.swing.JLabel();
+        prdCodigoText = new javax.swing.JTextField();
+        prdNome = new javax.swing.JLabel();
+        prdNomeText = new javax.swing.JTextField();
+        prdPreco = new javax.swing.JLabel();
+        prdPrecoText = new javax.swing.JTextField();
+        prdBtInserir = new javax.swing.JButton();
+        prdBtAlterar = new javax.swing.JButton();
+        prdBtExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CADASTRO DE PRODUTOS");
+        setResizable(false);
 
-        jPanelCadastroProdutos.setMaximumSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setMinimumSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setPreferredSize(new java.awt.Dimension(520, 600));
-        jPanelCadastroProdutos.setRequestFocusEnabled(false);
+        prdCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prdCadastrar.setText("Cadastro de Produtos");
 
-        prdCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        prdCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        prdCadastroLabel.setText("Cadastro de Produtos");
+        prdCodigo.setText("Código:");
 
-        prdCodigoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdCodigoLabel.setText("Código:");
+        prdNome.setText("Nome:");
 
-        prdNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdNomeLabel.setText("Nome:");
+        prdPreco.setText("Preço:");
 
-        prdPrecoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        prdPrecoLabel.setText("Preço:");
-
-        prdPrecoTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prdPrecoTextFieldActionPerformed(evt);
-            }
-        });
-
-        prdbtCadastrar.setText("Inserir");
-        prdbtCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        prdBtInserir.setText("Inserir");
+        prdBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                prdbtCadastrarMouseClicked(evt);
+                prdBtInserirMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelCadastroProdutosLayout = new javax.swing.GroupLayout(jPanelCadastroProdutos);
-        jPanelCadastroProdutos.setLayout(jPanelCadastroProdutosLayout);
-        jPanelCadastroProdutosLayout.setHorizontalGroup(
-            jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroProdutosLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(prdCodigoLabel)
-                        .addComponent(prdNomeLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(prdPrecoLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prdCadastroLabel)
-                    .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(prdPrecoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(prdCodigoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                            .addComponent(prdNomeTextField))
-                        .addComponent(prdbtCadastrar)))
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-        jPanelCadastroProdutosLayout.setVerticalGroup(
-            jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroProdutosLayout.createSequentialGroup()
+        prdBtAlterar.setText("Alterar");
+
+        prdBtExcluir.setText("Excluir");
+
+        javax.swing.GroupLayout CadastroProdutosLayout = new javax.swing.GroupLayout(CadastroProdutos);
+        CadastroProdutos.setLayout(CadastroProdutosLayout);
+        CadastroProdutosLayout.setHorizontalGroup(
+            CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroProdutosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(prdCadastroLabel)
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CadastroProdutosLayout.createSequentialGroup()
+                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(prdCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                            .addComponent(prdNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(prdNomeText)
+                            .addComponent(prdCodigoText)))
+                    .addGroup(CadastroProdutosLayout.createSequentialGroup()
+                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(prdCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroProdutosLayout.createSequentialGroup()
+                                .addComponent(prdPreco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(prdPrecoText, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroProdutosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(prdBtInserir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(prdBtAlterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(prdBtExcluir)))
+                .addContainerGap())
+        );
+        CadastroProdutosLayout.setVerticalGroup(
+            CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroProdutosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(prdCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdCodigoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prdCodigoLabel))
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdCodigo)
+                    .addComponent(prdCodigoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prdNomeLabel))
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdNome)
+                    .addComponent(prdNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdPrecoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prdPrecoLabel))
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdPreco)
+                    .addComponent(prdPrecoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(prdbtCadastrar)
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdBtExcluir)
+                    .addComponent(prdBtAlterar)
+                    .addComponent(prdBtInserir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -125,25 +133,21 @@ public class CadastroProdutos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelCadastroProdutos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroProdutos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelCadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void prdbtCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdbtCadastrarMouseClicked
+    private void prdBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtInserirMouseClicked
         // INSERIR PRODUTOS
-        prd = new Produtos(Integer.parseInt(prdCodigoTextField.getText()), prdNomeTextField.getText(), Double.parseDouble(prdPrecoTextField.getText()));
+        prd = new Produtos(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
         produtos.add(prd1);
-    }//GEN-LAST:event_prdbtCadastrarMouseClicked
-
-    private void prdPrecoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prdPrecoTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prdPrecoTextFieldActionPerformed
+    }//GEN-LAST:event_prdBtInserirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,14 +185,16 @@ public class CadastroProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanelCadastroProdutos;
-    private javax.swing.JLabel prdCadastroLabel;
-    private javax.swing.JLabel prdCodigoLabel;
-    private javax.swing.JTextField prdCodigoTextField;
-    private javax.swing.JLabel prdNomeLabel;
-    private javax.swing.JTextField prdNomeTextField;
-    private javax.swing.JLabel prdPrecoLabel;
-    private javax.swing.JTextField prdPrecoTextField;
-    private javax.swing.JButton prdbtCadastrar;
+    private javax.swing.JPanel CadastroProdutos;
+    private javax.swing.JButton prdBtAlterar;
+    private javax.swing.JButton prdBtExcluir;
+    private javax.swing.JButton prdBtInserir;
+    private javax.swing.JLabel prdCadastrar;
+    private javax.swing.JLabel prdCodigo;
+    private javax.swing.JTextField prdCodigoText;
+    private javax.swing.JLabel prdNome;
+    private javax.swing.JTextField prdNomeText;
+    private javax.swing.JLabel prdPreco;
+    private javax.swing.JTextField prdPrecoText;
     // End of variables declaration//GEN-END:variables
 }

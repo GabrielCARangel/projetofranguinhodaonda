@@ -8,13 +8,15 @@ package FranguinhoDaOnda.view;
 import FranguinhoDaOnda.Clientes;
 import FranguinhoDaOnda.Enderecos;
 import FranguinhoDaOnda.Telefones;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author sala302b
+ * @author Gabriel C. A. Rangel
  */
 public class CadastroClientes extends javax.swing.JFrame {
 
@@ -27,6 +29,9 @@ public class CadastroClientes extends javax.swing.JFrame {
      * Creates new form CadastroClientes
      */
     public CadastroClientes() {
+        initComponents();
+        Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setIconImage(img);
     }
 
     /**
@@ -38,165 +43,252 @@ public class CadastroClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroClientes = new javax.swing.JPanel();
-        clCadastroLabel = new javax.swing.JLabel();
-        clPesquisarLabel = new javax.swing.JLabel();
-        clPesquisarTextField = new javax.swing.JTextField();
-        clbtPesquisar = new javax.swing.JButton();
-        clCpfLabel = new javax.swing.JLabel();
-        clCpfTextField = new javax.swing.JTextField();
-        clNomeLabel = new javax.swing.JLabel();
-        clNomeTextField = new javax.swing.JTextField();
-        clTelefoneLabel = new javax.swing.JLabel();
-        clTelefoneTextField = new javax.swing.JTextField();
-        clCepLabel = new javax.swing.JLabel();
-        clCepTextField = new javax.swing.JTextField();
-        clRuaLabel = new javax.swing.JLabel();
-        clRuaTextField = new javax.swing.JTextField();
-        clBairroLabel = new javax.swing.JLabel();
-        clBairroTextField = new javax.swing.JTextField();
-        clNumeroLabel = new javax.swing.JLabel();
-        clNumeroTextField = new javax.swing.JTextField();
-        clComplementoLabel = new javax.swing.JLabel();
-        clComplementoTextField = new javax.swing.JTextField();
-        clbtCadastrar = new javax.swing.JButton();
-        clbtAlterar = new javax.swing.JButton();
-        clbtExcluir = new javax.swing.JButton();
+        CadastroClientes = new javax.swing.JPanel();
+        Cadastro = new javax.swing.JLabel();
+        clPesquisar = new javax.swing.JLabel();
+        clPesquisarText = new javax.swing.JTextField();
+        clBtProcurar = new javax.swing.JButton();
+        clNome = new javax.swing.JLabel();
+        clNomeText = new javax.swing.JTextField();
+        clCpf = new javax.swing.JLabel();
+        clCpfText = new javax.swing.JTextField();
+        clTelefone = new javax.swing.JLabel();
+        clTelefoneText = new javax.swing.JTextField();
+        clCep = new javax.swing.JLabel();
+        clCepText = new javax.swing.JTextField();
+        clBairro = new javax.swing.JLabel();
+        clBairroText = new javax.swing.JTextField();
+        clRua = new javax.swing.JLabel();
+        clRuaText = new javax.swing.JTextField();
+        clComplemento = new javax.swing.JLabel();
+        clBtAlterar = new javax.swing.JButton();
+        clComplementoText = new javax.swing.JTextField();
+        clNumero = new javax.swing.JLabel();
+        clNumeroText = new javax.swing.JTextField();
+        clBtExcluir = new javax.swing.JButton();
+        clbtInserir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(520, 430));
+        setTitle("CADASTRO DE CLIENTES");
         setResizable(false);
-        setSize(new java.awt.Dimension(520, 430));
 
-        jPanelCadastroClientes.setMinimumSize(new java.awt.Dimension(520, 430));
-        jPanelCadastroClientes.setPreferredSize(new java.awt.Dimension(520, 430));
-        jPanelCadastroClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        clCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        clCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clCadastroLabel.setText("Cadastro de Clientes");
-        jPanelCadastroClientes.add(clCadastroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 496, -1));
+        Cadastro.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        Cadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Cadastro.setText("Cadastro de Clientes");
+        Cadastro.setToolTipText("");
+        Cadastro.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        clPesquisarLabel.setText("Pesquisar:");
-        jPanelCadastroClientes.add(clPesquisarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 79, -1, -1));
-        jPanelCadastroClientes.add(clPesquisarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 77, 400, -1));
+        clPesquisar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        clPesquisar.setText("Pesquisar:");
 
-        clbtPesquisar.setText("Pesquisar");
-        clbtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtPesquisarMouseClicked(evt);
+        clPesquisarText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clPesquisarTextActionPerformed(evt);
             }
         });
-        jPanelCadastroClientes.add(clbtPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 102, -1, -1));
 
-        clCpfLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCpfLabel.setText("CPF:");
-        jPanelCadastroClientes.add(clCpfLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 165, 64, -1));
-        jPanelCadastroClientes.add(clCpfTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 163, 400, -1));
-
-        clNomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNomeLabel.setText("Nome:");
-        jPanelCadastroClientes.add(clNomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 64, -1));
-        jPanelCadastroClientes.add(clNomeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 188, 400, -1));
-
-        clTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clTelefoneLabel.setText("Telefone:");
-        jPanelCadastroClientes.add(clTelefoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 215, 64, -1));
-        jPanelCadastroClientes.add(clTelefoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 213, 400, -1));
-
-        clCepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clCepLabel.setText("CEP:");
-        jPanelCadastroClientes.add(clCepLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 252, 64, -1));
-        jPanelCadastroClientes.add(clCepTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 250, 400, -1));
-
-        clRuaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clRuaLabel.setText("Rua:");
-        jPanelCadastroClientes.add(clRuaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 277, 64, -1));
-        jPanelCadastroClientes.add(clRuaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 275, 400, -1));
-
-        clBairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clBairroLabel.setText("Bairro:");
-        jPanelCadastroClientes.add(clBairroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 302, 64, -1));
-        jPanelCadastroClientes.add(clBairroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 300, 400, -1));
-
-        clNumeroLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clNumeroLabel.setText("Numero:");
-        jPanelCadastroClientes.add(clNumeroLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 327, 64, -1));
-        jPanelCadastroClientes.add(clNumeroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 325, 400, -1));
-
-        clComplementoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        clComplementoLabel.setText("Complemento:");
-        jPanelCadastroClientes.add(clComplementoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
-        jPanelCadastroClientes.add(clComplementoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 350, 400, -1));
-
-        clbtCadastrar.setText("Inserir");
-        clbtCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        clBtProcurar.setText("Procurar");
+        clBtProcurar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        clBtProcurar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtCadastrarMouseClicked(evt);
+                clBtProcurarMouseClicked(evt);
             }
         });
-        jPanelCadastroClientes.add(clbtCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 381, -1, -1));
 
-        clbtAlterar.setText("Alterar");
-        clbtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtAlterarMouseClicked(evt);
+        clNome.setText("Nome:");
+        clNome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        clCpf.setText("CPF:");
+        clCpf.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        clCpfText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clCpfTextActionPerformed(evt);
             }
         });
-        jPanelCadastroClientes.add(clbtAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 381, -1, -1));
 
-        clbtExcluir.setText("Excluir");
-        clbtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtExcluirMouseClicked(evt);
+        clTelefone.setText("Telefone:");
+
+        clCep.setText("CEP:");
+
+        clBairro.setText("Bairro:");
+
+        clBairroText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clBairroTextActionPerformed(evt);
             }
         });
-        jPanelCadastroClientes.add(clbtExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 381, -1, -1));
+
+        clRua.setText("Rua:");
+
+        clRuaText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clRuaTextActionPerformed(evt);
+            }
+        });
+
+        clComplemento.setText("Complemento:");
+
+        clBtAlterar.setText("Alterar");
+
+        clNumero.setText("Numero:");
+
+        clBtExcluir.setText("Excluir");
+
+        clbtInserir.setText("Inserir");
+        clbtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clbtInserirMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CadastroClientesLayout = new javax.swing.GroupLayout(CadastroClientes);
+        CadastroClientes.setLayout(CadastroClientesLayout);
+        CadastroClientesLayout.setHorizontalGroup(
+            CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+                    .addGroup(CadastroClientesLayout.createSequentialGroup()
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(clCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                .addComponent(clCep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(clPesquisar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clNomeText)
+                            .addComponent(clCepText)
+                            .addComponent(clTelefoneText, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(clRuaText)
+                            .addComponent(clPesquisarText)
+                            .addComponent(clCpfText)))
+                    .addGroup(CadastroClientesLayout.createSequentialGroup()
+                        .addComponent(clComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clComplementoText))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clBtProcurar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
+                                .addComponent(clbtInserir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clBtAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clBtExcluir))))
+                    .addGroup(CadastroClientesLayout.createSequentialGroup()
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(clBairro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(clNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clNumeroText)
+                            .addComponent(clBairroText))))
+                .addContainerGap())
+        );
+        CadastroClientesLayout.setVerticalGroup(
+            CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clPesquisarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clPesquisar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clBtProcurar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clCpf)
+                    .addComponent(clCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clNome)
+                    .addComponent(clNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clTelefone))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(clCep)
+                    .addComponent(clCepText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clRua)
+                    .addComponent(clRuaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clBairro)
+                    .addComponent(clBairroText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clNumero)
+                    .addComponent(clNumeroText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clComplemento)
+                    .addComponent(clComplementoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clBtExcluir)
+                    .addComponent(clBtAlterar)
+                    .addComponent(clbtInserir))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelCadastroClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(CadastroClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelCadastroClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(CadastroClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void clbtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtPesquisarMouseClicked
-        // PESQUISAR USUÁRIO
+    private void clCpfTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clCpfTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clCpfTextActionPerformed
+
+    private void clRuaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clRuaTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clRuaTextActionPerformed
+
+    private void clPesquisarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clPesquisarTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clPesquisarTextActionPerformed
+
+    private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
+        // INSERIR USUÁRIO
+        end = new Enderecos(clCepText.getText(), clRuaText.getText(), clBairroText.getText());
+        tel = new Telefones(clTelefone.getText());
+        cl1 = new Clientes(clCpfText.getText(), clNomeText.getText(), clNumeroText.getText(), clComplementoText.getText(), end, tel);
+        clientes.add(cl1);
+    }//GEN-LAST:event_clbtInserirMouseClicked
+
+    private void clBairroTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clBairroTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clBairroTextActionPerformed
+
+    private void clBtProcurarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtProcurarMouseClicked
+        // PROCURAR USUÁRIO
         boolean pes = clientes.contains(cl1);
         if (clientes.contains(cl1)) {
-            // Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
-            //  Telefones(clTelefoneTextField.getText());
-            // Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
-
         } else {
-            JOptionPane.showMessageDialog(null, "Usuário não existe no sistema.");}
-    }//GEN-LAST:event_clbtPesquisarMouseClicked
-    private void clbtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtAlterarMouseClicked
-        // ALTERAR USUÁRIO
-    }//GEN-LAST:event_clbtAlterarMouseClicked
-
-    private void clbtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtExcluirMouseClicked
-        // REMOVER USUÁRIO
-    }//GEN-LAST:event_clbtExcluirMouseClicked
-
-    private void clbtCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtCadastrarMouseClicked
-        // INSERIR USUÁRIO
-        end = new Enderecos(clCepTextField.getText(), clRuaTextField.getText(), clBairroTextField.getText());
-        tel = new Telefones(clTelefoneTextField.getText());
-        cl1 = new Clientes(clCpfTextField.getText(), clNomeTextField.getText(), clNumeroTextField.getText(), clComplementoTextField.getText(), end, tel);
-        clientes.add(cl1);
-    }//GEN-LAST:event_clbtCadastrarMouseClicked
+            JOptionPane.showMessageDialog(null, "Usuário não existe no sistema.");
+        }
+    }//GEN-LAST:event_clBtProcurarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,24 +304,16 @@ public class CadastroClientes extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroClientes.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -242,29 +326,29 @@ public class CadastroClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel clBairroLabel;
-    private javax.swing.JTextField clBairroTextField;
-    private javax.swing.JLabel clCadastroLabel;
-    private javax.swing.JLabel clCepLabel;
-    private javax.swing.JTextField clCepTextField;
-    private javax.swing.JLabel clComplementoLabel;
-    private javax.swing.JTextField clComplementoTextField;
-    private javax.swing.JLabel clCpfLabel;
-    private javax.swing.JTextField clCpfTextField;
-    private javax.swing.JLabel clNomeLabel;
-    private javax.swing.JTextField clNomeTextField;
-    private javax.swing.JLabel clNumeroLabel;
-    private javax.swing.JTextField clNumeroTextField;
-    private javax.swing.JLabel clPesquisarLabel;
-    private javax.swing.JTextField clPesquisarTextField;
-    private javax.swing.JLabel clRuaLabel;
-    private javax.swing.JTextField clRuaTextField;
-    private javax.swing.JLabel clTelefoneLabel;
-    private javax.swing.JTextField clTelefoneTextField;
-    private javax.swing.JButton clbtAlterar;
-    private javax.swing.JButton clbtCadastrar;
-    private javax.swing.JButton clbtExcluir;
-    private javax.swing.JButton clbtPesquisar;
-    private javax.swing.JPanel jPanelCadastroClientes;
+    private javax.swing.JLabel Cadastro;
+    private javax.swing.JPanel CadastroClientes;
+    private javax.swing.JLabel clBairro;
+    private javax.swing.JTextField clBairroText;
+    private javax.swing.JButton clBtAlterar;
+    private javax.swing.JButton clBtExcluir;
+    private javax.swing.JButton clBtProcurar;
+    private javax.swing.JLabel clCep;
+    private javax.swing.JTextField clCepText;
+    private javax.swing.JLabel clComplemento;
+    private javax.swing.JTextField clComplementoText;
+    private javax.swing.JLabel clCpf;
+    private javax.swing.JTextField clCpfText;
+    private javax.swing.JLabel clNome;
+    private javax.swing.JTextField clNomeText;
+    private javax.swing.JLabel clNumero;
+    private javax.swing.JTextField clNumeroText;
+    private javax.swing.JLabel clPesquisar;
+    private javax.swing.JTextField clPesquisarText;
+    private javax.swing.JLabel clRua;
+    private javax.swing.JTextField clRuaText;
+    private javax.swing.JLabel clTelefone;
+    private javax.swing.JTextField clTelefoneText;
+    private javax.swing.JButton clbtInserir;
     // End of variables declaration//GEN-END:variables
 }

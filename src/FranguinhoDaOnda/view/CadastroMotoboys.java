@@ -4,24 +4,26 @@
  * and open the template in the editor.
  */
 package FranguinhoDaOnda.view;
-
 import FranguinhoDaOnda.Motoboys;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
- * @author sala302b
+ * @author Gabriel C. A. Rangel
  */
 public class CadastroMotoboys extends javax.swing.JFrame {
-        List<Motoboys> motoboys = new ArrayList<>();
-        Motoboys mot, mot1;
+       List<Motoboys> motoboys = new ArrayList<>();
+       Motoboys mot, mot1;
 
     /**
      * Creates new form CadastroMotoboys
      */
     public CadastroMotoboys() {
-
+        initComponents();
+        Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setIconImage(img);
     }
 
     /**
@@ -33,161 +35,124 @@ public class CadastroMotoboys extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroMotoboys = new javax.swing.JPanel();
-        motCadastroLabel = new javax.swing.JLabel();
-        motCpfPanel = new javax.swing.JLabel();
-        motCpfTextField = new javax.swing.JTextField();
-        motNomeLabel = new javax.swing.JLabel();
-        motNomeTextField = new javax.swing.JTextField();
-        motPlacaLabel = new javax.swing.JLabel();
-        motPlacaTextField = new javax.swing.JTextField();
-        motTelefoneLabel = new javax.swing.JLabel();
-        motTelefoneTextField = new javax.swing.JTextField();
-        motCadastrar = new javax.swing.JButton();
+        CadastroMotoboys = new javax.swing.JPanel();
+        motCadastrar = new javax.swing.JLabel();
+        motCpf = new javax.swing.JLabel();
+        motCpfText = new javax.swing.JTextField();
+        motNome = new javax.swing.JLabel();
+        motNomeText = new javax.swing.JTextField();
+        motPlaca = new javax.swing.JLabel();
+        motPlacaText = new javax.swing.JTextField();
+        motTelefone = new javax.swing.JLabel();
+        motTelefoneText = new javax.swing.JTextField();
+        motBtExcluir = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(540, 290));
-        setPreferredSize(new java.awt.Dimension(540, 290));
+        setTitle("CADASTRO DE MOTOBOYS");
         setResizable(false);
-        setSize(new java.awt.Dimension(540, 290));
 
-        jPanelCadastroMotoboys.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanelCadastroMotoboys.setPreferredSize(new java.awt.Dimension(520, 290));
-        jPanelCadastroMotoboys.setRequestFocusEnabled(false);
-        jPanelCadastroMotoboys.setVerifyInputWhenFocusTarget(false);
+        motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        motCadastrar.setText("Cadastro de Motoboys");
+        motCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        motCadastroLabel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        motCadastroLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        motCadastroLabel.setText("Cadastro de Motoboys");
+        motCpf.setText("CPF:");
 
-        motCpfPanel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motCpfPanel.setText("CPF:");
+        motNome.setText("Nome:");
 
-        motCpfTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motCpfTextFieldActionPerformed(evt);
-            }
-        });
+        motPlaca.setText("Placa:");
 
-        motNomeLabel.setText("Nome:");
+        motTelefone.setText("Telefone:");
 
-        motNomeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motNomeTextFieldActionPerformed(evt);
-            }
-        });
+        motBtExcluir.setText("Excluir");
 
-        motPlacaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motPlacaLabel.setText("Placa:");
+        jButton2.setText("Alterar");
 
-        motPlacaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motPlacaTextFieldActionPerformed(evt);
-            }
-        });
-
-        motTelefoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        motTelefoneLabel.setText("Telefone:");
-
-        motCadastrar.setText("Inserir");
-        motCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton3.setText("Inserir");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                motCadastrarMouseClicked(evt);
+                jButton3MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelCadastroMotoboysLayout = new javax.swing.GroupLayout(jPanelCadastroMotoboys);
-        jPanelCadastroMotoboys.setLayout(jPanelCadastroMotoboysLayout);
-        jPanelCadastroMotoboysLayout.setHorizontalGroup(
-            jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroMotoboysLayout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(motCadastroLabel)
-                .addGap(90, 90, 90))
-            .addGroup(jPanelCadastroMotoboysLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(motCadastrar)
-                    .addGroup(jPanelCadastroMotoboysLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(motPlacaLabel)
-                            .addComponent(motNomeLabel)
-                            .addComponent(motTelefoneLabel)
-                            .addComponent(motCpfPanel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(motPlacaTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(motNomeTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
-                                .addComponent(motCpfTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(motTelefoneTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(40, 40, 40))
-        );
-        jPanelCadastroMotoboysLayout.setVerticalGroup(
-            jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroMotoboysLayout.createSequentialGroup()
+        javax.swing.GroupLayout CadastroMotoboysLayout = new javax.swing.GroupLayout(CadastroMotoboys);
+        CadastroMotoboys.setLayout(CadastroMotoboysLayout);
+        CadastroMotoboysLayout.setHorizontalGroup(
+            CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(motCadastroLabel)
-                .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroMotoboysLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(motCpfPanel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroMotoboysLayout.createSequentialGroup()
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(motCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                        .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(motNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(motCpf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(motPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(motTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(motCpfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motNomeLabel)
-                    .addComponent(motNomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroMotoboysLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(motPlacaLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroMotoboysLayout.createSequentialGroup()
+                        .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(motNomeText)
+                            .addComponent(motCpfText)
+                            .addComponent(motPlacaText)
+                            .addComponent(motTelefoneText, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(motPlacaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(motBtExcluir)))
+                .addContainerGap())
+        );
+        CadastroMotoboysLayout.setVerticalGroup(
+            CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroMotoboysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(motCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motTelefoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(motTelefoneLabel))
-                .addGap(18, 18, 18)
-                .addComponent(motCadastrar)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motCpf)
+                    .addComponent(motCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motNome)
+                    .addComponent(motNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motPlaca)
+                    .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motTelefone)
+                    .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motBtExcluir)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelCadastroMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelCadastroMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void motPlacaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPlacaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motPlacaTextFieldActionPerformed
-
-    private void motCpfTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motCpfTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motCpfTextFieldActionPerformed
-
-    private void motCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motCadastrarMouseClicked
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // INSERIR MOTOBOYS
-        mot = new Motoboys(motCpfTextField.getText(), motPlacaTextField.getText(), motTelefoneTextField.getText(), motNomeTextField.getText());
+        mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
         motoboys.add(mot1);
-
-    }//GEN-LAST:event_motCadastrarMouseClicked
-
-    private void motNomeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motNomeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motNomeTextFieldActionPerformed
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -225,16 +190,18 @@ public class CadastroMotoboys extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanelCadastroMotoboys;
-    private javax.swing.JButton motCadastrar;
-    private javax.swing.JLabel motCadastroLabel;
-    private javax.swing.JLabel motCpfPanel;
-    private javax.swing.JTextField motCpfTextField;
-    private javax.swing.JLabel motNomeLabel;
-    private javax.swing.JTextField motNomeTextField;
-    private javax.swing.JLabel motPlacaLabel;
-    private javax.swing.JTextField motPlacaTextField;
-    private javax.swing.JLabel motTelefoneLabel;
-    private javax.swing.JTextField motTelefoneTextField;
+    private javax.swing.JPanel CadastroMotoboys;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton motBtExcluir;
+    private javax.swing.JLabel motCadastrar;
+    private javax.swing.JLabel motCpf;
+    private javax.swing.JTextField motCpfText;
+    private javax.swing.JLabel motNome;
+    private javax.swing.JTextField motNomeText;
+    private javax.swing.JLabel motPlaca;
+    private javax.swing.JTextField motPlacaText;
+    private javax.swing.JLabel motTelefone;
+    private javax.swing.JTextField motTelefoneText;
     // End of variables declaration//GEN-END:variables
 }
