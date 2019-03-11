@@ -109,8 +109,8 @@ public class JanelaInicial extends javax.swing.JFrame {
 
     private void jiBtCadastrarProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarProdutosMouseClicked
         // ABRE A JANELA DE CADASTRO DE PRODUTOS
-        CadastroClientes janelaMotoboysCadastro = new CadastroClientes();
-        janelaMotoboysCadastro.setVisible(true);
+        CadastroProdutos janelaCadastroProdutos = new CadastroProdutos();
+        janelaCadastroProdutos.setVisible(true);
     }//GEN-LAST:event_jiBtCadastrarProdutosMouseClicked
 
     private void jiBtCadastrarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarClientesMouseClicked
@@ -125,8 +125,8 @@ public class JanelaInicial extends javax.swing.JFrame {
 
     private void jiBtCadastrarMotoboysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarMotoboysMouseClicked
         // ABRE A JANELA DE CADASTRO DE MOTOBOYS
-        CadastroClientes janelaMotoboysCadastro = new CadastroClientes();
-        janelaMotoboysCadastro.setVisible(true);
+        CadastroMotoboys janelaCadastroMotoboys = new CadastroMotoboys();
+        janelaCadastroMotoboys.setVisible(true);
     }//GEN-LAST:event_jiBtCadastrarMotoboysMouseClicked
 
     /**
