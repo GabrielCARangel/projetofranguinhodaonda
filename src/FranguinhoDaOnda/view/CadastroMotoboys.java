@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Gabriel C. A. Rangel
@@ -152,6 +153,7 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         // INSERIR MOTOBOYS
         mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
         motoboys.add(mot1);
+        JOptionPane.showMessageDialog(null, "Motoboy adicionado.");
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

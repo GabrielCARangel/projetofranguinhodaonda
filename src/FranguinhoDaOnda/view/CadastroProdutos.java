@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -148,6 +149,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
         // INSERIR PRODUTOS
         prd = new Produtos(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
         produtos.add(prd1);
+        JOptionPane.showMessageDialog(null, "Produto adicionado.");
     }//GEN-LAST:event_prdBtInserirMouseClicked
 
     /**
