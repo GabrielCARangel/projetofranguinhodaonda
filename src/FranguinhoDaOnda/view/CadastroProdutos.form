@@ -38,25 +38,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="prdCadastrar" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="prdPreco" max="32767" attributes="0"/>
-                              <Component id="prdNome" pref="51" max="32767" attributes="0"/>
-                              <Component id="prdCodigo" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="prdCodigoText" min="-2" pref="453" max="-2" attributes="0"/>
-                                  <Component id="prdNomeText" min="-2" pref="453" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="prdPrecoText" alignment="1" min="-2" pref="453" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="prdCadastrar" pref="776" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="prdBtInserir" min="-2" max="-2" attributes="0"/>
@@ -64,6 +49,26 @@
                           <Component id="prdBtAlterar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="prdBtExcluir" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="prdPesquisar" alignment="0" pref="66" max="32767" attributes="0"/>
+                              <Component id="prdCodigo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="prdNome" alignment="0" max="32767" attributes="0"/>
+                              <Component id="prdPreco" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="prdPrecoText" max="32767" attributes="0"/>
+                              <Component id="prdNomeText" max="32767" attributes="0"/>
+                              <Component id="prdCodigoText" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="prdPesquisarText" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="prdBtPesquisar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="prdScPesquisar" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -77,18 +82,26 @@
                   <Component id="prdCadastrar" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="prdCodigoText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPesquisarText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdBtPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="prdScPesquisar" min="-2" pref="567" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="prdCodigo" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdCodigoText" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="prdNomeText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="prdPreco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="prdPrecoText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdPreco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -111,6 +124,60 @@
             <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="prdPesquisar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pesquisar:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="prdPesquisarText">
+        </Component>
+        <Component class="javax.swing.JButton" name="prdBtPesquisar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pesquisar"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="prdScPesquisar">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="prdTbPesquisar">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="3" rowCount="100">
+                    <Column editable="true" title="C&#xf3;digo" type="java.lang.Object"/>
+                    <Column editable="true" title="Nome" type="java.lang.Object"/>
+                    <Column editable="true" title="Pre&#xe7;o" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
         <Component class="javax.swing.JLabel" name="prdCodigo">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>

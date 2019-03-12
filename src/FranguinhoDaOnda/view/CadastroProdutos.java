@@ -39,6 +39,11 @@ public class CadastroProdutos extends javax.swing.JFrame {
 
         CadastroProdutos = new javax.swing.JPanel();
         prdCadastrar = new javax.swing.JLabel();
+        prdPesquisar = new javax.swing.JLabel();
+        prdPesquisarText = new javax.swing.JTextField();
+        prdBtPesquisar = new javax.swing.JButton();
+        prdScPesquisar = new javax.swing.JScrollPane();
+        prdTbPesquisar = new javax.swing.JTable();
         prdCodigo = new javax.swing.JLabel();
         prdCodigoText = new javax.swing.JTextField();
         prdNome = new javax.swing.JLabel();
@@ -54,6 +59,119 @@ public class CadastroProdutos extends javax.swing.JFrame {
         prdCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prdCadastrar.setText("Cadastro de Produtos");
+
+        prdPesquisar.setText("Pesquisar:");
+
+        prdBtPesquisar.setText("Pesquisar");
+
+        prdTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Código", "Nome", "Preço"
+            }
+        ));
+        prdScPesquisar.setViewportView(prdTbPesquisar);
 
         prdCodigo.setText("Código:");
 
@@ -79,25 +197,30 @@ public class CadastroProdutos extends javax.swing.JFrame {
             .addGroup(CadastroProdutosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prdCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(CadastroProdutosLayout.createSequentialGroup()
-                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(prdPreco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(prdNome, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                            .addComponent(prdCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(4, 4, 4)
-                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(prdCodigoText, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(prdNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(prdPrecoText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(prdCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroProdutosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(prdBtInserir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prdBtAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(prdBtExcluir)))
+                        .addComponent(prdBtExcluir))
+                    .addGroup(CadastroProdutosLayout.createSequentialGroup()
+                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(prdPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(prdCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(prdNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(prdPreco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(prdPrecoText)
+                            .addComponent(prdNomeText)
+                            .addComponent(prdCodigoText)
+                            .addGroup(CadastroProdutosLayout.createSequentialGroup()
+                                .addComponent(prdPesquisarText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(prdBtPesquisar))
+                            .addComponent(prdScPesquisar))))
                 .addContainerGap())
         );
         CadastroProdutosLayout.setVerticalGroup(
@@ -107,16 +230,23 @@ public class CadastroProdutos extends javax.swing.JFrame {
                 .addComponent(prdCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prdPesquisarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prdBtPesquisar)
+                    .addComponent(prdPesquisar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prdScPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(prdCodigo)
                     .addComponent(prdCodigoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdNome)
-                    .addComponent(prdNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prdNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prdNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prdPreco)
-                    .addComponent(prdPrecoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prdPrecoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prdPreco))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prdBtExcluir)
@@ -186,12 +316,17 @@ public class CadastroProdutos extends javax.swing.JFrame {
     private javax.swing.JButton prdBtAlterar;
     private javax.swing.JButton prdBtExcluir;
     private javax.swing.JButton prdBtInserir;
+    private javax.swing.JButton prdBtPesquisar;
     private javax.swing.JLabel prdCadastrar;
     private javax.swing.JLabel prdCodigo;
     private javax.swing.JTextField prdCodigoText;
     private javax.swing.JLabel prdNome;
     private javax.swing.JTextField prdNomeText;
+    private javax.swing.JLabel prdPesquisar;
+    private javax.swing.JTextField prdPesquisarText;
     private javax.swing.JLabel prdPreco;
     private javax.swing.JTextField prdPrecoText;
+    private javax.swing.JScrollPane prdScPesquisar;
+    private javax.swing.JTable prdTbPesquisar;
     // End of variables declaration//GEN-END:variables
 }

@@ -38,6 +38,11 @@ public class CadastroMotoboys extends javax.swing.JFrame {
 
         CadastroMotoboys = new javax.swing.JPanel();
         motCadastrar = new javax.swing.JLabel();
+        motPesquisar = new javax.swing.JLabel();
+        motPesquisarText = new javax.swing.JTextField();
+        motBtPesquisar = new javax.swing.JButton();
+        motSpPesquiar = new javax.swing.JScrollPane();
+        motTbPesquisar = new javax.swing.JTable();
         motCpf = new javax.swing.JLabel();
         motCpfText = new javax.swing.JTextField();
         motNome = new javax.swing.JLabel();
@@ -46,16 +51,150 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         motPlacaText = new javax.swing.JTextField();
         motTelefone = new javax.swing.JLabel();
         motTelefoneText = new javax.swing.JTextField();
+        motBtInserir = new javax.swing.JButton();
+        motBtAlterar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(800, 769));
         setResizable(false);
 
         motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         motCadastrar.setText("Cadastro de Motoboys");
         motCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        motPesquisar.setText("Pesquisar:");
+
+        motPesquisarText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                motPesquisarTextActionPerformed(evt);
+            }
+        });
+
+        motBtPesquisar.setText("Pesquisar");
+
+        motTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "CPF", "Nome", "Placa", "Telefone"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        motSpPesquiar.setViewportView(motTbPesquisar);
+        if (motTbPesquisar.getColumnModel().getColumnCount() > 0) {
+            motTbPesquisar.getColumnModel().getColumn(0).setResizable(false);
+            motTbPesquisar.getColumnModel().getColumn(1).setResizable(false);
+            motTbPesquisar.getColumnModel().getColumn(2).setResizable(false);
+            motTbPesquisar.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         motCpf.setText("CPF:");
 
@@ -65,16 +204,16 @@ public class CadastroMotoboys extends javax.swing.JFrame {
 
         motTelefone.setText("Telefone:");
 
-        motBtExcluir.setText("Excluir");
-
-        jButton2.setText("Alterar");
-
-        jButton3.setText("Inserir");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        motBtInserir.setText("Inserir");
+        motBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                motBtInserirMouseClicked(evt);
             }
         });
+
+        motBtAlterar.setText("Alterar");
+
+        motBtExcluir.setText("Excluir");
 
         javax.swing.GroupLayout CadastroMotoboysLayout = new javax.swing.GroupLayout(CadastroMotoboys);
         CadastroMotoboys.setLayout(CadastroMotoboysLayout);
@@ -83,55 +222,74 @@ public class CadastroMotoboys extends javax.swing.JFrame {
             .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(motCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                    .addComponent(motCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                         .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(motNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(motPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(motTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(motCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(motNomeText)
-                            .addComponent(motCpfText)
-                            .addComponent(motPlacaText)
-                            .addComponent(motTelefoneText, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(motBtExcluir)))
-                .addContainerGap())
+                            .addGroup(CadastroMotoboysLayout.createSequentialGroup()
+                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(motPlaca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(motNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(motTelefone))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                                        .addComponent(motBtInserir)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(motBtAlterar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(motBtExcluir))
+                                    .addComponent(motNomeText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(motPlacaText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(motTelefoneText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(CadastroMotoboysLayout.createSequentialGroup()
+                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(motPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(motCpf))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(CadastroMotoboysLayout.createSequentialGroup()
+                                        .addComponent(motPesquisarText)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(motBtPesquisar))
+                                    .addComponent(motSpPesquiar, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                                    .addComponent(motCpfText))))
+                        .addContainerGap())))
         );
         CadastroMotoboysLayout.setVerticalGroup(
             CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(motCadastrar)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motCpf)
-                    .addComponent(motCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(motPesquisarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motPesquisar)
+                    .addComponent(motBtPesquisar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(motSpPesquiar, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motNome)
-                    .addComponent(motNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(motCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motCpf))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motPlaca)
-                    .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(motNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motTelefone)
-                    .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motPlaca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(motTelefone))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(motBtExcluir)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(motBtAlterar)
+                    .addComponent(motBtInserir))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,18 +300,22 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CadastroMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void motBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtInserirMouseClicked
         // INSERIR MOTOBOYS
         mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
         motoboys.add(mot1);
         JOptionPane.showMessageDialog(null, "Motoboy adicionado.");
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_motBtInserirMouseClicked
+
+    private void motPesquisarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPesquisarTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_motPesquisarTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,16 +354,21 @@ public class CadastroMotoboys extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CadastroMotoboys;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton motBtAlterar;
     private javax.swing.JButton motBtExcluir;
+    private javax.swing.JButton motBtInserir;
+    private javax.swing.JButton motBtPesquisar;
     private javax.swing.JLabel motCadastrar;
     private javax.swing.JLabel motCpf;
     private javax.swing.JTextField motCpfText;
     private javax.swing.JLabel motNome;
     private javax.swing.JTextField motNomeText;
+    private javax.swing.JLabel motPesquisar;
+    private javax.swing.JTextField motPesquisarText;
     private javax.swing.JLabel motPlaca;
     private javax.swing.JTextField motPlacaText;
+    private javax.swing.JScrollPane motSpPesquiar;
+    private javax.swing.JTable motTbPesquisar;
     private javax.swing.JLabel motTelefone;
     private javax.swing.JTextField motTelefoneText;
     // End of variables declaration//GEN-END:variables
