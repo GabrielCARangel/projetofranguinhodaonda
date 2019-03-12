@@ -55,7 +55,6 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         motBtAlterar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(800, 769));
         setResizable(false);
 
         motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -231,7 +230,7 @@ public class CadastroMotoboys extends javax.swing.JFrame {
                                         .addComponent(motPlaca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(motNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(motTelefone))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
                                         .addComponent(motBtInserir)
@@ -289,7 +288,7 @@ public class CadastroMotoboys extends javax.swing.JFrame {
                     .addComponent(motBtExcluir)
                     .addComponent(motBtAlterar)
                     .addComponent(motBtInserir))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

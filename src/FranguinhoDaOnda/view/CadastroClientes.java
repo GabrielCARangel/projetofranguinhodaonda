@@ -404,6 +404,10 @@ public class CadastroClientes extends javax.swing.JFrame {
         cl1 = new Clientes(clCpfText.getText(), clNomeText.getText(), clNumeroText.getText(), clComplementoText.getText(), end, tel);
         clientes.add(cl1);
         JOptionPane.showMessageDialog(null, "Usuário adicionado.");
+        if (end.equals("") && tel.equals("") && cl1.equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha todas as lacunas");
+
+        }
     }//GEN-LAST:event_clbtInserirMouseClicked
 
     private void clBairroTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clBairroTextActionPerformed
