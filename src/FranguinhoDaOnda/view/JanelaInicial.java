@@ -38,7 +38,7 @@ public class JanelaInicial extends javax.swing.JFrame {
         jiBtCadastrarProdutos = new javax.swing.JButton();
         jiBTPesquisar = new javax.swing.JButton();
 
-        setTitle("JANELA PRINCIPAL");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jiBtCadastrarClientes.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -71,7 +71,7 @@ public class JanelaInicial extends javax.swing.JFrame {
         });
 
         jiBTPesquisar.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jiBTPesquisar.setText("Pesquisar no sistema");
+        jiBTPesquisar.setText("Pesquisar");
         jiBTPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jiBTPesquisarMouseClicked(evt);
@@ -143,8 +143,8 @@ public class JanelaInicial extends javax.swing.JFrame {
 
     private void jiBTPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBTPesquisarMouseClicked
         // ABRE A JANELA DE PESQUISA
-        CadastroMotoboys janelaCadastroMotoboys = new CadastroMotoboys();
-        janelaCadastroMotoboys.setVisible(true);
+        Pesquisar janelaPesquisar = new Pesquisar();
+        janelaPesquisar.setVisible(true);
     }//GEN-LAST:event_jiBTPesquisarMouseClicked
 
     /**

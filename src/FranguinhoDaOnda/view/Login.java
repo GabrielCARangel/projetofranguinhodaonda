@@ -44,7 +44,6 @@ public class Login extends javax.swing.JFrame {
         logBtEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOGIN");
         setResizable(false);
 
         logUsuario.setText("Usuário:");

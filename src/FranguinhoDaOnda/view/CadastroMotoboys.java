@@ -50,7 +50,6 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setTitle("CADASTRO DE MOTOBOYS");
         setResizable(false);
 
         motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

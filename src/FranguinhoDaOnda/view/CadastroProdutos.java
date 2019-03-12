@@ -49,7 +49,6 @@ public class CadastroProdutos extends javax.swing.JFrame {
         prdBtAlterar = new javax.swing.JButton();
         prdBtExcluir = new javax.swing.JButton();
 
-        setTitle("CADASTRO DE PRODUTOS");
         setResizable(false);
 
         prdCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
