@@ -49,17 +49,22 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Cadastro" pref="580" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="clCpf" max="32767" attributes="0"/>
-                                  <Component id="clNome" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="clTelefone" alignment="0" pref="83" max="32767" attributes="0"/>
-                                  <Component id="clCep" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="clRua" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="clPesquisar" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Component id="clPesquisar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="clCpf" max="32767" attributes="0"/>
+                                      <Component id="clNome" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clTelefone" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clCep" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clRua" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="clNomeText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clCepText" alignment="0" max="32767" attributes="0"/>
@@ -68,11 +73,6 @@
                               <Component id="clPesquisarText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clCpfText" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="clComplemento" min="-2" pref="83" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="clComplementoText" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -89,13 +89,15 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="clBairro" max="32767" attributes="0"/>
-                              <Component id="clNumero" pref="83" max="32767" attributes="0"/>
+                              <Component id="clComplemento" max="32767" attributes="0"/>
+                              <Component id="clNumero" alignment="0" pref="83" max="32767" attributes="0"/>
+                              <Component id="clBairro" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="clNumeroText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clBairroText" max="32767" attributes="0"/>
+                              <Component id="clComplementoText" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -180,7 +182,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="clPesquisar">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Pesquisar:"/>
           </Properties>
         </Component>

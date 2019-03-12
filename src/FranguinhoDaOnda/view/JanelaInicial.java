@@ -36,6 +36,7 @@ public class JanelaInicial extends javax.swing.JFrame {
         jiBtCadastrarClientes = new javax.swing.JButton();
         jiBtCadastrarMotoboys = new javax.swing.JButton();
         jiBtCadastrarProdutos = new javax.swing.JButton();
+        jiBTPesquisar = new javax.swing.JButton();
 
         setTitle("JANELA PRINCIPAL");
         setResizable(false);
@@ -69,16 +70,25 @@ public class JanelaInicial extends javax.swing.JFrame {
             }
         });
 
+        jiBTPesquisar.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jiBTPesquisar.setText("Pesquisar no sistema");
+        jiBTPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jiBTPesquisarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JanelaInicialLayout = new javax.swing.GroupLayout(JanelaInicial);
         JanelaInicial.setLayout(JanelaInicialLayout);
         JanelaInicialLayout.setHorizontalGroup(
             JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaInicialLayout.createSequentialGroup()
+            .addGroup(JanelaInicialLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                    .addComponent(jiBTPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         JanelaInicialLayout.setVerticalGroup(
@@ -89,8 +99,10 @@ public class JanelaInicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jiBTPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,6 +141,12 @@ public class JanelaInicial extends javax.swing.JFrame {
         janelaCadastroMotoboys.setVisible(true);
     }//GEN-LAST:event_jiBtCadastrarMotoboysMouseClicked
 
+    private void jiBTPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBTPesquisarMouseClicked
+        // ABRE A JANELA DE PESQUISA
+        CadastroMotoboys janelaCadastroMotoboys = new CadastroMotoboys();
+        janelaCadastroMotoboys.setVisible(true);
+    }//GEN-LAST:event_jiBTPesquisarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -166,6 +184,7 @@ public class JanelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JanelaInicial;
+    private javax.swing.JButton jiBTPesquisar;
     private javax.swing.JButton jiBtCadastrarClientes;
     private javax.swing.JButton jiBtCadastrarMotoboys;
     private javax.swing.JButton jiBtCadastrarProdutos;
