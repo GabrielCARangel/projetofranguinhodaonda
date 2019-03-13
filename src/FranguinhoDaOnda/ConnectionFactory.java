@@ -10,7 +10,11 @@ public class ConnectionFactory {
     public static Connection getcoConnection() {
         Connection conexao = null;
         try {
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/franguinho_da_onda");
+            String url = "jdbc:mysql://localhost/franguinho_da_onda";
+            String user = "root";
+            String pass = "123456";
+            conexao = DriverManager.getConnection(url, user, pass);
+            System.out.println("Conexão estabelecida com sucesso.");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao conectar ao tentar conexão"
                     + ex.getMessage());
