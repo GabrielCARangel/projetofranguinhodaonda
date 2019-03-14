@@ -2,7 +2,7 @@ package FranguinhoDaOnda;
 
 public class Motoboys {
 
-    private String placa, cpf, numero, nome;
+    private String placa, nome, cpf, numero;
 
     public void realizarEntrega() {
 
@@ -12,11 +12,11 @@ public class Motoboys {
 
     }
 
-    public Motoboys(String placa, String cpf, String numero, String nome) {
+    public Motoboys(String placa, String nome, String cpf, String numero) {
         this.placa = placa;
+        this.nome = nome;
         this.cpf = cpf;
         this.numero = numero;
-        this.nome = nome;
     }
 
     public String getPlaca() {
@@ -25,6 +25,14 @@ public class Motoboys {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -41,14 +49,6 @@ public class Motoboys {
 
     public void setNumero(String numero) {
         this.numero = numero;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
 }

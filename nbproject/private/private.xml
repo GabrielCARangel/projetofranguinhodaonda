@@ -11,10 +11,15 @@
         </group>
         <group name="Turma 395 - UC10 - Emanuel Xavier">
             <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/view/CadastroClientes.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/ConnectionFactory.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/Enderecos.java</file>
             <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/view/CadastroMotoboys.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/Cartao.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/NotaFiscal.java</file>
             <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/view/CadastroProdutos.java</file>
-            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/view/Login.java</file>
-            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/view/JanelaInicial.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/Telefones.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/ProjetoIntegrador.java</file>
+            <file>file:/C:/Projetos%20Java/Gabriel/FranguinhoDaOnda/src/FranguinhoDaOnda/ItemDePedido.java</file>
         </group>
     </open-files>
 </project-private>

@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class ConnectionFactory {
 
-    public static Connection getcoConnection() {
+    public static Connection getConnection() {
         Connection conexao = null;
         try {
             String url = "jdbc:mysql://localhost/franguinho_da_onda";
@@ -16,7 +16,7 @@ public class ConnectionFactory {
             conexao = DriverManager.getConnection(url, user, pass);
             System.out.println("Conexão estabelecida com sucesso.");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao conectar ao tentar conexão"
+            JOptionPane.showMessageDialog(null, "'Erro ao conectar ao tentar conexão '"
                     + ex.getMessage());
         }
         return conexao;

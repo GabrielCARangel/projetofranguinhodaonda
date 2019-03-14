@@ -2,9 +2,11 @@ package FranguinhoDaOnda;
 
 public class Clientes {
 
-    private String cpf, nome, numero_residencial, complemento, Enderecos_cep;
+    private String cpf, nome, numero_residencial, complemento, Enderecos_cep, Cartao_numero, Usuarios_login;
     Enderecos end;
     Telefones tel;
+    Cartoes cart;
+    Usuarios login;
 
     public void cadastrarCliente() {
 
@@ -12,15 +14,6 @@ public class Clientes {
 
     public void ValidarCpf() {
 
-    }
-
-    public Clientes(String cpf, String nome, String numero_residencial, String complemento, Enderecos end, Telefones tel) {
-        this.cpf = cpf;
-        this.nome = nome;
-        this.numero_residencial = numero_residencial;
-        this.complemento = complemento;
-        this.end = end;
-        this.tel = tel;
     }
 
     public String getCpf() {
@@ -63,6 +56,22 @@ public class Clientes {
         this.Enderecos_cep = Enderecos_cep;
     }
 
+    public String getCartao_numero() {
+        return Cartao_numero;
+    }
+
+    public void setCartao_numero(String Cartao_numero) {
+        this.Cartao_numero = Cartao_numero;
+    }
+
+    public String getUsuarios_login() {
+        return Usuarios_login;
+    }
+
+    public void setUsuarios_login(String Usuarios_login) {
+        this.Usuarios_login = Usuarios_login;
+    }
+
     public Enderecos getEnd() {
         return end;
     }
@@ -77,6 +86,22 @@ public class Clientes {
 
     public void setTel(Telefones tel) {
         this.tel = tel;
+    }
+
+    public Cartoes getCart() {
+        return cart;
+    }
+
+    public void setCart(Cartoes cart) {
+        this.cart = cart;
+    }
+
+    public Usuarios getLogin() {
+        return login;
+    }
+
+    public void setLogin(Usuarios login) {
+        this.login = login;
     }
 
 }

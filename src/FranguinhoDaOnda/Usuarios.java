@@ -1,12 +1,12 @@
 package FranguinhoDaOnda;
 
-public class Usuario {
+public class Usuarios {
 
     private int codigo;
     private String usuario, senha;
 
     //Método construtor
-    public Usuario() {
+    public Usuarios() {
     }
 
     // Métodos de entradas e saídas

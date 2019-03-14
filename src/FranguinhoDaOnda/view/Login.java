@@ -5,7 +5,7 @@
  */
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Usuario;
+import FranguinhoDaOnda.Usuarios;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -111,23 +111,23 @@ public class Login extends javax.swing.JFrame {
     private void logBtEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logBtEntrarMouseClicked
 
         //Criando uma lista de usuário
-        List<Usuario> usuarios = new ArrayList<Usuario>();
+        List<Usuarios> usuarios = new ArrayList<Usuarios>();
 
-        Usuario user1 = new Usuario();
+        Usuarios user1 = new Usuarios();
         user1.setUsuario("admin");
         user1.setSenha("12345");
         user1.setCodigo(1);
 
         usuarios.add(user1);
 
-        Usuario user2 = new Usuario();
+        Usuarios user2 = new Usuarios();
         user2.setUsuario("joaquim");
         user2.setSenha("12345");
         user2.setCodigo(2);
 
         usuarios.add(user2);
 
-        Usuario user3 = new Usuario();
+        Usuarios user3 = new Usuarios();
         user3.setUsuario("maria");
         user3.setSenha("12345");
         user3.setCodigo(3);

@@ -9,7 +9,7 @@ public class ProjetoIntegrador {
     public static void main(String[] args) {
 
         Connection c;
-        c = ConnectionFactory.getcoConnection();
+        c = ConnectionFactory.getConnection();
         Login janela = new Login();
         janela.setVisible(true);
 

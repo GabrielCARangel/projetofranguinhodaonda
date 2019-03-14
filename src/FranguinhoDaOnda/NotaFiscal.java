@@ -3,23 +3,23 @@ package FranguinhoDaOnda;
 public class NotaFiscal {
 
     private int serie;
-    private String nNF, dhEmi, dhSaiEnt, tpNF, indPag, indPres, natOp, indFinal, idDest;
+    private String nnf, dhemi, dhsaient, tpnf, indpag, indpres, natop, indfinal, iddest;
 
     public void calcularPrecoFinal() {
 
     }
 
-    public NotaFiscal(int serie, String nNF, String dhEmi, String dhSaiEnt, String tpNF, String indPag, String indPres, String natOp, String indFinal, String idDest) {
+    public NotaFiscal(int serie, String nnf, String dhemi, String dhsaient, String tpnf, String indpag, String indpres, String natop, String indfinal, String iddest) {
         this.serie = serie;
-        this.nNF = nNF;
-        this.dhEmi = dhEmi;
-        this.dhSaiEnt = dhSaiEnt;
-        this.tpNF = tpNF;
-        this.indPag = indPag;
-        this.indPres = indPres;
-        this.natOp = natOp;
-        this.indFinal = indFinal;
-        this.idDest = idDest;
+        this.nnf = nnf;
+        this.dhemi = dhemi;
+        this.dhsaient = dhsaient;
+        this.tpnf = tpnf;
+        this.indpag = indpag;
+        this.indpres = indpres;
+        this.natop = natop;
+        this.indfinal = indfinal;
+        this.iddest = iddest;
     }
 
     public int getSerie() {
@@ -30,76 +30,76 @@ public class NotaFiscal {
         this.serie = serie;
     }
 
-    public String getnNF() {
-        return nNF;
+    public String getNnf() {
+        return nnf;
     }
 
-    public void setnNF(String nNF) {
-        this.nNF = nNF;
+    public void setNnf(String nnf) {
+        this.nnf = nnf;
     }
 
-    public String getDhEmi() {
-        return dhEmi;
+    public String getDhemi() {
+        return dhemi;
     }
 
-    public void setDhEmi(String dhEmi) {
-        this.dhEmi = dhEmi;
+    public void setDhemi(String dhemi) {
+        this.dhemi = dhemi;
     }
 
-    public String getDhSaiEnt() {
-        return dhSaiEnt;
+    public String getDhsaient() {
+        return dhsaient;
     }
 
-    public void setDhSaiEnt(String dhSaiEnt) {
-        this.dhSaiEnt = dhSaiEnt;
+    public void setDhsaient(String dhsaient) {
+        this.dhsaient = dhsaient;
     }
 
-    public String getTpNF() {
-        return tpNF;
+    public String getTpnf() {
+        return tpnf;
     }
 
-    public void setTpNF(String tpNF) {
-        this.tpNF = tpNF;
+    public void setTpnf(String tpnf) {
+        this.tpnf = tpnf;
     }
 
-    public String getIndPag() {
-        return indPag;
+    public String getIndpag() {
+        return indpag;
     }
 
-    public void setIndPag(String indPag) {
-        this.indPag = indPag;
+    public void setIndpag(String indpag) {
+        this.indpag = indpag;
     }
 
-    public String getIndPres() {
-        return indPres;
+    public String getIndpres() {
+        return indpres;
     }
 
-    public void setIndPres(String indPres) {
-        this.indPres = indPres;
+    public void setIndpres(String indpres) {
+        this.indpres = indpres;
     }
 
-    public String getNatOp() {
-        return natOp;
+    public String getNatop() {
+        return natop;
     }
 
-    public void setNatOp(String natOp) {
-        this.natOp = natOp;
+    public void setNatop(String natop) {
+        this.natop = natop;
     }
 
-    public String getIndFinal() {
-        return indFinal;
+    public String getIndfinal() {
+        return indfinal;
     }
 
-    public void setIndFinal(String indFinal) {
-        this.indFinal = indFinal;
+    public void setIndfinal(String indfinal) {
+        this.indfinal = indfinal;
     }
 
-    public String getIdDest() {
-        return idDest;
+    public String getIddest() {
+        return iddest;
     }
 
-    public void setIdDest(String idDest) {
-        this.idDest = idDest;
+    public void setIddest(String iddest) {
+        this.iddest = iddest;
     }
 
 }
