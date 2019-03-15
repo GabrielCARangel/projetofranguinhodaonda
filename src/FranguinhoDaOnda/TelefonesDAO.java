@@ -5,50 +5,50 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class ItemDePedidoDAO {
+public class TelefonesDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public ItemDePedidoDAO() {
+    public TelefonesDAO() {
         Connection conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(ItemDePedido itemdepedido) {
-        String sql = "INSERT INTO ItemDePedido(quantidade) "
+    public boolean inserirCliente(Telefones telefones) {
+        String sql = "INSERT INTO Telefones(numero) "
                 + "VALUES(?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) itemdepedido.getQuantidade());
+            stmt.setString(1, telefones.getNumero());
             stmt.close();
             status = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ItemDePedido.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelefonesDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return status;
     }
-
     // MÉTODO LISTAR
-    public void listarItemDePedido() {
+
+    public void listarTelefones() {
 
     }
 
     // MÉTODO PESQUSIAR
-    public void pesquisarItemDePedido() {
+    public void pesquisarTelefones() {
 
     }
 
     // MÉTODO ALTERAR
-    public void alterarItemDePedido() {
+    public void alterarTelefones() {
 
     }
 
     // MÉTODO EXCLUIR
-    public void excluirItemDePedido() {
+    public void excluirTelefones() {
 
     }
 

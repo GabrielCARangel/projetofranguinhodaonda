@@ -35,4 +35,24 @@ public class MotoboysDAO {
         return status;
     }
 
+    // MÉTODO LISTAR
+    public void listarMotoboys() {
+
+    }
+
+    // MÉTODO PESQUSIAR
+    public void pesquisarMotoboys() {
+
+    }
+
+    // MÉTODO ALTERAR
+    public void alterarMotoboys() {
+
+    }
+
+    // MÉTODO EXCLUIR
+    public void excluirMotoboys() {
+
+    }
+
 }

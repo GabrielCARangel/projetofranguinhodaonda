@@ -2,28 +2,23 @@ package FranguinhoDaOnda;
 
 public class Usuarios {
 
-    private int codigo;
-    private String usuario, senha;
+    private String login, senha, tipo;
 
-    //Método construtor
     public Usuarios() {
     }
 
-    // Métodos de entradas e saídas
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public Usuarios(int codigo, String usuario, String senha, String tipo) {
+        this.login = usuario;
+        this.senha = senha;
+        this.tipo = tipo;
     }
 
     public String getUsuario() {
-        return usuario;
+        return login;
     }
 
     public void setUsuario(String usuario) {
-        this.usuario = usuario;
+        this.login = usuario;
     }
 
     public String getSenha() {
@@ -32,6 +27,14 @@ public class Usuarios {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }

@@ -116,23 +116,9 @@ public class Login extends javax.swing.JFrame {
         Usuarios user1 = new Usuarios();
         user1.setUsuario("admin");
         user1.setSenha("12345");
-        user1.setCodigo(1);
+        user1.setTipo("Administrador");
 
         usuarios.add(user1);
-
-        Usuarios user2 = new Usuarios();
-        user2.setUsuario("joaquim");
-        user2.setSenha("12345");
-        user2.setCodigo(2);
-
-        usuarios.add(user2);
-
-        Usuarios user3 = new Usuarios();
-        user3.setUsuario("maria");
-        user3.setSenha("12345");
-        user3.setCodigo(3);
-
-        usuarios.add(user3);
 
         Boolean c = false;
 

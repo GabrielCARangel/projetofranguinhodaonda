@@ -16,7 +16,7 @@ public class ConnectionFactory {
             conexao = DriverManager.getConnection(url, user, pass);
             System.out.println("Conexão estabelecida com sucesso.");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "'Erro ao conectar ao tentar conexão '"
+            JOptionPane.showMessageDialog(null, "Erro ao conectar ao tentar conexão!"
                     + ex.getMessage());
         }
         return conexao;
