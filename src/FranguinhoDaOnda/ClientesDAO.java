@@ -16,7 +16,7 @@ public class ClientesDAO {
 
     // MÉTODO CONSTRUTOR
     public ClientesDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -54,7 +54,7 @@ public class ClientesDAO {
                 Clientes cliente = new Clientes();
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setNome(rs.getString("nome"));
-                cliente.setNumero_residencial(rs.getString("numero_residencial"));
+                cliente.setNumero_residencial(rs.getString("numero_residencia"));
                 cliente.setComplemento(rs.getString("complemento"));
                 clientes.add(cliente);
             }

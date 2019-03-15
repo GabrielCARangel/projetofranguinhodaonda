@@ -17,14 +17,14 @@ public class CartoesDAO {
 
     // MÉTODO INSERIR
     public boolean inserirCliente(Cartoes cartoes) {
-        String sql = "INSERT INTO Cartoes(numero,nomecartao,codseguranca,validade,debcred) "
+        String sql = "INSERT INTO Cartoes(numero,nome,bandeira,validade,debcred) "
                 + "VALUES(?,?,?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cartoes.getNumero());
-            stmt.setString(2, cartoes.getNomecartao());
-            stmt.setString(3, cartoes.getCodseguranca());
+            stmt.setString(2, cartoes.getNome());
+            stmt.setString(3, cartoes.getBandeira());
             stmt.setString(4, cartoes.getValidade());
             stmt.setInt(5, (int) cartoes.getDebcred());
             stmt.close();

@@ -2,17 +2,17 @@ package FranguinhoDaOnda;
 
 public class Cartoes {
 
-    private String numero, nomecartao, codseguranca, validade;
+    private String numero, nome, bandeira, validade;
     private int debcred;
 
     public void validarNumero() {
 
     }
 
-    public Cartoes(String numero, String nomecartao, String codseguranca, String validade, int debcred) {
+    public Cartoes(String numero, String nome, String bandeira, String validade, int debcred) {
         this.numero = numero;
-        this.nomecartao = nomecartao;
-        this.codseguranca = codseguranca;
+        this.nome = nome;
+        this.bandeira = bandeira;
         this.validade = validade;
         this.debcred = debcred;
     }
@@ -25,20 +25,20 @@ public class Cartoes {
         this.numero = numero;
     }
 
-    public String getNomecartao() {
-        return nomecartao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomecartao(String nomecartao) {
-        this.nomecartao = nomecartao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getCodseguranca() {
-        return codseguranca;
+    public String getBandeira() {
+        return bandeira;
     }
 
-    public void setCodseguranca(String codseguranca) {
-        this.codseguranca = codseguranca;
+    public void setBandeira(String bandeira) {
+        this.bandeira = bandeira;
     }
 
     public String getValidade() {
