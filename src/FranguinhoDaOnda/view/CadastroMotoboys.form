@@ -5,7 +5,7 @@
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,67,0,0,3,41"/>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-40,0,0,2,-47"/>
     <SyntheticProperty name="formPosition" type="java.awt.Point" value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,97,119,116,46,80,111,105,110,116,-74,-60,-118,114,52,126,-56,38,2,0,2,73,0,1,120,73,0,1,121,120,112,0,0,0,0,0,0,0,0"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
     <SyntheticProperty name="generatePosition" type="boolean" value="true"/>
@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="CadastroMotoboys" max="32767" attributes="0"/>
+          <Component id="CadastroMotoboys" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -45,31 +45,19 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="motCadastrar" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="motPlaca" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="motNome" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="motTelefone" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="motPlaca" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="motNome" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="motTelefone" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="motBtAlterar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="motNomeText" alignment="1" min="-2" pref="688" max="-2" attributes="0"/>
-                                      <Component id="motPlacaText" alignment="1" min="-2" pref="688" max="-2" attributes="0"/>
-                                      <Component id="motTelefoneText" alignment="1" min="-2" pref="688" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="motCadastrar" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="motPesquisar" min="-2" pref="69" max="-2" attributes="0"/>
@@ -77,13 +65,27 @@
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Component id="motPesquisarText" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="motBtPesquisar" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="motSpPesquiar" pref="688" max="32767" attributes="0"/>
-                                      <Component id="motCpfText" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="motNomeText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="motCpfText" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="motSpPesquiar" alignment="0" pref="600" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="motPlacaText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
+                                          <Component id="motTelefoneText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="motBtAlterar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -105,8 +107,8 @@
                       <Component id="motBtPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="motSpPesquiar" min="-2" pref="550" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="motSpPesquiar" min="-2" pref="181" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="motCpfText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motCpf" alignment="3" min="-2" max="-2" attributes="0"/>

@@ -23,10 +23,9 @@ public class CartoesDAO {
         try {
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cartoes.getNumero());
-            stmt.setString(2, cartoes.getNome());
-            stmt.setString(3, cartoes.getBandeira());
-            stmt.setString(4, cartoes.getValidade());
-            stmt.setInt(5, (int) cartoes.getDebcred());
+            stmt.setString(2, cartoes.getBandeira());
+            stmt.setString(3, cartoes.getValidade());
+            stmt.setInt(4, (int) cartoes.getDebcred());
             stmt.close();
             status = true;
         } catch (SQLException ex) {

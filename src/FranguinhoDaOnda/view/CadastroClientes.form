@@ -2,7 +2,6 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="title" type="java.lang.String" value="CADASTRO DE CLIENTES"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -51,11 +50,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="cartNumero" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cartNumeroText" min="-2" pref="600" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cartBandeira" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartValidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartCredeb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="46" pref="44" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="cartCbDebcred" alignment="1" pref="600" max="32767" attributes="0"/>
+                              <Component id="cartBandeiraText" alignment="1" max="32767" attributes="0"/>
+                              <Component id="cartValidadeText" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Cadastro" alignment="0" min="-2" pref="689" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="clPesquisar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="clPesquisarText" min="-2" pref="518" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="clBtProcurar" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="clCpf" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -66,92 +91,41 @@
                                       <Component id="clNumero" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="clRuaText" max="32767" attributes="0"/>
                                       <Component id="clCepText" alignment="0" max="32767" attributes="0"/>
                                       <Component id="clTelefoneText" alignment="0" max="32767" attributes="0"/>
                                       <Component id="clNomeText" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="clCpfText" alignment="0" pref="600" max="32767" attributes="0"/>
-                                      <Component id="clNumeroText" max="32767" attributes="0"/>
-                                      <Component id="clRuaText" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cartNumero" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="cartNumeroText" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                              <Component id="cartCbDebcred" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="cartValidadeText" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cartBandeiraText" alignment="0" min="-2" pref="376" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="cartBtInserir" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cartBtAlterar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cartBtExcluir" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clCpfText" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="clNumeroText" min="-2" pref="600" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="1" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cartValidade" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cartBandeira" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cartCredeb" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clComplemento" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clBairro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="clBairroText" max="32767" attributes="0"/>
+                                      <Component id="clComplementoText" min="-2" pref="600" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="clbtInserir" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="clBtAlterar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="clBtExcluir" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="clBairro" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="clComplemento" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="clBairroText" pref="600" max="32767" attributes="0"/>
-                                          <Component id="clComplementoText" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="clPesquisar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPane1" min="-2" pref="594" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="clPesquisarText" max="32767" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="clBtProcurar" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="Cadastro" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
                   </Group>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="clbtInserir" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="clBtAlterar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="clBtExcluir" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -208,43 +182,33 @@
                       <Component id="clComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clComplementoText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cartNumeroText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cartNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cartBandeira" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cartBandeiraText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cartValidadeText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cartValidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cartCbDebcred" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="cartCredeb" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="clBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clbtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
-                          <Component id="cartValidade" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cartCredeb" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cartNumero" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cartNumeroText" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cartBandeira" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cartBandeiraText" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cartValidadeText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cartCbDebcred" min="-2" pref="20" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cartBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -403,7 +367,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="cartNumero">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Numero do Cart&#xe3;o:"/>
+            <Property name="text" type="java.lang.String" value="Numero:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cartNumeroText">
@@ -413,21 +377,21 @@
         </Component>
         <Component class="javax.swing.JLabel" name="cartBandeira">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Bandeira"/>
+            <Property name="text" type="java.lang.String" value="Bandeira:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cartBandeiraText">
         </Component>
         <Component class="javax.swing.JLabel" name="cartValidade">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Validade"/>
+            <Property name="text" type="java.lang.String" value="Validade:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cartValidadeText">
         </Component>
         <Component class="javax.swing.JLabel" name="cartCredeb">
           <Properties>
-            <Property name="text" type="java.lang.String" value="D&#xe9;bito ou Cr&#xe9;dito?"/>
+            <Property name="text" type="java.lang.String" value="Tipo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cartCbDebcred">
@@ -447,21 +411,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="cartBtInserir">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="cartBtAlterar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="cartBtExcluir">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Excluir"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
