@@ -261,13 +261,12 @@ public class CadastroProdutos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void prdBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtInserirMouseClicked
-        // RECEBER DADOS DIGITADOS
-        prd = new Produtos(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
         if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ADICIONAR PRODUTO
+            prd = new Produtos(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
             produtos.add(prd1);
             JOptionPane.showMessageDialog(null, "Produto adicionado.");
         }

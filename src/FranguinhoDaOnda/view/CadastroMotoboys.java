@@ -297,13 +297,12 @@ public class CadastroMotoboys extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void motBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtInserirMouseClicked
-        // RECEBER DADOS DIGITADOS
-        mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
         if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ADICIONAR MOTOBOY
+            mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
             motoboys.add(mot1);
             JOptionPane.showMessageDialog(null, "Motoboy adicionado.");
         }

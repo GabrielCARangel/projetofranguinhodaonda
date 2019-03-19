@@ -453,18 +453,17 @@ public class CadastroClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_clBtAlterarMouseClicked
 
     private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
-        // RECEBER DADOS DIGITADOS
-        end = new Enderecos(clCepText.getText(), clRuaText.getText(), clBairroText.getText());
-        tel = new Telefones(clTelefone.getText());
-        cl1 = new Clientes(clCpfText.getText(), clNomeText.getText(), clNumeroText.getText(), clComplementoText.getText(), end, tel);
-        cart1 = new Cartoes(cartNumeroText.getText(), cartBandeiraText.getText(), cartValidadeText.getText());
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
                 || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
                 || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ADICIONAR CLIENTE
+            end = new Enderecos(clCepText.getText(), clRuaText.getText(), clBairroText.getText());
+            tel = new Telefones(clTelefone.getText());
+            cl1 = new Clientes(clCpfText.getText(), clNomeText.getText(), clNumeroText.getText(), clComplementoText.getText(), end, tel);
+            cart1 = new Cartoes(cartNumeroText.getText(), cartBandeiraText.getText(), cartValidadeText.getText());
             clientes.add(cl1);
             JOptionPane.showMessageDialog(null, "Cliente adicionado.");
         }
