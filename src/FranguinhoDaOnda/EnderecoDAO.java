@@ -5,53 +5,52 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class UsuariosDAO {
+public class EnderecoDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public UsuariosDAO() {
+    public EnderecoDAO() {
         Connection conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Usuarios usuarios) {
-        String sql = "INSERT INTO Usuarios(login,senha,tipo) "
+    public boolean inserirCliente(Endereco enderecos) {
+        String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, usuarios.getUsuario());
-            stmt.setString(2, usuarios.getSenha());
-            stmt.setString(3, usuarios.getTipo());
+            stmt.setString(1, enderecos.getCep());
+            stmt.setString(2, enderecos.getRua());
+            stmt.setString(3, enderecos.getBairro());
             stmt.close();
             status = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return status;
     }
-    // MÉTODO LISTAR
 
-    public void listarUsuarios() {
+    // MÉTODO LISTAR
+    public void listarEnderecos() {
 
     }
 
     // MÉTODO PESQUSIAR
-    public void pesquisarUsuarios() {
+    public void pesquisarEnderecos() {
 
     }
 
     // MÉTODO ALTERAR
-    public void alterarUsuarios() {
+    public void alterarEnderecos() {
 
     }
 
     // MÉTODO EXCLUIR
-    public void excluirUsuarios() {
+    public void excluirEnderecos() {
 
     }
-
 }

@@ -5,50 +5,52 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class TelefonesDAO {
+public class UsuarioDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public TelefonesDAO() {
+    public UsuarioDAO() {
         Connection conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Telefones telefones) {
-        String sql = "INSERT INTO Telefones(numero) "
-                + "VALUES(?)";
+    public boolean inserirCliente(Usuario usuarios) {
+        String sql = "INSERT INTO Usuarios(login,senha,tipo) "
+                + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, telefones.getNumero());
+            stmt.setString(1, usuarios.getUsuario());
+            stmt.setString(2, usuarios.getSenha());
+            stmt.setString(3, usuarios.getTipo());
             stmt.close();
             status = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(TelefonesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return status;
     }
     // MÉTODO LISTAR
 
-    public void listarTelefones() {
+    public void listarUsuarios() {
 
     }
 
     // MÉTODO PESQUSIAR
-    public void pesquisarTelefones() {
+    public void pesquisarUsuarios() {
 
     }
 
     // MÉTODO ALTERAR
-    public void alterarTelefones() {
+    public void alterarUsuarios() {
 
     }
 
     // MÉTODO EXCLUIR
-    public void excluirTelefones() {
+    public void excluirUsuarios() {
 
     }
 

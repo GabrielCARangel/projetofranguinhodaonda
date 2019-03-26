@@ -1,6 +1,6 @@
 package FranguinhoDaOnda;
 
-public class Cartoes {
+public class Cartao {
 
     private String numero, bandeira, validade;
     private int debcred;
@@ -9,13 +9,13 @@ public class Cartoes {
 
     }
 
-    public Cartoes(String numero, String bandeira, String validade) {
+    public Cartao(String numero, String bandeira, String validade) {
         this.numero = numero;
         this.bandeira = bandeira;
         this.validade = validade;
     }
 
-    public Cartoes(int debcred) {
+    public Cartao(int debcred) {
         this.debcred = debcred;
     }
     

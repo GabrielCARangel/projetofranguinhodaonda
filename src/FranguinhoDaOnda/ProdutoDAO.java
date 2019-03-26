@@ -6,18 +6,18 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProdutosDAO {
+public class ProdutoDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public ProdutosDAO() {
+    public ProdutoDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirProduto(Produtos produtos) {
+    public boolean inserirProduto(Produto produtos) {
         // Comando SQL = INTER INTO produtos (codigo, nome, preco)
         //               VALUES (?, ?, ?, ?)
         String sql = "INSERT INTO Produtos(codigo,nome,preco) "
@@ -30,7 +30,7 @@ public class ProdutosDAO {
             stmt.setDouble(3, (double) produtos.getPreco());
             status = true;
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return status;
     }

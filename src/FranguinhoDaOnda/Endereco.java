@@ -1,6 +1,6 @@
 package FranguinhoDaOnda;
 
-public class Enderecos {
+public class Endereco {
 
     private String cep, rua, bairro;
 
@@ -8,7 +8,7 @@ public class Enderecos {
 
     }
 
-    public Enderecos(String cep, String rua, String bairro) {
+    public Endereco(String cep, String rua, String bairro) {
         this.cep = cep;
         this.rua = rua;
         this.bairro = bairro;

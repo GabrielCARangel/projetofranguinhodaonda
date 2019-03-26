@@ -1,12 +1,12 @@
 package FranguinhoDaOnda;
 
-public class Clientes {
+public class Cliente {
 
     private String cpf, nome, numero_residencial, complemento;
-    Enderecos end;
-    Telefones tel;
-    Cartoes cart;
-    Usuarios login;
+    Endereco end;
+    Telefone tel;
+    Cartao cart;
+    Usuario login;
 
     public void cadastrarCliente() {
 
@@ -16,11 +16,11 @@ public class Clientes {
 
     }
 
-    public Clientes() {
+    public Cliente() {
 
     }
 
-    public Clientes(String cpf, String nome, String numero_residencial, String complemento, Enderecos end, Telefones tel) {
+    public Cliente(String cpf, String nome, String numero_residencial, String complemento, Endereco end, Telefone tel) {
         this.cpf = cpf;
         this.nome = nome;
         this.numero_residencial = numero_residencial;
@@ -29,7 +29,7 @@ public class Clientes {
         this.tel = tel;
     }
 
-    public Clientes(String cpf, String nome, String numero_residencial, String complemento, Enderecos end, Telefones tel, Cartoes cart, Usuarios login) {
+    public Cliente(String cpf, String nome, String numero_residencial, String complemento, Endereco end, Telefone tel, Cartao cart, Usuario login) {
         this.cpf = cpf;
         this.nome = nome;
         this.numero_residencial = numero_residencial;
@@ -72,35 +72,35 @@ public class Clientes {
         this.complemento = complemento;
     }
 
-    public Enderecos getEnd() {
+    public Endereco getEnd() {
         return end;
     }
 
-    public void setEnd(Enderecos end) {
+    public void setEnd(Endereco end) {
         this.end = end;
     }
 
-    public Telefones getTel() {
+    public Telefone getTel() {
         return tel;
     }
 
-    public void setTel(Telefones tel) {
+    public void setTel(Telefone tel) {
         this.tel = tel;
     }
 
-    public Cartoes getCart() {
+    public Cartao getCart() {
         return cart;
     }
 
-    public void setCart(Cartoes cart) {
+    public void setCart(Cartao cart) {
         this.cart = cart;
     }
 
-    public Usuarios getLogin() {
+    public Usuario getLogin() {
         return login;
     }
 
-    public void setLogin(Usuarios login) {
+    public void setLogin(Usuario login) {
         this.login = login;
     }
 

@@ -1,6 +1,6 @@
 package FranguinhoDaOnda;
 
-public class Pedidos {
+public class Pedido {
 
     private int numero;
     private double preco_final;
@@ -13,7 +13,7 @@ public class Pedidos {
 
     }
 
-    public Pedidos(int numero, double preco_final) {
+    public Pedido(int numero, double preco_final) {
         this.numero = numero;
         this.preco_final = preco_final;
     }

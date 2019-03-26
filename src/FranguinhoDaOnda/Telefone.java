@@ -1,10 +1,10 @@
 package FranguinhoDaOnda;
 
-public class Telefones {
+public class Telefone {
 
     private String numero;
 
-    public Telefones(String numero) {
+    public Telefone(String numero) {
         this.numero = numero;
     }
 

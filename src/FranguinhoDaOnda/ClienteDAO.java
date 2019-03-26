@@ -9,19 +9,19 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ClientesDAO {
+public class ClienteDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public ClientesDAO() {
+    public ClienteDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Clientes clientes) {
-        // Comando SQL = INTER INTO Clientes (cpf, nome, numero_residencia)
+    public boolean inserirCliente(Cliente clientes) {
+        // Comando SQL = INTER INTO Cliente (cpf, nome, numero_residencia)
         //               VALUES (?, ?, ?, ?)
         String sql = "INSERT INTO Clientes(cpf,nome,numero_residencial,complemento) "
                 + "VALUES(?,?,?,?)";
@@ -35,23 +35,23 @@ public class ClientesDAO {
             stmt.close();
             status = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return status;
     }
 
     // MÉTODO LISTAR
-    public List<Clientes> listarClientes() {
-        List<Clientes> clientes = new ArrayList<>();
-        // Comando SQL = SELECT * FROM Clientes ORDER BY nome"
+    public List<Cliente> listarClientes() {
+        List<Cliente> clientes = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Cliente ORDER BY nome"
         String sql = "SELECT * FROM clientes ORDER BY nome";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Clientes cliente = new Clientes();
+                Cliente cliente = new Cliente();
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setNome(rs.getString("nome"));
                 cliente.setNumero_residencial(rs.getString("numero_residencia"));
@@ -62,12 +62,12 @@ public class ClientesDAO {
             rs.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ClientesDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }

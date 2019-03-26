@@ -1,6 +1,6 @@
 package FranguinhoDaOnda;
 
-public class Produtos {
+public class Produto {
 
     private int codigo;
     private String nome;
@@ -10,7 +10,7 @@ public class Produtos {
 
     }
 
-    public Produtos(int codigo, String nome, Double preco) {
+    public Produto(int codigo, String nome, Double preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;

@@ -1,6 +1,6 @@
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Motoboys;
+import FranguinhoDaOnda.Motoboy;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class CadastroMotoboys extends javax.swing.JFrame {
 
-    List<Motoboys> motoboys = new ArrayList<>();
-    Motoboys mot, mot1;
+    List<Motoboy> motoboys = new ArrayList<>();
+    Motoboy mot, mot1;
 
     public CadastroMotoboys() {
         initComponents();
@@ -302,7 +302,7 @@ public class CadastroMotoboys extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ADICIONAR MOTOBOY
-            mot = new Motoboys(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
+            mot = new Motoboy(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
             motoboys.add(mot1);
             JOptionPane.showMessageDialog(null, "Motoboy adicionado.");
         }

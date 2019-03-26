@@ -1,6 +1,6 @@
 package FranguinhoDaOnda;
 
-public class Motoboys {
+public class Motoboy {
 
     private String placa, nome, cpf, numero;
 
@@ -12,7 +12,7 @@ public class Motoboys {
 
     }
 
-    public Motoboys(String placa, String nome, String cpf, String numero) {
+    public Motoboy(String placa, String nome, String cpf, String numero) {
         this.placa = placa;
         this.nome = nome;
         this.cpf = cpf;

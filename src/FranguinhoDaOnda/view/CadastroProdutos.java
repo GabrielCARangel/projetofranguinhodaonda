@@ -1,6 +1,6 @@
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Produtos;
+import FranguinhoDaOnda.Produto;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class CadastroProdutos extends javax.swing.JFrame {
 
-    List<Produtos> produtos = new ArrayList<>();
-    Produtos prd, prd1;
+    List<Produto> produtos = new ArrayList<>();
+    Produto prd, prd1;
 
     public CadastroProdutos() {
         initComponents();
@@ -266,7 +266,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ADICIONAR PRODUTO
-            prd = new Produtos(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
+            prd = new Produto(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
             produtos.add(prd1);
             JOptionPane.showMessageDialog(null, "Produto adicionado.");
         }

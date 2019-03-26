@@ -5,20 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class CartoesDAO {
+public class CartaoDAO {
 
     private Connection conexao;
     boolean status;
 
     // MÉTODO CONSTRUTOR
-    public CartoesDAO() {
+    public CartaoDAO() {
         Connection conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Cartoes cartoes) {
-        String sql = "INSERT INTO Cartoes(numero,nome,bandeira,validade,debcred) "
-                + "VALUES(?,?,?,?,?)";
+    public boolean inserirCliente(Cartao cartoes) {
+        String sql = "INSERT INTO Cartoes(numero,bandeira,validade,debcred)"
+                + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class CartoesDAO {
             stmt.close();
             status = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(CartoesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CartaoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return status;
@@ -51,8 +51,12 @@ public class CartoesDAO {
     }
 
     // MÉTODO EXCLUIR
-    public void excluirCartoes() {
-
-    }
-
+    //   public boolean excluirCartoes(Cartao cartoes) {
+    //  String sql = "DELETE FROM Cartoes where(numero,bandeira,validade,debcred)"
+    //  + "VALUES(?,?,?,?)";
+    //   PreparedStatement stmt;
+    //  try {
+    //        stmt = conexao.prepareStatement(sql);
+    //       stmt.executeUpdate("DELETE FROM CARTOES WHERE numero='" + this.jTextfield
+    //    }
 }

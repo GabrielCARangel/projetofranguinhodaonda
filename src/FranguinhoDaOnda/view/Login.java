@@ -5,7 +5,7 @@
  */
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Usuarios;
+import FranguinhoDaOnda.Usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -111,9 +111,9 @@ public class Login extends javax.swing.JFrame {
     private void logBtEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logBtEntrarMouseClicked
 
         //Criando uma lista de usuário
-        List<Usuarios> usuarios = new ArrayList<Usuarios>();
+        List<Usuario> usuarios = new ArrayList<Usuario>();
 
-        Usuarios user1 = new Usuarios();
+        Usuario user1 = new Usuario();
         user1.setUsuario("admin");
         user1.setSenha("12345");
         user1.setTipo("Administrador");
@@ -135,7 +135,6 @@ public class Login extends javax.swing.JFrame {
         }
         // EXIBIÇÃO
         if (c == true) {
-            JOptionPane.showMessageDialog(null, "Seja bem vindo Administrador.");
             JanelaInicial janela = new JanelaInicial();
             Login janelaLogin = new Login();
             janela.setVisible(true);

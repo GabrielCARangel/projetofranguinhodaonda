@@ -1,13 +1,13 @@
 package FranguinhoDaOnda;
 
-public class Usuarios {
+public class Usuario {
 
     private String login, senha, tipo;
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(int codigo, String usuario, String senha, String tipo) {
+    public Usuario(int codigo, String usuario, String senha, String tipo) {
         this.login = usuario;
         this.senha = senha;
         this.tipo = tipo;
