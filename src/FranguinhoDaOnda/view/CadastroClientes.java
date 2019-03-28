@@ -1,31 +1,27 @@
 package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Cartao;
+import FranguinhoDaOnda.CartaoDAO;
+import FranguinhoDaOnda.ClienteDAO;
 import FranguinhoDaOnda.Cliente;
 import FranguinhoDaOnda.Endereco;
+import FranguinhoDaOnda.EnderecoDAO;
 import FranguinhoDaOnda.Telefone;
+import FranguinhoDaOnda.TelefoneDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Gabriel C. A. Rangel
  */
-public class CadastroClientes extends javax.swing.JFrame {
-
-    List<Cliente> clientes = new ArrayList<>();
-    Endereco end;
-    Telefone tel;
-    Cliente cl1;
-    Cartao cart1;
+public class CadastroClientes extends javax.swing.JInternalFrame {
 
     public CadastroClientes() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
-        setIconImage(img);
+        //setIconImage(img);
     }
 
     @SuppressWarnings("unchecked")
@@ -401,12 +397,16 @@ public class CadastroClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtAlterarMouseClicked
-        // ALTERAR USUÁRIO
-        //  if (clientes.contains(cl1)) {
-        // cl1.clCepText.().getCep("");
-        // }
-    }//GEN-LAST:event_clBtAlterarMouseClicked
+// VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
+        if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
+                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            // ATUALIZAR CLIENTE
 
+        }
+    }//GEN-LAST:event_clBtAlterarMouseClicked
     private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
@@ -414,13 +414,37 @@ public class CadastroClientes extends javax.swing.JFrame {
                 || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            // ADICIONAR CLIENTE
-            end = new Endereco(clCepText.getText(), clRuaText.getText(), clBairroText.getText());
-            tel = new Telefone(clTelefone.getText());
-            cl1 = new Cliente(clCpfText.getText(), clNomeText.getText(), clNumeroText.getText(), clComplementoText.getText(), end, tel);
-            cart1 = new Cartao(cartNumeroText.getText(), cartBandeiraText.getText(), cartValidadeText.getText());
-            clientes.add(cl1);
-            JOptionPane.showMessageDialog(null, "Cliente adicionado.");
+            // COLETAR DADOS DO CLIENTE
+            Cliente cl = new Cliente();
+            cl.setCpf(clCpfText.getText());
+            cl.setNome(clNomeText.getText());
+            cl.setNumero_residencial(clNumeroText.getText());
+            cl.setComplemento(clComplementoText.getText());
+            // COLETAR TELEFONE
+            Telefone tel = new Telefone();
+            tel.setNumero(clTelefoneText.getText());
+            // COLETAR ENDERECO
+            Endereco end = new Endereco();
+            end.setCep(clCepText.getText());
+            end.setRua(clRuaText.getText());
+            end.setBairro(clBairroText.getText());
+            // COLETAR CARTÃO
+            Cartao cart = new Cartao();
+            cart.setNumero(cartNumeroText.getText());
+            cart.setBandeira(cartBandeiraText.getText());
+            cart.setValidade(cartValidadeText.getText());
+            cart.setDebcred(cartCbDebcred.getSelectedIndex());
+            //INSERIR DADOS DO CLIENTE
+            ClienteDAO cldao = new ClienteDAO();
+            TelefoneDAO teldao = new TelefoneDAO();
+            EnderecoDAO enddao = new EnderecoDAO();
+            CartaoDAO cartdao = new CartaoDAO();
+            cldao.inserirCliente(cl);
+            teldao.inserirTelefone(tel);
+            enddao.inserirEndereco(end);
+            cartdao.inserirCartao(cart);
+            // INFORMAR INSERÇÂO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_clbtInserirMouseClicked
 
@@ -433,13 +457,7 @@ public class CadastroClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_clCpfTextActionPerformed
 
     private void clBtProcurarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtProcurarMouseClicked
-        // RECEBER DADOS DIGITADOS
 
-        //String prc = clPesquisarText.getText();
-        // if (clPesquisarText.contains(cl1.getNome(""))) {
-        //  } else {
-        //    JOptionPane.showMessageDialog(null, "Usuário não existe no sistema.");
-        // }
     }//GEN-LAST:event_clBtProcurarMouseClicked
 
     /**

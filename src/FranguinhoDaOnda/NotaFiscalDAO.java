@@ -16,7 +16,7 @@ public class NotaFiscalDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(NotaFiscal notafiscal) {
+    public boolean inserirNotaFiscal(NotaFiscal notafiscal) {
         String sql = "INSERT INTO NotaFiscal(serie,nnf,dhemi,dhemi,dhsaient,tpnf,indpag,indpres,natop,indfinal,iddest) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement stmt;

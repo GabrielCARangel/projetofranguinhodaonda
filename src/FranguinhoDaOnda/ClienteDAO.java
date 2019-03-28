@@ -45,7 +45,7 @@ public class ClienteDAO {
     public List<Cliente> listarClientes() {
         List<Cliente> clientes = new ArrayList<>();
         // Comando SQL = SELECT * FROM Cliente ORDER BY nome"
-        String sql = "SELECT * FROM clientes ORDER BY nome";
+        String sql = "SELECT * FROM Clientes ORDER BY nome";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);

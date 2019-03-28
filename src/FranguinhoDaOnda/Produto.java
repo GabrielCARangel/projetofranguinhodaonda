@@ -10,10 +10,22 @@ public class Produto {
 
     }
 
+    public Produto() {
+    }
+
     public Produto(int codigo, String nome, Double preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
+
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -31,9 +43,4 @@ public class Produto {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
 }

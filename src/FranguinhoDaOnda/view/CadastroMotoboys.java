@@ -1,6 +1,7 @@
 package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Motoboy;
+import FranguinhoDaOnda.MotoboyDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -11,15 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Gabriel C. A. Rangel
  */
-public class CadastroMotoboys extends javax.swing.JFrame {
-
-    List<Motoboy> motoboys = new ArrayList<>();
-    Motoboy mot, mot1;
+public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
     public CadastroMotoboys() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
-        setIconImage(img);
+        //setIconImage(img);
     }
 
     @SuppressWarnings("unchecked")
@@ -301,10 +299,17 @@ public class CadastroMotoboys extends javax.swing.JFrame {
         if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            // ADICIONAR MOTOBOY
-            mot = new Motoboy(motCpfText.getText(), motPlacaText.getText(), motTelefoneText.getText(), motNomeText.getText());
-            motoboys.add(mot1);
-            JOptionPane.showMessageDialog(null, "Motoboy adicionado.");
+            //COLETAR DADOS DO MOTOBOY
+            Motoboy mot = new Motoboy();
+            mot.setPlaca(motPlacaText.getText());
+            mot.setNome(motNomeText.getText());
+            mot.setCpf(motCpfText.getText());
+            mot.setNumero(motTelefoneText.getText());
+            //INSERIR DADOS DO MOTOBOY
+            MotoboyDAO motdao = new MotoboyDAO();
+            motdao.inserirMotoboy(mot);
+            // INFORMAR INSERÇÂO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_motBtInserirMouseClicked
 

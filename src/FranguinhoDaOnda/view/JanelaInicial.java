@@ -14,11 +14,16 @@ import java.awt.Toolkit;
  */
 public class JanelaInicial extends javax.swing.JFrame {
 
+    CadastroClientes cc = new CadastroClientes();
+    CadastroMotoboys cm = new CadastroMotoboys();
+    CadastroProdutos cp = new CadastroProdutos();
+
     /**
      * Creates new form JanelaInicial
      */
     public JanelaInicial() {
         initComponents();
+
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
         setIconImage(img);
     }
@@ -32,102 +37,116 @@ public class JanelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JanelaInicial = new javax.swing.JPanel();
-        jiBtCadastrarClientes = new javax.swing.JButton();
-        jiBtCadastrarMotoboys = new javax.swing.JButton();
-        jiBtCadastrarProdutos = new javax.swing.JButton();
+        Desktop = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        MICadastrarClientes = new javax.swing.JMenuItem();
+        MICadastrarMotoboys = new javax.swing.JMenuItem();
+        MICadastrarProdutos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jiBtCadastrarClientes.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jiBtCadastrarClientes.setText("Cadastrar Clientes");
-        jiBtCadastrarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
+        Desktop.setLayout(DesktopLayout);
+        DesktopLayout.setHorizontalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 921, Short.MAX_VALUE)
+        );
+        DesktopLayout.setVerticalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 729, Short.MAX_VALUE)
+        );
+
+        jMenu1.setText("Cadastrar...");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jiBtCadastrarClientesMouseClicked(evt);
+                jMenu1MouseClicked(evt);
             }
         });
 
-        jiBtCadastrarMotoboys.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jiBtCadastrarMotoboys.setText("Cadastrar Motoboys");
-        jiBtCadastrarMotoboys.addMouseListener(new java.awt.event.MouseAdapter() {
+        MICadastrarClientes.setText("Clientes");
+        MICadastrarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jiBtCadastrarMotoboysMouseClicked(evt);
+                MICadastrarClientesMouseClicked(evt);
             }
         });
-        jiBtCadastrarMotoboys.addActionListener(new java.awt.event.ActionListener() {
+        MICadastrarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jiBtCadastrarMotoboysActionPerformed(evt);
+                MICadastrarClientesActionPerformed(evt);
             }
         });
+        jMenu1.add(MICadastrarClientes);
 
-        jiBtCadastrarProdutos.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jiBtCadastrarProdutos.setText("Cadastrar Produtos");
-        jiBtCadastrarProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jiBtCadastrarProdutosMouseClicked(evt);
+        MICadastrarMotoboys.setText("Motoboys");
+        MICadastrarMotoboys.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MICadastrarMotoboysActionPerformed(evt);
             }
         });
+        jMenu1.add(MICadastrarMotoboys);
 
-        javax.swing.GroupLayout JanelaInicialLayout = new javax.swing.GroupLayout(JanelaInicial);
-        JanelaInicial.setLayout(JanelaInicialLayout);
-        JanelaInicialLayout.setHorizontalGroup(
-            JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JanelaInicialLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                    .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        JanelaInicialLayout.setVerticalGroup(
-            JanelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JanelaInicialLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jiBtCadastrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jiBtCadastrarMotoboys, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jiBtCadastrarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        MICadastrarProdutos.setText("Produtos");
+        MICadastrarProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MICadastrarProdutosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MICadastrarProdutos);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaInicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Desktop)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Desktop)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jiBtCadastrarProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarProdutosMouseClicked
-        // ABRE A JANELA DE CADASTRO DE PRODUTOS
-        CadastroProdutos janelaCadastroProdutos = new CadastroProdutos();
-        janelaCadastroProdutos.setVisible(true);
-    }//GEN-LAST:event_jiBtCadastrarProdutosMouseClicked
+    private void MICadastrarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MICadastrarClientesMouseClicked
 
-    private void jiBtCadastrarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarClientesMouseClicked
-        // ABRE A JANELA DE CADASTRO DE CLIENTES
-        CadastroClientes janelaCadastroClientes = new CadastroClientes();
-        janelaCadastroClientes.setVisible(true);
-    }//GEN-LAST:event_jiBtCadastrarClientesMouseClicked
+    }//GEN-LAST:event_MICadastrarClientesMouseClicked
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        /*InternalTeste internalteste = new InternalTeste();
+Desktop.add(internalteste);
+internalteste.setVisible(true);*/
+    }//GEN-LAST:event_jMenu1MouseClicked
 
-    private void jiBtCadastrarMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jiBtCadastrarMotoboysActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jiBtCadastrarMotoboysActionPerformed
+    private void MICadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarClientesActionPerformed
+        Desktop.add(cc);
+        if (cm.isVisible() || cp.isVisible()) {
+            cm.setVisible(false);
+            cp.setVisible(false);
+        }
+        cc.setVisible(true);
+    }//GEN-LAST:event_MICadastrarClientesActionPerformed
 
-    private void jiBtCadastrarMotoboysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jiBtCadastrarMotoboysMouseClicked
-        // ABRE A JANELA DE CADASTRO DE MOTOBOYS
-        CadastroMotoboys janelaCadastroMotoboys = new CadastroMotoboys();
-        janelaCadastroMotoboys.setVisible(true);
-    }//GEN-LAST:event_jiBtCadastrarMotoboysMouseClicked
+    private void MICadastrarMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarMotoboysActionPerformed
+        Desktop.add(cm);
+        if (cc.isVisible() || cp.isVisible()) {
+            cc.setVisible(false);
+            cp.setVisible(false);
+        }
+        cm.setVisible(true);
+    }//GEN-LAST:event_MICadastrarMotoboysActionPerformed
+
+    private void MICadastrarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarProdutosActionPerformed
+        Desktop.add(cp);
+        if (cc.isVisible() || cm.isVisible()) {
+            cc.setVisible(false);
+            cm.setVisible(false);
+        }
+        cp.setVisible(true);
+    }//GEN-LAST:event_MICadastrarProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,9 +184,11 @@ public class JanelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel JanelaInicial;
-    private javax.swing.JButton jiBtCadastrarClientes;
-    private javax.swing.JButton jiBtCadastrarMotoboys;
-    private javax.swing.JButton jiBtCadastrarProdutos;
+    private javax.swing.JDesktopPane Desktop;
+    private javax.swing.JMenuItem MICadastrarClientes;
+    private javax.swing.JMenuItem MICadastrarMotoboys;
+    private javax.swing.JMenuItem MICadastrarProdutos;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

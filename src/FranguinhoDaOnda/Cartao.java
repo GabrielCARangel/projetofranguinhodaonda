@@ -9,7 +9,11 @@ public class Cartao {
 
     }
 
+    public Cartao() {
+    }
+
     public Cartao(String numero, String bandeira, String validade) {
+        
         this.numero = numero;
         this.bandeira = bandeira;
         this.validade = validade;

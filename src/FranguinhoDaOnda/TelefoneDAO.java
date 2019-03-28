@@ -16,7 +16,7 @@ public class TelefoneDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Telefone telefones) {
+    public boolean inserirTelefone(Telefone telefones) {
         String sql = "INSERT INTO Telefones(numero) "
                 + "VALUES(?)";
         PreparedStatement stmt;

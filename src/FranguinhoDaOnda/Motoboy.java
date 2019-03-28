@@ -12,6 +12,9 @@ public class Motoboy {
 
     }
 
+    public Motoboy() {
+    }
+
     public Motoboy(String placa, String nome, String cpf, String numero) {
         this.placa = placa;
         this.nome = nome;

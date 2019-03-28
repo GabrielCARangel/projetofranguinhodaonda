@@ -1,6 +1,7 @@
 package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Produto;
+import FranguinhoDaOnda.ProdutoDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -11,15 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Gabriel C. A. Rangel
  */
-public class CadastroProdutos extends javax.swing.JFrame {
-
-    List<Produto> produtos = new ArrayList<>();
-    Produto prd, prd1;
+public class CadastroProdutos extends javax.swing.JInternalFrame {
 
     public CadastroProdutos() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
-        setIconImage(img);
+        //setIconImage(img);
     }
 
     @SuppressWarnings("unchecked")
@@ -265,10 +263,16 @@ public class CadastroProdutos extends javax.swing.JFrame {
         if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            // ADICIONAR PRODUTO
-            prd = new Produto(Integer.parseInt(prdCodigoText.getText()), prdNomeText.getText(), Double.parseDouble(prdPrecoText.getText()));
-            produtos.add(prd1);
-            JOptionPane.showMessageDialog(null, "Produto adicionado.");
+            // COLETAR DADOS DO PRODUTO
+            Produto prd = new Produto();
+            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
+            prd.setNome(prdNomeText.getText());
+            prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
+            // INSERIR DADOS DO PRODUTO
+            ProdutoDAO prddao = new ProdutoDAO();
+            prddao.inserirProduto(prd);
+            // INFORMAR INSERÇÂO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_prdBtInserirMouseClicked
 

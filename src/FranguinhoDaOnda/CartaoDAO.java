@@ -16,7 +16,7 @@ public class CartaoDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Cartao cartoes) {
+    public boolean inserirCartao(Cartao cartoes) {
         String sql = "INSERT INTO Cartoes(numero,bandeira,validade,debcred)"
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
@@ -49,14 +49,4 @@ public class CartaoDAO {
     public void alterarCartoes() {
 
     }
-
-    // MÉTODO EXCLUIR
-    //   public boolean excluirCartoes(Cartao cartoes) {
-    //  String sql = "DELETE FROM Cartoes where(numero,bandeira,validade,debcred)"
-    //  + "VALUES(?,?,?,?)";
-    //   PreparedStatement stmt;
-    //  try {
-    //        stmt = conexao.prepareStatement(sql);
-    //       stmt.executeUpdate("DELETE FROM CARTOES WHERE numero='" + this.jTextfield
-    //    }
 }

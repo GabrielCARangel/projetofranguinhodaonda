@@ -1,9 +1,6 @@
 package FranguinhoDaOnda;
 
 import FranguinhoDaOnda.view.Login;
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -11,46 +8,18 @@ public class ProjetoIntegrador {
 
     public static void main(String[] args) {
 
-        
- try {
+        try {
             // Set System L&F
-        UIManager.setLookAndFeel(
-            UIManager.getSystemLookAndFeelClassName());
-        
-         Login janela = new Login();
-        janela.setVisible(true);
-    } 
-    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-        
-         Login janela = new Login();
-        janela.setVisible(true);
-       
-    }
-       
-        
-        
-        
-        
-       /* Connection c;
-        c = ConnectionFactory.getConnection();
-       
+            UIManager.setLookAndFeel(
+                    UIManager.getSystemLookAndFeelClassName());
 
-        // Coletar clientes
-        ClienteDAO clientesDAO = new ClienteDAO();
-        List<Cliente> clientes = new ArrayList<>();
-        clientes = clientesDAO.listarClientes();
+            Login janela = new Login();
+            janela.setVisible(true);
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 
-        //Exibir lista clientes
-        for (int i = 0; i < clientes.size(); i++) {
-            Cliente cliente = new Cliente();
-            System.out.println(cliente.getNome());
-            System.out.println(cliente.getCpf());
+            Login janela = new Login();
+            janela.setVisible(true);
 
         }
-        Cliente cliente = new Cliente();
-        cliente.setNome("José");
-        cliente.setCpf("123456789");
-        System.out.println(cliente.getNome());
-        System.out.println(cliente.getCpf());*/
     }
 }

@@ -14,9 +14,10 @@ public class MotoboyDAO {
     public MotoboyDAO() {
         Connection conexao = ConnectionFactory.getConnection();
     }
+    
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Motoboy motoboys) {
+    public boolean inserirMotoboy(Motoboy motoboys) {
         String sql = "INSERT INTO Motoboys(placa,nome,cpf,numero) "
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;

@@ -16,7 +16,7 @@ public class EnderecoDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Endereco enderecos) {
+    public boolean inserirEndereco(Endereco enderecos) {
         String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;

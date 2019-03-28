@@ -16,7 +16,7 @@ public class UsuarioDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirCliente(Usuario usuarios) {
+    public boolean inserirUsuario(Usuario usuarios) {
         String sql = "INSERT INTO Usuarios(login,senha,tipo) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;

@@ -6,6 +6,7 @@
 package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Usuario;
+import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -54,6 +55,11 @@ public class Login extends javax.swing.JFrame {
         logBtEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logBtEntrarMouseClicked(evt);
+            }
+        });
+        logBtEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                logBtEntrarKeyPressed(evt);
             }
         });
 
@@ -143,6 +149,12 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "DADOS INCORRETOS!");
         }
     }//GEN-LAST:event_logBtEntrarMouseClicked
+
+    private void logBtEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logBtEntrarKeyPressed
+if(evt.getKeyCode()==KeyEvent.VK_ENTER) {       
+}
+        
+    }//GEN-LAST:event_logBtEntrarKeyPressed
 
     /**
      * @param args the command line arguments

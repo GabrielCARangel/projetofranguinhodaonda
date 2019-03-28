@@ -4,6 +4,10 @@ public class Telefone {
 
     private String numero;
 
+    public Telefone() {
+
+    }
+
     public Telefone(String numero) {
         this.numero = numero;
     }
