@@ -2,7 +2,10 @@ package FranguinhoDaOnda;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,9 +22,9 @@ public class ProdutoDAO {
     // MÉTODO INSERIR
     public boolean inserirProduto(Produto produtos) {
         // Comando SQL = INTER INTO produtos (codigo, nome, preco)
-        //               VALUES (?, ?, ?, ?)
+        //               VALUES (?, ?, ?)
         String sql = "INSERT INTO Produtos(codigo,nome,preco) "
-                + "VALUES(?,?,?,?)";
+                + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -36,7 +39,35 @@ public class ProdutoDAO {
     }
 
     // MÉTODO LISTAR
-    public void listarProdutos() {
+    public List<Produto> listarProdutos() {
+        List<Produto> produtos = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
+        String sql = "SELECT * FROM Produtos ORDER BY nome";
+        PreparedStatement stmt;
+        try {
+            stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            Produto prd = new Produto();
+            while (rs.next()) {
+                prd.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                prd.setNome(rs.getString("nome"));
+                prd.setPreco(Double.parseDouble(rs.getString("preco")));
+            }
+            stmt.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
+        return produtos;
 
     }
 
