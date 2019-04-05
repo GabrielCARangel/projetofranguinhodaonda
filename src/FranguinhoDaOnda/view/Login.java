@@ -38,6 +38,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        logLogin = new javax.swing.JLabel();
         logUsuario = new javax.swing.JLabel();
         logUsuarioText = new javax.swing.JTextField();
         logSenha = new javax.swing.JLabel();
@@ -46,6 +47,10 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        logLogin.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        logLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logLogin.setText("Login");
 
         logUsuario.setText("Usuário:");
 
@@ -70,6 +75,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -79,22 +85,25 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(logSenha)
                                 .addGap(16, 16, 16)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logSenhaText, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                            .addComponent(logSenhaText)
                             .addComponent(logUsuarioText)))
-                    .addComponent(logBtEntrar, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(logBtEntrar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logUsuario)
-                    .addComponent(logUsuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(logLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logSenha)
-                    .addComponent(logSenhaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logUsuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logSenhaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logSenha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logBtEntrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -108,22 +117,23 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void logBtEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logBtEntrarMouseClicked
-
+        //VERIFICAR SE LACUNAS ESTÂO PREENCHIDAS
+        if (logUsuarioText.getText().equals("") || logSenhaText.getPassword().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        }
         //Criando uma lista de usuário
         List<Usuario> usuarios = new ArrayList<Usuario>();
-
         Usuario user1 = new Usuario();
         user1.setUsuario("admin");
         user1.setSenha("12345");
         user1.setTipo("Administrador");
-
         usuarios.add(user1);
 
         Boolean c = false;
@@ -143,17 +153,17 @@ public class Login extends javax.swing.JFrame {
         if (c == true) {
             JanelaInicial janela = new JanelaInicial();
             Login janelaLogin = new Login();
-            janela.setVisible(true);
             janelaLogin.setVisible(false);
+            janela.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(null, "DADOS INCORRETOS!");
+            JOptionPane.showMessageDialog(null,"DADOS INCORRETOS!");
         }
     }//GEN-LAST:event_logBtEntrarMouseClicked
 
     private void logBtEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logBtEntrarKeyPressed
-if(evt.getKeyCode()==KeyEvent.VK_ENTER) {       
-}
-        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        }
+
     }//GEN-LAST:event_logBtEntrarKeyPressed
 
     /**
@@ -194,6 +204,7 @@ if(evt.getKeyCode()==KeyEvent.VK_ENTER) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logBtEntrar;
+    private javax.swing.JLabel logLogin;
     private javax.swing.JLabel logSenha;
     private javax.swing.JPasswordField logSenhaText;
     private javax.swing.JLabel logUsuario;

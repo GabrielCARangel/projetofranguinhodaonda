@@ -45,7 +45,6 @@ public class JanelaInicial extends javax.swing.JFrame {
         MICadastrarProdutos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
@@ -127,6 +126,7 @@ internalteste.setVisible(true);*/
             cm.setVisible(false);
             cp.setVisible(false);
         }
+        Desktop.setSize(716,573);
         cc.setVisible(true);
     }//GEN-LAST:event_MICadastrarClientesActionPerformed
 
@@ -136,6 +136,7 @@ internalteste.setVisible(true);*/
             cc.setVisible(false);
             cp.setVisible(false);
         }
+        Desktop.size();
         cm.setVisible(true);
     }//GEN-LAST:event_MICadastrarMotoboysActionPerformed
 
@@ -145,6 +146,7 @@ internalteste.setVisible(true);*/
             cc.setVisible(false);
             cm.setVisible(false);
         }
+        Desktop.size();
         cp.setVisible(true);
     }//GEN-LAST:event_MICadastrarProdutosActionPerformed
 
