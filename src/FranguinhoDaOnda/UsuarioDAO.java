@@ -12,7 +12,7 @@ public class UsuarioDAO {
 
     // MÉTODO CONSTRUTOR
     public UsuarioDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -25,6 +25,7 @@ public class UsuarioDAO {
             stmt.setString(1, usuarios.getUsuario());
             stmt.setString(2, usuarios.getSenha());
             stmt.setString(3, usuarios.getTipo());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

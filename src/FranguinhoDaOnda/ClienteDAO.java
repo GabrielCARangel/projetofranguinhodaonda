@@ -21,10 +21,10 @@ public class ClienteDAO {
 
     // MÉTODO INSERIR
     public boolean inserirCliente(Cliente clientes) {
-        // Comando SQL = INTER INTO Cliente (cpf, nome, numero_residencia)
+        // Comando SQL = INSERT INTO Cliente (cpf, nome, numero_residencia, complemento)
         //               VALUES (?, ?, ?, ?)
-        String sql = "INSERT INTO Clientes(cpf,nome,numero_residencial,complemento) "
-                + "VALUES(?,?,?,?)";
+        String sql = "INSERT INTO Clientes(cpf,nome,numero_residencial,complemento,Enderecos_cep,Cartoes_numero) "
+                + "VALUES(?,?,?,?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -32,6 +32,9 @@ public class ClienteDAO {
             stmt.setString(2, clientes.getNome());
             stmt.setString(3, clientes.getNumero_residencial());
             stmt.setString(4, clientes.getComplemento());
+            stmt.setString(5, clientes.getEnd().getCep());
+            stmt.setString(6, clientes.getCart().getNumero());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {
@@ -80,11 +83,26 @@ public class ClienteDAO {
     }
 
     // MÉTODO ALTERAR
-    public void alterarClientes() {
-
+    public void alterarClientes() throws SQLException {
+        // COMANDO SQL
+        String sql = "UPDATE Clientes set num_point = ? where nome = ?";
+        PreparedStatement stmt;
+        try {
+            stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setCpf(rs.getString("cpf"));
+                cliente.setNome(rs.getString("nome"));
+                cliente.setNumero_residencial(rs.getString("numero_residencia"));
+                cliente.setComplemento(rs.getString("complemento"));
+                stmt.close();
+            }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    // MÉTODO EXCLUIR
+        // MÉTODO EXCLUIR
     public void excluirClientes() {
 
     }

@@ -404,6 +404,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ATUALIZAR CLIENTE
+            
 
         }
     }//GEN-LAST:event_clBtAlterarMouseClicked
@@ -423,26 +424,29 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             // COLETAR TELEFONE
             Telefone tel = new Telefone();
             tel.setNumero(clTelefoneText.getText());
+            cl.setTel(tel);
             // COLETAR ENDERECO
             Endereco end = new Endereco();
             end.setCep(clCepText.getText());
             end.setRua(clRuaText.getText());
             end.setBairro(clBairroText.getText());
+            cl.setEnd(end);
             // COLETAR CARTÃO
             Cartao cart = new Cartao();
             cart.setNumero(cartNumeroText.getText());
             cart.setBandeira(cartBandeiraText.getText());
             cart.setValidade(cartValidadeText.getText());
             cart.setDebcred(cartCbDebcred.getSelectedIndex());
+            cl.setCart(cart);
             //INSERIR DADOS DO CLIENTE
-            ClienteDAO cldao = new ClienteDAO();
-            TelefoneDAO teldao = new TelefoneDAO();
             EnderecoDAO enddao = new EnderecoDAO();
             CartaoDAO cartdao = new CartaoDAO();
-            cldao.inserirCliente(cl);
-            teldao.inserirTelefone(tel);
+            ClienteDAO cldao = new ClienteDAO();
+            TelefoneDAO teldao = new TelefoneDAO();
             enddao.inserirEndereco(end);
             cartdao.inserirCartao(cart);
+            cldao.inserirCliente(cl);
+            teldao.inserirTelefone(cl);
             // INFORMAR INSERÇÂO DE DADOS
             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }

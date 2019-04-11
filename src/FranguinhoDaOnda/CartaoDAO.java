@@ -12,7 +12,7 @@ public class CartaoDAO {
 
     // MÉTODO CONSTRUTOR
     public CartaoDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -26,6 +26,7 @@ public class CartaoDAO {
             stmt.setString(2, cartoes.getBandeira());
             stmt.setString(3, cartoes.getValidade());
             stmt.setInt(4, (int) cartoes.getDebcred());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

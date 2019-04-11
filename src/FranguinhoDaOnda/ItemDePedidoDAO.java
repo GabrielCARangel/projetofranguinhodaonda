@@ -12,7 +12,7 @@ public class ItemDePedidoDAO {
 
     // MÉTODO CONSTRUTOR
     public ItemDePedidoDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -23,6 +23,7 @@ public class ItemDePedidoDAO {
         try {
             stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, (int) itemdepedido.getQuantidade());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

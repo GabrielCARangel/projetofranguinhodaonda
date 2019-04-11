@@ -12,7 +12,7 @@ public class EnderecoDAO {
 
     // MÉTODO CONSTRUTOR
     public EnderecoDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -25,6 +25,7 @@ public class EnderecoDAO {
             stmt.setString(1, enderecos.getCep());
             stmt.setString(2, enderecos.getRua());
             stmt.setString(3, enderecos.getBairro());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

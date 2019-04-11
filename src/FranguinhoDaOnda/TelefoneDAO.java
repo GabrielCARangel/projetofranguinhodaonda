@@ -12,17 +12,19 @@ public class TelefoneDAO {
 
     // MÉTODO CONSTRUTOR
     public TelefoneDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirTelefone(Telefone telefones) {
-        String sql = "INSERT INTO Telefones(numero) "
-                + "VALUES(?)";
+    public boolean inserirTelefone(Cliente cliente) {
+        String sql = "INSERT INTO Telefones(numero, Clientes_cpf) "
+                + "VALUES(?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, telefones.getNumero());
+            stmt.setString(1, cliente.getTel().getNumero());
+            stmt.setString(2, cliente.getCpf());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

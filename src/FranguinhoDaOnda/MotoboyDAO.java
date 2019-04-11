@@ -16,7 +16,7 @@ public class MotoboyDAO {
 
     // MÉTODO CONSTRUTOR
     public MotoboyDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -30,6 +30,7 @@ public class MotoboyDAO {
             stmt.setString(2, motoboys.getNome());
             stmt.setString(3, motoboys.getCpf());
             stmt.setString(4, motoboys.getNumero());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {

@@ -31,6 +31,8 @@ public class ProdutoDAO {
             stmt.setInt(1, (int) produtos.getCodigo());
             stmt.setString(2, produtos.getNome());
             stmt.setDouble(3, (double) produtos.getPreco());
+            stmt.execute();
+            stmt.close();
             status = true;
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);

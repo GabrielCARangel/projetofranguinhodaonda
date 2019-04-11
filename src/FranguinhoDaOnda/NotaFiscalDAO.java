@@ -12,7 +12,7 @@ public class NotaFiscalDAO {
 
     // MÉTODO CONSTRUTOR
     public NotaFiscalDAO() {
-        Connection conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -32,6 +32,7 @@ public class NotaFiscalDAO {
             stmt.setString(8, notafiscal.getNatop());
             stmt.setString(9, notafiscal.getIndfinal());
             stmt.setString(10, notafiscal.getIddest());
+            stmt.execute();
             stmt.close();
             status = true;
         } catch (SQLException ex) {
