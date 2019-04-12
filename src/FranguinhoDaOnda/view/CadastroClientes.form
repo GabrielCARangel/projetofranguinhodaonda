@@ -264,9 +264,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clCpfText">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clCpfTextActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clNome">
           <Properties>
@@ -296,9 +293,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clRuaText">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clRuaTextActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clNumero">
           <Properties>
@@ -341,6 +335,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clBtExcluirMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="cartNumero">
           <Properties>

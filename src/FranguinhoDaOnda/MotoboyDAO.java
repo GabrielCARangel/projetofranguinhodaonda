@@ -5,14 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class MotoboyDAO {
 
     private Connection conexao;
-    boolean status;
 
     // MÉTODO CONSTRUTOR
     public MotoboyDAO() {
@@ -21,6 +20,7 @@ public class MotoboyDAO {
 
     // MÉTODO INSERIR
     public boolean inserirMotoboy(Motoboy motoboys) {
+        boolean resultado = false;
         String sql = "INSERT INTO Motoboys(placa,nome,cpf,numero) "
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
@@ -32,19 +32,24 @@ public class MotoboyDAO {
             stmt.setString(4, motoboys.getNumero());
             stmt.execute();
             stmt.close();
-            status = true;
+            resultado = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(MotoboyDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
         }
-
-        return status;
+        return resultado;
     }
 
     // MÉTODO LISTAR
-    public List<Motoboy> listarMotoboys() {
-        List<Motoboy> motoboys = new ArrayList<>();
-        // Comando SQL = SELECT * FROM Cliente ORDER BY nome"
-        String sql = "SELECT * FROM Clientes ORDER BY nome";
+    public ArrayList<Motoboy> getlist() {
+        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Motoboys ORDER BY nome"
+        String sql = "SELECT * FROM Motoboys ORDER BY nome";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -55,11 +60,10 @@ public class MotoboyDAO {
                 motoboy.setNome(rs.getString("nome"));
                 motoboy.setPlaca(rs.getString("placa"));
                 motoboy.setNumero(rs.getString("numero"));
-                motoboys.add(motoboy);
+                arrayMotoboys.add(motoboy);
             }
             stmt.close();
             rs.close();
-
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -68,26 +72,85 @@ public class MotoboyDAO {
             } catch (SQLException ex) {
                 Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
-
-        return motoboys;
-
+        return arrayMotoboys;
     }
 
-    // MÉTODO PESQUSIAR
-    public void pesquisarMotoboys() {
-
+    public ArrayList<Motoboy> getlistByNome(String nome) {
+        nome = "%" + nome.trim() + "%";
+        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
+        String sql = "SELECT * FROM Motoboys WHERE nome LIKE ? ORDER BY nome";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, nome);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Motoboy motoboy = new Motoboy();
+                motoboy.setCpf(rs.getString("cpf"));
+                motoboy.setNome(rs.getString("nome"));
+                motoboy.setPlaca(rs.getString("placa"));
+                motoboy.setNumero(rs.getString("numero"));
+                arrayMotoboys.add(motoboy);
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return arrayMotoboys;
     }
 
     // MÉTODO ALTERAR
-    public void alterarMotoboys() {
-
+    public boolean alterarMotoboys(Motoboy motoboy) {
+        boolean resultado = false;
+        String sql = "UPDATE Motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, motoboy.getCpf());
+            stmt.setString(2, motoboy.getNome());
+            stmt.setString(3, motoboy.getPlaca());
+            stmt.setString(4, motoboy.getNumero());
+            stmt.executeUpdate();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
-
+    
     // MÉTODO EXCLUIR
-    public void excluirMotoboys() {
-
+    public boolean excluirMotoboys(Motoboy motoboy) {  
+        boolean resultado = false;
+        String sql = "DELETE FROM Motoboys WHERE cpf = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, motoboy.getCpf());
+            stmt.executeUpdate();
+            stmt.close();    
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }      
+        return resultado;
     }
-
 }
+

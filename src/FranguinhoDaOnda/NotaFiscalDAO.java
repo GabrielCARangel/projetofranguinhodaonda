@@ -8,7 +8,6 @@ import java.util.logging.Level;
 public class NotaFiscalDAO {
 
     private Connection conexao;
-    boolean status;
 
     // MÉTODO CONSTRUTOR
     public NotaFiscalDAO() {
@@ -17,11 +16,11 @@ public class NotaFiscalDAO {
 
     // MÉTODO INSERIR
     public boolean inserirNotaFiscal(NotaFiscal notafiscal) {
+        boolean resultado = false;
         String sql = "INSERT INTO NotaFiscal(serie,nnf,dhemi,dhemi,dhsaient,tpnf,indpag,indpres,natop,indfinal,iddest) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?)";
-        PreparedStatement stmt;
         try {
-            stmt = conexao.prepareStatement(sql);
+            PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, (int) notafiscal.getSerie());
             stmt.setString(2, notafiscal.getNnf());
             stmt.setString(3, notafiscal.getDhemi());
@@ -34,12 +33,10 @@ public class NotaFiscalDAO {
             stmt.setString(10, notafiscal.getIddest());
             stmt.execute();
             stmt.close();
-            status = true;
+            resultado = true;
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(NotaFiscal.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return status;
+        return resultado;
     }
-
 }

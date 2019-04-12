@@ -41,8 +41,6 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motBtAlterar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
 
-        setResizable(false);
-
         motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         motCadastrar.setText("Cadastro de Motoboys");
@@ -50,13 +48,12 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motPesquisar.setText("Pesquisar:");
 
-        motPesquisarText.addActionListener(new java.awt.event.ActionListener() {
+        motBtPesquisar.setText("Pesquisar");
+        motBtPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                motPesquisarTextActionPerformed(evt);
+                motBtPesquisarActionPerformed(evt);
             }
         });
-
-        motBtPesquisar.setText("Pesquisar");
 
         motTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -197,8 +194,18 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         });
 
         motBtAlterar.setText("Alterar");
+        motBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                motBtAlterarMouseClicked(evt);
+            }
+        });
 
         motBtExcluir.setText("Excluir");
+        motBtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                motBtExcluirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CadastroMotoboysLayout = new javax.swing.GroupLayout(CadastroMotoboys);
         CadastroMotoboys.setLayout(CadastroMotoboysLayout);
@@ -311,9 +318,17 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_motBtInserirMouseClicked
 
-    private void motPesquisarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motPesquisarTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_motPesquisarTextActionPerformed
+    private void motBtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motBtPesquisarActionPerformed
+        // PESQUISAR MOTOBOY
+    }//GEN-LAST:event_motBtPesquisarActionPerformed
+
+    private void motBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtAlterarMouseClicked
+        // ALTERAR MOTOBOY
+    }//GEN-LAST:event_motBtAlterarMouseClicked
+
+    private void motBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtExcluirMouseClicked
+        // EXCLUIR MOTOBOY
+    }//GEN-LAST:event_motBtExcluirMouseClicked
 
     /**
      * @param args the command line arguments

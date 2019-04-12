@@ -13,7 +13,7 @@ public class Cartao {
     }
 
     public Cartao(String numero, String bandeira, String validade) {
-        
+
         this.numero = numero;
         this.bandeira = bandeira;
         this.validade = validade;
@@ -22,8 +22,6 @@ public class Cartao {
     public Cartao(int debcred) {
         this.debcred = debcred;
     }
-    
-    
 
     public String getNumero() {
         return numero;

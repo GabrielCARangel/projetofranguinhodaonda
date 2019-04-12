@@ -63,8 +63,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         cartCredeb = new javax.swing.JLabel();
         cartCbDebcred = new javax.swing.JComboBox<>();
 
-        setResizable(false);
-
         CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Cadastro.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -208,12 +206,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clCpf.setText("CPF:");
         clCpf.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        clCpfText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clCpfTextActionPerformed(evt);
-            }
-        });
-
         clNome.setText("Nome:");
         clNome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
@@ -222,12 +214,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clCep.setText("CEP:");
 
         clRua.setText("Rua:");
-
-        clRuaText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clRuaTextActionPerformed(evt);
-            }
-        });
 
         clNumero.setText("Numero:");
 
@@ -250,6 +236,11 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         });
 
         clBtExcluir.setText("Excluir");
+        clBtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clBtExcluirMouseClicked(evt);
+            }
+        });
 
         cartNumero.setText("Numero:");
 
@@ -403,7 +394,8 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            // ATUALIZAR CLIENTE
+            // ALTERAR CLIENTE
+            
             
 
         }
@@ -452,17 +444,13 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_clbtInserirMouseClicked
 
-    private void clRuaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clRuaTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clRuaTextActionPerformed
-
-    private void clCpfTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clCpfTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clCpfTextActionPerformed
-
     private void clBtProcurarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtProcurarMouseClicked
-
+       // PESQUISAR CLIENTES
     }//GEN-LAST:event_clBtProcurarMouseClicked
+
+    private void clBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtExcluirMouseClicked
+        // EXCLUIR CLIENTES
+    }//GEN-LAST:event_clBtExcluirMouseClicked
 
     /**
      * @param args the command line arguments

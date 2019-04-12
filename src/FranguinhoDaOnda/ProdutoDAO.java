@@ -5,14 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class ProdutoDAO {
 
     private Connection conexao;
-    boolean status;
 
     // MÉTODO CONSTRUTOR
     public ProdutoDAO() {
@@ -20,72 +17,131 @@ public class ProdutoDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirProduto(Produto produtos) {
-        // Comando SQL = INTER INTO produtos (codigo, nome, preco)
-        //               VALUES (?, ?, ?)
+    public boolean inserirProduto(Produto produto) {
+        boolean resultado = false;
         String sql = "INSERT INTO Produtos(codigo,nome,preco) "
                 + "VALUES(?,?,?)";
-        PreparedStatement stmt;
         try {
-            stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produtos.getCodigo());
-            stmt.setString(2, produtos.getNome());
-            stmt.setDouble(3, (double) produtos.getPreco());
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setString(2, produto.getNome());
+            stmt.setDouble(3, (double) produto.getPreco());
             stmt.execute();
             stmt.close();
-            status = true;
+            resultado = true;
         } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return status;
-    }
-
-    // MÉTODO LISTAR
-    public List<Produto> listarProdutos() {
-        List<Produto> produtos = new ArrayList<>();
-        // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
-        String sql = "SELECT * FROM Produtos ORDER BY nome";
-        PreparedStatement stmt;
-        try {
-            stmt = conexao.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-            Produto prd = new Produto();
-            while (rs.next()) {
-                prd.setCodigo(Integer.parseInt(rs.getString("codigo")));
-                prd.setNome(rs.getString("nome"));
-                prd.setPreco(Double.parseDouble(rs.getString("preco")));
-            }
-            stmt.close();
-            rs.close();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
         } finally {
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
-
         }
-
-        return produtos;
-
+        return resultado;
     }
 
-    // MÉTODO PESQUSIAR
-    public void pesquisarProdutos() {
+    // MÉTODO LISTAR
+    public ArrayList<Produto> getlist() {
+        ArrayList<Produto> arrayProdutos = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
+        String sql = "SELECT * FROM Produtos ORDER BY nome";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Produto produto = new Produto();
+                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(Double.parseDouble(rs.getString("preco")));
+                arrayProdutos.add(produto);
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return arrayProdutos;
+    }
 
+    public ArrayList<Produto> getlistByNome(String nome) {
+        nome = "%" + nome.trim() + "%";
+        ArrayList<Produto> arrayProdutos = new ArrayList<>();
+        String sql = "SELECT * FROM Produtos WHERE nome LIKE ? ORDER BY nome";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, nome);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Produto produto = new Produto();
+                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(Double.parseDouble(rs.getString("preco")));
+                arrayProdutos.add(produto);
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return arrayProdutos;
     }
 
     // MÉTODO ALTERAR
-    public void alterarProdutos() {
-
+    public boolean alterarProdutos(Produto produto) {
+        boolean resultado = false;
+        String sql = "UPDATE Produtos SET codigo = ?, nome = ?, preco = ? WHERE codigo = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setString(2, produto.getNome());
+            stmt.setDouble(3, (double) produto.getPreco());
+            stmt.executeUpdate();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
 
     // MÉTODO EXCLUIR
-    public void excluirProdutos() {
-
+    public boolean excluirProdutos(Produto produto) {
+        boolean resultado = false;
+        String sql = "delete from clientes where cpf = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.executeUpdate();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
-
 }

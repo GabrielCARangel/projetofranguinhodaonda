@@ -3,12 +3,11 @@ package FranguinhoDaOnda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
+import javax.swing.JOptionPane;
 
 public class TelefoneDAO {
 
     private Connection conexao;
-    boolean status;
 
     // MÉTODO CONSTRUTOR
     public TelefoneDAO() {
@@ -17,41 +16,71 @@ public class TelefoneDAO {
 
     // MÉTODO INSERIR
     public boolean inserirTelefone(Cliente cliente) {
+        boolean resultado = false;
         String sql = "INSERT INTO Telefones(numero, Clientes_cpf) "
                 + "VALUES(?,?)";
-        PreparedStatement stmt;
         try {
-            stmt = conexao.prepareStatement(sql);
+            PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getTel().getNumero());
             stmt.setString(2, cliente.getCpf());
             stmt.execute();
             stmt.close();
-            status = true;
+            resultado = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(TelefoneDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
         }
-
-        return status;
-    }
-    // MÉTODO LISTAR
-
-    public void listarTelefones() {
-
-    }
-
-    // MÉTODO PESQUSIAR
-    public void pesquisarTelefones() {
-
+        return resultado;
     }
 
     // MÉTODO ALTERAR
-    public void alterarTelefones() {
-
+    public boolean alterarTelefones(Cliente cliente) {
+        boolean resultado = false;
+        String sql = "UPDATE Telefones SET numero = ?, Clientes_cpf = ? WHERE numero = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, cliente.getTel().getNumero());
+            stmt.setString(2, cliente.getCpf());
+            stmt.execute();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
 
     // MÉTODO EXCLUIR
-    public void excluirTelefones() {
-
+    public boolean excluirTelefones(Cliente cliente) {
+        boolean resultado = false;
+        String sql = "DELETE FROM Telefones WHERE numero = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, cliente.getTel().getNumero());
+            stmt.setString(2, cliente.getCpf());
+            stmt.executeUpdate();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
-
 }

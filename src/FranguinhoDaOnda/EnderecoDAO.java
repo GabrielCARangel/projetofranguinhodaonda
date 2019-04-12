@@ -3,12 +3,11 @@ package FranguinhoDaOnda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
+import javax.swing.JOptionPane;
 
 public class EnderecoDAO {
 
     private Connection conexao;
-    boolean status;
 
     // MÉTODO CONSTRUTOR
     public EnderecoDAO() {
@@ -16,42 +15,76 @@ public class EnderecoDAO {
     }
 
     // MÉTODO INSERIR
-    public boolean inserirEndereco(Endereco enderecos) {
+    public boolean inserirEndereco(Endereco endereco) {
+        boolean resultado = false;
         String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, enderecos.getCep());
-            stmt.setString(2, enderecos.getRua());
-            stmt.setString(3, enderecos.getBairro());
+            stmt.setString(1, endereco.getCep());
+            stmt.setString(2, endereco.getRua());
+            stmt.setString(3, endereco.getBairro());
             stmt.execute();
             stmt.close();
-            status = true;
+            resultado = true;
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
         }
-
-        return status;
-    }
-
-    // MÉTODO LISTAR
-    public void listarEnderecos() {
-
-    }
-
-    // MÉTODO PESQUSIAR
-    public void pesquisarEnderecos() {
-
+        return resultado;
     }
 
     // MÉTODO ALTERAR
-    public void alterarEnderecos() {
+    public boolean alterarEnderecos(Endereco endereco) {
+        boolean resultado = false;
 
+        String sql = "update clientes set nome = ?, endereco = ?, sexo = ?, telefone = ?, celular = ? where cpf = ?";
+
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, endereco.getCep());
+            stmt.setString(2, endereco.getRua());
+            stmt.setString(3, endereco.getBairro());
+            stmt.execute();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
 
     // MÉTODO EXCLUIR
-    public void excluirEnderecos() {
-
+    public boolean excluirEnderecos(Endereco endereco) {
+        boolean resultado = false;
+        String sql = "DELETE FROM Enderecos WHERE cep = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, endereco.getCep());
+            stmt.executeUpdate();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
     }
 }

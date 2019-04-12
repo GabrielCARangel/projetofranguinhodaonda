@@ -39,8 +39,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdBtAlterar = new javax.swing.JButton();
         prdBtExcluir = new javax.swing.JButton();
 
-        setResizable(false);
-
         prdCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prdCadastrar.setText("Cadastro de Produtos");
@@ -48,6 +46,11 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdPesquisar.setText("Pesquisar:");
 
         prdBtPesquisar.setText("Pesquisar");
+        prdBtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdBtPesquisarMouseClicked(evt);
+            }
+        });
 
         prdTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,8 +175,18 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         });
 
         prdBtAlterar.setText("Alterar");
+        prdBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdBtAlterarMouseClicked(evt);
+            }
+        });
 
         prdBtExcluir.setText("Excluir");
+        prdBtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdBtExcluirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CadastroProdutosLayout = new javax.swing.GroupLayout(CadastroProdutos);
         CadastroProdutos.setLayout(CadastroProdutosLayout);
@@ -273,6 +286,18 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_prdBtInserirMouseClicked
+
+    private void prdBtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtPesquisarMouseClicked
+        // PESQUISAR PRODUTO
+    }//GEN-LAST:event_prdBtPesquisarMouseClicked
+
+    private void prdBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtAlterarMouseClicked
+        // ALTERAR PRODUTOS
+    }//GEN-LAST:event_prdBtAlterarMouseClicked
+
+    private void prdBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtExcluirMouseClicked
+        // EXCLUIR PRODUTOS
+    }//GEN-LAST:event_prdBtExcluirMouseClicked
 
     /**
      * @param args the command line arguments

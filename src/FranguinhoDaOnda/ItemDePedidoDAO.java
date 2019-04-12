@@ -12,7 +12,7 @@ public class ItemDePedidoDAO {
 
     // MÉTODO CONSTRUTOR
     public ItemDePedidoDAO() {
-         conexao = ConnectionFactory.getConnection();
+        conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
@@ -29,28 +29,6 @@ public class ItemDePedidoDAO {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ItemDePedido.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return status;
     }
-
-    // MÉTODO LISTAR
-    public void listarItemDePedido() {
-
-    }
-
-    // MÉTODO PESQUSIAR
-    public void pesquisarItemDePedido() {
-
-    }
-
-    // MÉTODO ALTERAR
-    public void alterarItemDePedido() {
-
-    }
-
-    // MÉTODO EXCLUIR
-    public void excluirItemDePedido() {
-
-    }
-
 }
