@@ -65,12 +65,12 @@ public class MotoboyDAO {
             stmt.close();
             rs.close();
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
         } finally {
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
         return arrayMotoboys;
@@ -107,7 +107,7 @@ public class MotoboyDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarMotoboys(Motoboy motoboy) {
+    public boolean alterarMotoboy(Motoboy motoboy) {
         boolean resultado = false;
         String sql = "UPDATE Motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
         try {
@@ -132,7 +132,7 @@ public class MotoboyDAO {
     }
     
     // MÉTODO EXCLUIR
-    public boolean excluirMotoboys(Motoboy motoboy) {  
+    public boolean excluirMotoboy(Motoboy motoboy) {  
         boolean resultado = false;
         String sql = "DELETE FROM Motoboys WHERE cpf = ?";
         try {

@@ -39,7 +39,7 @@ public class TelefoneDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarTelefones(Cliente cliente) {
+    public boolean alterarTelefone(Cliente cliente) {
         boolean resultado = false;
         String sql = "UPDATE Telefones SET numero = ?, Clientes_cpf = ? WHERE numero = ?";
         try {
@@ -62,7 +62,7 @@ public class TelefoneDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirTelefones(Cliente cliente) {
+    public boolean excluirTelefone(Cliente cliente) {
         boolean resultado = false;
         String sql = "DELETE FROM Telefones WHERE numero = ?";
         try {

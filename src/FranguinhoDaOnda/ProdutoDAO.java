@@ -100,7 +100,7 @@ public class ProdutoDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarProdutos(Produto produto) {
+    public boolean alterarProduto(Produto produto) {
         boolean resultado = false;
         String sql = "UPDATE Produtos SET codigo = ?, nome = ?, preco = ? WHERE codigo = ?";
         try {
@@ -124,7 +124,7 @@ public class ProdutoDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirProdutos(Produto produto) {
+    public boolean excluirProduto(Produto produto) {
         boolean resultado = false;
         String sql = "delete from clientes where cpf = ?";
         try {

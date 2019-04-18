@@ -41,7 +41,7 @@ public class EnderecoDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarEnderecos(Endereco endereco) {
+    public boolean alterarEndereco(Endereco endereco) {
         boolean resultado = false;
 
         String sql = "update clientes set nome = ?, endereco = ?, sexo = ?, telefone = ?, celular = ? where cpf = ?";
@@ -67,7 +67,7 @@ public class EnderecoDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirEnderecos(Endereco endereco) {
+    public boolean excluirEndereco(Endereco endereco) {
         boolean resultado = false;
         String sql = "DELETE FROM Enderecos WHERE cep = ?";
         try {

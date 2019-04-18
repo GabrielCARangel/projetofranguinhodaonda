@@ -2,19 +2,25 @@ package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Produto;
 import FranguinhoDaOnda.ProdutoDAO;
+import FranguinhoDaOnda.ProdutoTableModel;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 
 /**
  *
  * @author Gabriel C. A. Rangel
  */
 public class CadastroProdutos extends javax.swing.JInternalFrame {
+    
+    private ProdutoTableModel produtoTableModel;
 
     public CadastroProdutos() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setarCaracteristicasTabela();
         //setIconImage(img);
     }
 
@@ -54,111 +60,17 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
 
         prdTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Código", "Nome", "Preço"
+
             }
         ));
+        prdTbPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdTbPesquisarMouseClicked(evt);
+            }
+        });
         prdScPesquisar.setViewportView(prdTbPesquisar);
 
         prdCodigo.setText("Código:");
@@ -270,6 +182,7 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void prdBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtInserirMouseClicked
+        // INSERIR PRODUTO
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
         if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
@@ -286,18 +199,72 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_prdBtInserirMouseClicked
-
+    private void setarCaracteristicasTabela() {
+        //seleção para a linha inteira
+        this.prdTbPesquisar.setCellSelectionEnabled(false);
+        this.prdTbPesquisar.setRowSelectionAllowed(true);
+        //selecionar apenas uma linha
+        this.prdTbPesquisar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    }
     private void prdBtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtPesquisarMouseClicked
         // PESQUISAR PRODUTO
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        ArrayList<Produto> produtos = produtoDAO.getlistByNome(prdPesquisarText.getText().trim());
+        produtoTableModel = new ProdutoTableModel(produtos);
+        prdTbPesquisar.setModel(produtoTableModel);
     }//GEN-LAST:event_prdBtPesquisarMouseClicked
 
     private void prdBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtAlterarMouseClicked
         // ALTERAR PRODUTOS
+        // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
+        if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            // COLETAR DADOS DO PRODUTO
+            Produto prd = new Produto();
+            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
+            prd.setNome(prdNomeText.getText());
+            prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
+            // ALTERAR DADOS DO PRODUTO
+            ProdutoDAO prddao = new ProdutoDAO();
+            prddao.alterarProduto(prd);
+            // INFORMAR A MUDANÇA DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
+        }
     }//GEN-LAST:event_prdBtAlterarMouseClicked
 
     private void prdBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtExcluirMouseClicked
         // EXCLUIR PRODUTOS
+        // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
+        if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            // COLETAR DADOS DO PRODUTO
+            Produto prd = new Produto();
+            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
+            prd.setNome(prdNomeText.getText());
+            prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
+            // EXCLUIR DADOS DO PRODUTO
+            ProdutoDAO prddao = new ProdutoDAO();
+            prddao.excluirProduto(prd);
+            // INFORMAR A EXCLUSÃO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso!");
+        }
     }//GEN-LAST:event_prdBtExcluirMouseClicked
+
+    private void prdTbPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdTbPesquisarMouseClicked
+        int linha = prdTbPesquisar.getSelectedRow();
+        if (linha < 0) {
+            JOptionPane.showMessageDialog(null, "Necessário selecionar um registro para editar.");
+        } else {
+            //BUSCAR DADOS DA LINHA SELECIONADA
+            Produto produto1 = produtoTableModel.getProduto(linha);
+            //CARREGAR A JANELA DE EXIBIÇÃO
+            prdCodigoText.setText(String.valueOf(produto1.getCodigo()));
+            prdNomeText.setText(produto1.getNome());
+            prdPrecoText.setText(String.valueOf(produto1.getPreco()));
+        }
+    }//GEN-LAST:event_prdTbPesquisarMouseClicked
 
     /**
      * @param args the command line arguments

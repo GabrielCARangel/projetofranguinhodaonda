@@ -4,13 +4,16 @@ import FranguinhoDaOnda.Cartao;
 import FranguinhoDaOnda.CartaoDAO;
 import FranguinhoDaOnda.ClienteDAO;
 import FranguinhoDaOnda.Cliente;
+import FranguinhoDaOnda.ClienteTableModel;
 import FranguinhoDaOnda.Endereco;
 import FranguinhoDaOnda.EnderecoDAO;
 import FranguinhoDaOnda.Telefone;
 import FranguinhoDaOnda.TelefoneDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -18,9 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class CadastroClientes extends javax.swing.JInternalFrame {
 
+    private ClienteTableModel clienteTableModel;
+
     public CadastroClientes() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setarCaracteristicasTabela();
         //setIconImage(img);
     }
 
@@ -33,8 +39,8 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clPesquisar = new javax.swing.JLabel();
         clPesquisarText = new javax.swing.JTextField();
         clBtProcurar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        clSP = new javax.swing.JScrollPane();
+        clJT = new javax.swing.JTable();
         clCpf = new javax.swing.JLabel();
         clCpfText = new javax.swing.JTextField();
         clNome = new javax.swing.JLabel();
@@ -81,127 +87,20 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        clJT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "CPF", "Nome", "Telefone"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+            }
+        ));
+        clJT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clJTMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-        }
+        clSP.setViewportView(clJT);
 
         clCpf.setText("CPF:");
         clCpf.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -287,7 +186,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                             .addComponent(clTelefoneText)
                             .addComponent(clNomeText)
                             .addComponent(clCpfText)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                             .addComponent(clNumeroText)
                             .addComponent(clBairroText)
                             .addComponent(clComplementoText)
@@ -316,7 +215,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                     .addComponent(clPesquisar)
                     .addComponent(clPesquisarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(clSP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -388,25 +287,59 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtAlterarMouseClicked
-// VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
-        if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
-                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
-                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
-        } else {
-            // ALTERAR CLIENTE
-            
-            
-
-        }
-    }//GEN-LAST:event_clBtAlterarMouseClicked
-    private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
+        // ALTERAR CLIENTES
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
                 || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
                 || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
+            // ALTERAR CLIENTE
+            // COLETAR DADOS DO CLIENTE
+            Cliente cl = new Cliente();
+            cl.setCpf(clCpfText.getText());
+            cl.setNome(clNomeText.getText());
+            cl.setNumero_residencial(clNumeroText.getText());
+            cl.setComplemento(clComplementoText.getText());
+            // COLETAR TELEFONE
+            Telefone tel = new Telefone();
+            tel.setNumero(clTelefoneText.getText());
+            cl.setTel(tel);
+            // COLETAR ENDERECO
+            Endereco end = new Endereco();
+            end.setCep(clCepText.getText());
+            end.setRua(clRuaText.getText());
+            end.setBairro(clBairroText.getText());
+            cl.setEnd(end);
+            // COLETAR CARTÃO
+            Cartao cart = new Cartao();
+            cart.setNumero(cartNumeroText.getText());
+            cart.setBandeira(cartBandeiraText.getText());
+            cart.setValidade(cartValidadeText.getText());
+            cart.setDebcred(cartCbDebcred.getSelectedIndex());
+            cl.setCart(cart);
+            //MUDAR DADOS DO CLIENTE
+            EnderecoDAO enddao = new EnderecoDAO();
+            CartaoDAO cartdao = new CartaoDAO();
+            ClienteDAO cldao = new ClienteDAO();
+            TelefoneDAO teldao = new TelefoneDAO();
+            enddao.alterarEndereco(end);
+            cartdao.alterarCartao(cart);
+            cldao.alterarCliente(cl);
+            teldao.alterarTelefone(cl);
+            // INFORMAR A MUDANÇA DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
+        }
+    }//GEN-LAST:event_clBtAlterarMouseClicked
+    private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
+        // INSERIR CLIENTE
+        // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
+        if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
+                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            // INSERIR CLIENTE
             // COLETAR DADOS DO CLIENTE
             Cliente cl = new Cliente();
             cl.setCpf(clCpfText.getText());
@@ -443,14 +376,88 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_clbtInserirMouseClicked
+    // PREPARAR TABELAS
 
+    private void setarCaracteristicasTabela() {
+        //seleção para a linha inteira
+        this.clJT.setCellSelectionEnabled(false);
+        this.clJT.setRowSelectionAllowed(true);
+        //selecionar apenas uma linha
+        this.clJT.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    }
     private void clBtProcurarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtProcurarMouseClicked
-       // PESQUISAR CLIENTES
+        ClienteDAO clienteDAO = new ClienteDAO();
+        ArrayList<Cliente> clientes = clienteDAO.getlistByNome(clPesquisarText.getText().trim());
+        clienteTableModel = new ClienteTableModel(clientes);
+        clJT.setModel(clienteTableModel);
     }//GEN-LAST:event_clBtProcurarMouseClicked
-
     private void clBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtExcluirMouseClicked
-        // EXCLUIR CLIENTES
+        // EXCLUIR CLIENTE
+        // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
+        if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
+                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            // COLETAR DADOS DO CLIENTE
+            Cliente cl = new Cliente();
+            cl.setCpf(clCpfText.getText());
+            cl.setNome(clNomeText.getText());
+            cl.setNumero_residencial(clNumeroText.getText());
+            cl.setComplemento(clComplementoText.getText());
+            // COLETAR TELEFONE
+            Telefone tel = new Telefone();
+            tel.setNumero(clTelefoneText.getText());
+            cl.setTel(tel);
+            // COLETAR ENDERECO
+            Endereco end = new Endereco();
+            end.setCep(clCepText.getText());
+            end.setRua(clRuaText.getText());
+            end.setBairro(clBairroText.getText());
+            cl.setEnd(end);
+            // COLETAR CARTÃO
+            Cartao cart = new Cartao();
+            cart.setNumero(cartNumeroText.getText());
+            cart.setBandeira(cartBandeiraText.getText());
+            cart.setValidade(cartValidadeText.getText());
+            cart.setDebcred(cartCbDebcred.getSelectedIndex());
+            cl.setCart(cart);
+            //EXCLUIR DADOS DO CLIENTE
+            EnderecoDAO enddao = new EnderecoDAO();
+            CartaoDAO cartdao = new CartaoDAO();
+            ClienteDAO cldao = new ClienteDAO();
+            TelefoneDAO teldao = new TelefoneDAO();
+            enddao.excluirEndereco(end);
+            cartdao.excluirCartao(cart);
+            cldao.excluirCliente(cl);
+            teldao.excluirTelefone(cl);
+            // INFORMAR EXCLUSÃO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso!");
+        }
     }//GEN-LAST:event_clBtExcluirMouseClicked
+
+    private void clJTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clJTMouseClicked
+        // PESQUISAR CLIENTES
+        int linha = clJT.getSelectedRow();
+        if (linha < 0) {
+            JOptionPane.showMessageDialog(null, "Necessário selecionar um registro para editar.");
+        } else {
+            //BUSCAR DADOS DA LINHA SELECIONADA
+            Cliente cliente1 = clienteTableModel.getCliente(linha);
+            //CARREGAR A JANELA DE EXIBIÇÃO
+            clCpfText.setText(cliente1.getCpf());
+            clNomeText.setText(cliente1.getNome());
+            clTelefoneText.setText(cliente1.getTel().getNumero());
+            clCepText.setText(cliente1.getEnd().getCep());
+            clRuaText.setText(cliente1.getEnd().getRua());
+            clNumeroText.setText(cliente1.getNumero_residencial());
+            clBairroText.setText(cliente1.getEnd().getBairro());
+            clComplementoText.setText(cliente1.getComplemento());
+            cartNumeroText.setText(cliente1.getCart().getNumero());
+            cartBandeiraText.setText(cliente1.getCart().getBandeira());
+            cartValidadeText.setText(cliente1.getCart().getValidade());
+        }
+    }//GEN-LAST:event_clJTMouseClicked
 
     /**
      * @param args the command line arguments
@@ -509,6 +516,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField clComplementoText;
     private javax.swing.JLabel clCpf;
     private javax.swing.JTextField clCpfText;
+    private javax.swing.JTable clJT;
     private javax.swing.JLabel clNome;
     private javax.swing.JTextField clNomeText;
     private javax.swing.JLabel clNumero;
@@ -517,10 +525,9 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField clPesquisarText;
     private javax.swing.JLabel clRua;
     private javax.swing.JTextField clRuaText;
+    private javax.swing.JScrollPane clSP;
     private javax.swing.JLabel clTelefone;
     private javax.swing.JTextField clTelefoneText;
     private javax.swing.JButton clbtInserir;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

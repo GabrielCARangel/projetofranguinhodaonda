@@ -66,7 +66,7 @@ public class CartaoDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirCartoes(Cartao cartao) {
+    public boolean excluirCartao(Cartao cartao) {
         boolean resultado = false;
         String sql = "DELETE FROM Cartoes WHERE numero = ?";
         try {

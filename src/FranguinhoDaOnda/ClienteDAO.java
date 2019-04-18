@@ -48,17 +48,19 @@ public class ClienteDAO {
     // MÉTODO LISTAR
     public ArrayList<Cliente> getlist() {
         ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT c.*, t.numero, e.*, car.* FROM franguinho_da_onda.clientes c\n" +
-                     "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n" +
-                     "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n" +
-                     "INNER JOIN Cartoes car ON car.numero = c.Cartoes_numero;";
+        String sql = "SELECT cpf, nome, t.numero FROM franguinho_da_onda.clientes c\n" +
+                     "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf" +
+                     "SELECT * FROM Clientes WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Cliente cliente = new Cliente();
+                Telefone telefone = new Telefone();
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setNome(rs.getString("nome"));
+                telefone.setNumero(rs.getString("numero"));
+                cliente.setTel(telefone);
                 arrayClientes.add(cliente);
             }
             stmt.close();
@@ -78,17 +80,33 @@ public class ClienteDAO {
     public ArrayList<Cliente> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
         ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT * FROM Clientes WHERE nome LIKE ? ORDER BY nome";
+        String sql = "SELECT c.*, t.numero, e.*, car.* FROM franguinho_da_onda.clientes c\n" +
+                     "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n" +
+                     "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n" +
+                     "INNER JOIN Cartoes car ON car.numero = c.Cartoes_numero WHERE nome LIKE ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Cliente cliente = new Cliente();
+                Telefone telefone = new Telefone();
+                Endereco endereco = new Endereco();
+                Cartao cartao = new Cartao();
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setNome(rs.getString("nome"));
-                cliente.setNumero_residencial(rs.getString("endereco"));
-                cliente.setComplemento(rs.getString("sexo"));
+                telefone.setNumero(rs.getString("numero"));
+                endereco.setCep(rs.getString("cep"));
+                endereco.setRua(rs.getString("rua"));
+                cliente.setNumero_residencial(rs.getString("numero_residencial"));
+                endereco.setBairro(rs.getString("bairro"));
+                cliente.setComplemento(rs.getString("complemento"));
+                cartao.setNumero(rs.getString("numero"));
+                cartao.setBandeira(rs.getString("bandeira"));
+                cartao.setValidade(rs.getString("validade"));
+                cliente.setTel(telefone);
+                cliente.setEnd(endereco);
+                cliente.setCart(cartao);
                 arrayClientes.add(cliente);
             }
             stmt.close();
@@ -106,7 +124,7 @@ public class ClienteDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarClientes(Cliente cliente) {
+    public boolean alterarCliente(Cliente cliente) {
         boolean resultado = false;
         String sql = "UPDATE clientes SET cpf = ?, nome = ?, numero_residencial = ?, complemento = ?, WHERE cpf = ?";
         try {
@@ -132,7 +150,7 @@ public class ClienteDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirClientes(Cliente cliente) {
+    public boolean excluirCliente(Cliente cliente) {
         boolean resultado = false;
         String sql = "DELETE FROM Clientes WHERE cpf = ?";
         try {

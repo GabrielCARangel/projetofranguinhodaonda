@@ -41,7 +41,7 @@ public class UsuarioDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarUsuarios(Usuario usuario) {
+    public boolean alterarUsuario(Usuario usuario) {
         boolean resultado = false;
         String sql = "UPDATE Usuarios SET login = ?, senha = ? tipo= ?, where login = ?";
         try {
@@ -65,7 +65,7 @@ public class UsuarioDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirUsuarios(Usuario usuario) {
+    public boolean excluirUsuario(Usuario usuario) {
         boolean resultado = false;
         String sql = "DELETE FROM Usuarios WHERE usuario = ?";
         try {

@@ -2,9 +2,12 @@ package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.Motoboy;
 import FranguinhoDaOnda.MotoboyDAO;
+import FranguinhoDaOnda.MotoboyTableModel;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -12,9 +15,12 @@ import javax.swing.JOptionPane;
  */
 public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
+    private MotoboyTableModel motoboyTableModel;
+
     public CadastroMotoboys() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
+        setarCaracteristicasTabela();
         //setIconImage(img);
     }
 
@@ -57,126 +63,18 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motTbPesquisar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "CPF", "Nome", "Placa", "Telefone"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+            }
+        ));
+        motTbPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                motTbPesquisarMouseClicked(evt);
             }
         });
         motSpPesquiar.setViewportView(motTbPesquisar);
-        if (motTbPesquisar.getColumnModel().getColumnCount() > 0) {
-            motTbPesquisar.getColumnModel().getColumn(0).setResizable(false);
-            motTbPesquisar.getColumnModel().getColumn(1).setResizable(false);
-            motTbPesquisar.getColumnModel().getColumn(2).setResizable(false);
-            motTbPesquisar.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         motCpf.setText("CPF:");
 
@@ -300,6 +198,7 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void motBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtInserirMouseClicked
+        // INSERIR MOTOBOY
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
         if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
@@ -313,22 +212,79 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             //INSERIR DADOS DO MOTOBOY
             MotoboyDAO motdao = new MotoboyDAO();
             motdao.inserirMotoboy(mot);
-            // INFORMAR INSERÇÂO DE DADOS
+            // INFORMAR INSERÇÃO DE DADOS
             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
         }
     }//GEN-LAST:event_motBtInserirMouseClicked
-
+    private void setarCaracteristicasTabela() {
+        //seleção para a linha inteira
+        this.motTbPesquisar.setCellSelectionEnabled(false);
+        this.motTbPesquisar.setRowSelectionAllowed(true);
+        //selecionar apenas uma linha
+        this.motTbPesquisar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    }
     private void motBtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motBtPesquisarActionPerformed
-        // PESQUISAR MOTOBOY
+        MotoboyDAO motoboyDAO = new MotoboyDAO();
+        ArrayList<Motoboy> motoboys = motoboyDAO.getlistByNome(motPesquisarText.getText().trim());
+        motoboyTableModel = new MotoboyTableModel(motoboys);
+        motTbPesquisar.setModel(motoboyTableModel);
     }//GEN-LAST:event_motBtPesquisarActionPerformed
 
     private void motBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtAlterarMouseClicked
         // ALTERAR MOTOBOY
+        // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
+        if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            //COLETAR DADOS DO MOTOBOY
+            Motoboy mot = new Motoboy();
+            mot.setPlaca(motPlacaText.getText());
+            mot.setNome(motNomeText.getText());
+            mot.setCpf(motCpfText.getText());
+            mot.setNumero(motTelefoneText.getText());
+            // ALTERAR DADOS DO MOTOBOY
+            MotoboyDAO motdao = new MotoboyDAO();
+            motdao.alterarMotoboy(mot);
+            // INFORMAR A MUDANÇA DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
+        }
     }//GEN-LAST:event_motBtAlterarMouseClicked
 
     private void motBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtExcluirMouseClicked
         // EXCLUIR MOTOBOY
+        // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
+        if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
+        } else {
+            //COLETAR DADOS DO MOTOBOY
+            Motoboy mot = new Motoboy();
+            mot.setPlaca(motPlacaText.getText());
+            mot.setNome(motNomeText.getText());
+            mot.setCpf(motCpfText.getText());
+            mot.setNumero(motTelefoneText.getText());
+            // EXCLUIR DADOS DO MOTOBOY
+            MotoboyDAO motdao = new MotoboyDAO();
+            motdao.excluirMotoboy(mot);
+            // INFORMAR EXCLUSÃO DE DADOS
+            JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso!");
+        }
     }//GEN-LAST:event_motBtExcluirMouseClicked
+
+    private void motTbPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motTbPesquisarMouseClicked
+        // PESQUISAR MOTOBOY
+        int linha = motTbPesquisar.getSelectedRow();
+        if (linha < 0) {
+            JOptionPane.showMessageDialog(null, "Necessário selecionar um registro para editar.");
+        } else {
+            //BUSCAR DADOS DA LINHA SELECIONADA
+            Motoboy motoboy1 = motoboyTableModel.getMotoboy(linha);
+            //CARREGAR A JANELA DE EXIBIÇÃO
+            motCpfText.setText(motoboy1.getCpf());
+            motNomeText.setText(motoboy1.getNome());
+            motPlacaText.setText(motoboy1.getPlaca());
+            motTelefoneText.setText(motoboy1.getNumero());
+        }
+    }//GEN-LAST:event_motTbPesquisarMouseClicked
 
     /**
      * @param args the command line arguments
