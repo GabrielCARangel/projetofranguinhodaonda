@@ -126,7 +126,7 @@ internalteste.setVisible(true);*/
             cm.setVisible(false);
             cp.setVisible(false);
         }
-        Desktop.setSize(716,573);
+        Desktop.setSize(716, 573);
         cc.setVisible(true);
     }//GEN-LAST:event_MICadastrarClientesActionPerformed
 

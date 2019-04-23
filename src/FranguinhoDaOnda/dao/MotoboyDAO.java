@@ -1,5 +1,6 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.Motoboy;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,25 +8,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class ProdutoDAO {
+public class MotoboyDAO {
 
     private Connection conexao;
 
     // MÉTODO CONSTRUTOR
-    public ProdutoDAO() {
+    public MotoboyDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirProduto(Produto produto) {
+    public boolean inserirMotoboy(Motoboy motoboys) {
         boolean resultado = false;
-        String sql = "INSERT INTO Produtos(codigo,nome,preco) "
-                + "VALUES(?,?,?)";
+        String sql = "INSERT INTO Motoboys(placa,nome,cpf,numero) "
+                + "VALUES(?,?,?,?)";
+        PreparedStatement stmt;
         try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produto.getCodigo());
-            stmt.setString(2, produto.getNome());
-            stmt.setDouble(3, (double) produto.getPreco());
+            stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, motoboys.getPlaca());
+            stmt.setString(2, motoboys.getNome());
+            stmt.setString(3, motoboys.getCpf());
+            stmt.setString(4, motoboys.getNumero());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -42,19 +45,21 @@ public class ProdutoDAO {
     }
 
     // MÉTODO LISTAR
-    public ArrayList<Produto> getlist() {
-        ArrayList<Produto> arrayProdutos = new ArrayList<>();
-        // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
-        String sql = "SELECT * FROM Produtos ORDER BY nome";
+    public ArrayList<Motoboy> getlist() {
+        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Motoboys ORDER BY nome"
+        String sql = "SELECT * FROM Motoboys ORDER BY nome";
+        PreparedStatement stmt;
         try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Produto produto = new Produto();
-                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
-                produto.setNome(rs.getString("nome"));
-                produto.setPreco(Double.parseDouble(rs.getString("preco")));
-                arrayProdutos.add(produto);
+                Motoboy motoboy = new Motoboy();
+                motoboy.setCpf(rs.getString("cpf"));
+                motoboy.setNome(rs.getString("nome"));
+                motoboy.setPlaca(rs.getString("placa"));
+                motoboy.setNumero(rs.getString("numero"));
+                arrayMotoboys.add(motoboy);
             }
             stmt.close();
             rs.close();
@@ -67,23 +72,24 @@ public class ProdutoDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
-        return arrayProdutos;
+        return arrayMotoboys;
     }
 
-    public ArrayList<Produto> getlistByNome(String nome) {
+    public ArrayList<Motoboy> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
-        ArrayList<Produto> arrayProdutos = new ArrayList<>();
-        String sql = "SELECT * FROM Produtos WHERE nome LIKE ? ORDER BY nome";
+        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
+        String sql = "SELECT * FROM Motoboys WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Produto produto = new Produto();
-                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
-                produto.setNome(rs.getString("nome"));
-                produto.setPreco(Double.parseDouble(rs.getString("preco")));
-                arrayProdutos.add(produto);
+                Motoboy motoboy = new Motoboy();
+                motoboy.setCpf(rs.getString("cpf"));
+                motoboy.setNome(rs.getString("nome"));
+                motoboy.setPlaca(rs.getString("placa"));
+                motoboy.setNumero(rs.getString("numero"));
+                arrayMotoboys.add(motoboy);
             }
             stmt.close();
             rs.close();
@@ -96,18 +102,19 @@ public class ProdutoDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
-        return arrayProdutos;
+        return arrayMotoboys;
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarProduto(Produto produto) {
+    public boolean alterarMotoboy(Motoboy motoboy) {
         boolean resultado = false;
-        String sql = "UPDATE Produtos SET codigo = ?, nome = ?, preco = ? WHERE codigo = ?";
+        String sql = "UPDATE Motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produto.getCodigo());
-            stmt.setString(2, produto.getNome());
-            stmt.setDouble(3, (double) produto.getPreco());
+            stmt.setString(1, motoboy.getCpf());
+            stmt.setString(2, motoboy.getNome());
+            stmt.setString(3, motoboy.getPlaca());
+            stmt.setString(4, motoboy.getNumero());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
@@ -124,12 +131,12 @@ public class ProdutoDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirProduto(Produto produto) {
+    public boolean excluirMotoboy(Motoboy motoboy) {
         boolean resultado = false;
-        String sql = "delete from clientes where cpf = ?";
+        String sql = "DELETE FROM Motoboys WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setString(1, motoboy.getCpf());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;

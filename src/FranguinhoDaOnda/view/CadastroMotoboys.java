@@ -1,8 +1,8 @@
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Motoboy;
-import FranguinhoDaOnda.MotoboyDAO;
-import FranguinhoDaOnda.MotoboyTableModel;
+import FranguinhoDaOnda.model.Motoboy;
+import FranguinhoDaOnda.dao.MotoboyDAO;
+import FranguinhoDaOnda.model.MotoboyTableModel;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;

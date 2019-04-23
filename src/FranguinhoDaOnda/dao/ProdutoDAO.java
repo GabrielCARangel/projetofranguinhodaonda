@@ -1,35 +1,33 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class MotoboyDAO {
+public class ProdutoDAO {
 
     private Connection conexao;
 
     // MÉTODO CONSTRUTOR
-    public MotoboyDAO() {
+    public ProdutoDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirMotoboy(Motoboy motoboys) {
+    public boolean inserirProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "INSERT INTO Motoboys(placa,nome,cpf,numero) "
+        String sql = "INSERT INTO Produtos(codigo,nome,preco,descricao) "
                 + "VALUES(?,?,?,?)";
-        PreparedStatement stmt;
         try {
-            stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, motoboys.getPlaca());
-            stmt.setString(2, motoboys.getNome());
-            stmt.setString(3, motoboys.getCpf());
-            stmt.setString(4, motoboys.getNumero());
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setString(2, produto.getNome());
+            stmt.setDouble(3, (double) produto.getPreco());
+            stmt.setString(4, produto.getDescricao());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -46,21 +44,20 @@ public class MotoboyDAO {
     }
 
     // MÉTODO LISTAR
-    public ArrayList<Motoboy> getlist() {
-        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
-        // Comando SQL = SELECT * FROM Motoboys ORDER BY nome"
-        String sql = "SELECT * FROM Motoboys ORDER BY nome";
-        PreparedStatement stmt;
+    public ArrayList<Produto> getlist() {
+        ArrayList<Produto> arrayProdutos = new ArrayList<>();
+        // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
+        String sql = "SELECT * FROM Produtos ORDER BY nome";
         try {
-            stmt = conexao.prepareStatement(sql);
+            PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Motoboy motoboy = new Motoboy();
-                motoboy.setCpf(rs.getString("cpf"));
-                motoboy.setNome(rs.getString("nome"));
-                motoboy.setPlaca(rs.getString("placa"));
-                motoboy.setNumero(rs.getString("numero"));
-                arrayMotoboys.add(motoboy);
+                Produto produto = new Produto();
+                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(Double.parseDouble(rs.getString("preco")));
+                produto.setDescricao(rs.getString("descricao"));
+                arrayProdutos.add(produto);
             }
             stmt.close();
             rs.close();
@@ -73,24 +70,24 @@ public class MotoboyDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
-        return arrayMotoboys;
+        return arrayProdutos;
     }
 
-    public ArrayList<Motoboy> getlistByNome(String nome) {
+    public ArrayList<Produto> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
-        ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
-        String sql = "SELECT * FROM Motoboys WHERE nome LIKE ? ORDER BY nome";
+        ArrayList<Produto> arrayProdutos = new ArrayList<>();
+        String sql = "SELECT * FROM Produtos WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Motoboy motoboy = new Motoboy();
-                motoboy.setCpf(rs.getString("cpf"));
-                motoboy.setNome(rs.getString("nome"));
-                motoboy.setPlaca(rs.getString("placa"));
-                motoboy.setNumero(rs.getString("numero"));
-                arrayMotoboys.add(motoboy);
+                Produto produto = new Produto();
+                produto.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(Double.parseDouble(rs.getString("preco")));
+                produto.setDescricao(rs.getString("descricao"));
+                arrayProdutos.add(produto);
             }
             stmt.close();
             rs.close();
@@ -103,19 +100,19 @@ public class MotoboyDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
-        return arrayMotoboys;
+        return arrayProdutos;
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarMotoboy(Motoboy motoboy) {
+    public boolean alterarProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "UPDATE Motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
+        String sql = "UPDATE Produtos SET codigo = ?, nome = ?, preco = ? WHERE codigo = ?, WHERE descricao = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, motoboy.getCpf());
-            stmt.setString(2, motoboy.getNome());
-            stmt.setString(3, motoboy.getPlaca());
-            stmt.setString(4, motoboy.getNumero());
+            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setString(2, produto.getNome());
+            stmt.setDouble(3, (double) produto.getPreco());
+            stmt.setString(4, produto.getDescricao());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
@@ -130,27 +127,26 @@ public class MotoboyDAO {
         }
         return resultado;
     }
-    
+
     // MÉTODO EXCLUIR
-    public boolean excluirMotoboy(Motoboy motoboy) {  
+    public boolean excluirProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "DELETE FROM Motoboys WHERE cpf = ?";
+        String sql = "DELETE FROM clientes WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, motoboy.getCpf());
+            stmt.setInt(1, (int) produto.getCodigo());
             stmt.executeUpdate();
-            stmt.close();    
+            stmt.close();
             resultado = true;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
         } finally {
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
-        }      
+        }
         return resultado;
     }
 }
-

@@ -1,24 +1,24 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.model;
 
 public class Usuario {
 
-    private String usuario, senha, tipo;
+    private String login, senha, tipo;
 
     public Usuario() {
     }
 
-    public Usuario(String usuario, String senha, String tipo) {
-        this.usuario = usuario;
+    public Usuario(String login, String senha, String tipo) {
+        this.login = login;
         this.senha = senha;
         this.tipo = tipo;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getSenha() {

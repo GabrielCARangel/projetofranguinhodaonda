@@ -1,4 +1,4 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.model;
 
 public class Pedido {
 

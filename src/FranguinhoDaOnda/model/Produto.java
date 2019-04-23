@@ -1,10 +1,11 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.model;
 
 public class Produto {
 
     private int codigo;
     private String nome;
     private Double preco;
+    private String descricao;
 
     public void registrarProdutos() {
 
@@ -13,11 +14,11 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(int codigo, String nome, Double preco) {
+    public Produto(int codigo, String nome, Double preco, String descricao) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
-
+        this.descricao = descricao;
     }
 
     public int getCodigo() {
@@ -42,5 +43,13 @@ public class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

@@ -1,4 +1,4 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.model;
 
 public class Endereco {
 
@@ -7,9 +7,9 @@ public class Endereco {
     public void validarCep() {
 
     }
-    
+
     public Endereco() {
-        
+
     }
 
     public Endereco(String cep, String rua, String bairro) {

@@ -1,5 +1,6 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.NotaFiscal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

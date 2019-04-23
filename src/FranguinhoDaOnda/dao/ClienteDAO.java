@@ -1,5 +1,8 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.Cliente;
+import FranguinhoDaOnda.model.Endereco;
+import FranguinhoDaOnda.model.Telefone;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +32,6 @@ public class ClienteDAO {
             stmt.setString(3, cliente.getNumero_residencial());
             stmt.setString(4, cliente.getComplemento());
             stmt.setString(5, cliente.getEnd().getCep());
-            stmt.setString(6, cliente.getCart().getNumero());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -48,9 +50,9 @@ public class ClienteDAO {
     // MÉTODO LISTAR
     public ArrayList<Cliente> getlist() {
         ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT cpf, nome, t.numero FROM franguinho_da_onda.clientes c\n" +
-                     "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf" +
-                     "SELECT * FROM Clientes WHERE nome LIKE ? ORDER BY nome";
+        String sql = "SELECT cpf, nome, t.numero FROM franguinho_da_onda.clientes c\n"
+                + "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf"
+                + "SELECT * FROM Clientes WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -80,10 +82,10 @@ public class ClienteDAO {
     public ArrayList<Cliente> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
         ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT c.*, t.numero, e.*, car.* FROM franguinho_da_onda.clientes c\n" +
-                     "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n" +
-                     "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n" +
-                     "INNER JOIN Cartoes car ON car.numero = c.Cartoes_numero WHERE nome LIKE ?";
+        String sql = "SELECT c.*, t.numero, e.*, car.* FROM franguinho_da_onda.clientes c\n"
+                + "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n"
+                + "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n"
+                + "INNER JOIN Cartoes car ON car.numero = c.Cartoes_numero WHERE nome LIKE ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
@@ -92,7 +94,6 @@ public class ClienteDAO {
                 Cliente cliente = new Cliente();
                 Telefone telefone = new Telefone();
                 Endereco endereco = new Endereco();
-                Cartao cartao = new Cartao();
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setNome(rs.getString("nome"));
                 telefone.setNumero(rs.getString("numero"));
@@ -101,12 +102,8 @@ public class ClienteDAO {
                 cliente.setNumero_residencial(rs.getString("numero_residencial"));
                 endereco.setBairro(rs.getString("bairro"));
                 cliente.setComplemento(rs.getString("complemento"));
-                cartao.setNumero(rs.getString("numero"));
-                cartao.setBandeira(rs.getString("bandeira"));
-                cartao.setValidade(rs.getString("validade"));
                 cliente.setTel(telefone);
                 cliente.setEnd(endereco);
-                cliente.setCart(cartao);
                 arrayClientes.add(cliente);
             }
             stmt.close();

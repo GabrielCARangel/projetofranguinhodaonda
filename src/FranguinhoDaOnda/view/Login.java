@@ -5,12 +5,11 @@
  */
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Usuario;
+import FranguinhoDaOnda.dao.UsuarioDAO;
+import FranguinhoDaOnda.model.Usuario;
 import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,7 +39,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         logLogin = new javax.swing.JLabel();
         logUsuario = new javax.swing.JLabel();
-        logUsuarioText = new javax.swing.JTextField();
+        logLoginText = new javax.swing.JTextField();
         logSenha = new javax.swing.JLabel();
         logSenhaText = new javax.swing.JPasswordField();
         logBtEntrar = new javax.swing.JButton();
@@ -86,7 +85,7 @@ public class Login extends javax.swing.JFrame {
                                 .addGap(16, 16, 16)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(logSenhaText)
-                            .addComponent(logUsuarioText)))
+                            .addComponent(logLoginText)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(logBtEntrar)))
@@ -98,7 +97,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(logLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logUsuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logLoginText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -124,46 +123,35 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logBtEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logBtEntrarMouseClicked
+        fazerLogin();
+    }//GEN-LAST:event_logBtEntrarMouseClicked
+    private void fazerLogin() {
         //VERIFICAR SE LACUNAS ESTÂO PREENCHIDAS
-        if (logUsuarioText.getText().equals("") || logSenhaText.getPassword().equals("")) {
+        if (logLoginText.getText().equals("") || logSenhaText.getPassword().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
-        }
-        //Criando uma lista de usuário
-        List<Usuario> usuarios = new ArrayList<Usuario>();
-        Usuario user1 = new Usuario();
-        user1.setUsuario("admin");
-        user1.setSenha("12345");
-        user1.setTipo("Administrador");
-        usuarios.add(user1);
+        } else {
+            try {
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                String senha = String.valueOf(this.logSenhaText.getPassword());
+                Usuario usuario = usuarioDAO.fazerLogin(this.logLoginText.getText(), senha);
+                if (usuario == null) {
+                    JOptionPane.showMessageDialog(null, "Login ou senha inválidos");
+                } else {
+                    JanelaInicial janela = new JanelaInicial();
+                    janela.setVisible(true);
+                    this.dispose();
+                }
 
-        Boolean c = false;
-
-        // VERIFICAR USUÁRIO E SENHA
-        // ESTRUTURA DE REPETIÇÃO
-        for (int i = 0; i < usuarios.size(); i++) {
-            String user = usuarios.get(i).getUsuario();
-            String senha = usuarios.get(i).getSenha();
-            // PESQUISA
-            if (logUsuarioText.getText().equals(user)
-                    && String.valueOf(logSenhaText.getPassword()).equals(senha)) {
-                c = true;
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
             }
         }
-        // EXIBIÇÃO
-        if (c == true) {
-            JanelaInicial janela = new JanelaInicial();
-            Login janelaLogin = new Login();
-            janelaLogin.setVisible(false);
-            janela.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null,"DADOS INCORRETOS!");
-        }
-    }//GEN-LAST:event_logBtEntrarMouseClicked
-
+    }
     private void logBtEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logBtEntrarKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            fazerLogin();
         }
-
     }//GEN-LAST:event_logBtEntrarKeyPressed
 
     /**
@@ -205,9 +193,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logBtEntrar;
     private javax.swing.JLabel logLogin;
+    private javax.swing.JTextField logLoginText;
     private javax.swing.JLabel logSenha;
     private javax.swing.JPasswordField logSenhaText;
     private javax.swing.JLabel logUsuario;
-    private javax.swing.JTextField logUsuarioText;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,4 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.view;
 
 import FranguinhoDaOnda.view.Login;
 import javax.swing.UIManager;

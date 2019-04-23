@@ -1,30 +1,32 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class EnderecoDAO {
+public class UsuarioDAO {
 
     private Connection conexao;
 
     // MÉTODO CONSTRUTOR
-    public EnderecoDAO() {
+    public UsuarioDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirEndereco(Endereco endereco) {
+    public boolean inserirUsuario(Usuario usuario) {
         boolean resultado = false;
-        String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
+        String sql = "INSERT INTO Usuarios(login,senha,tipo) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, endereco.getCep());
-            stmt.setString(2, endereco.getRua());
-            stmt.setString(3, endereco.getBairro());
+            stmt.setString(1, usuario.getLogin());
+            stmt.setString(2, usuario.getSenha());
+            stmt.setString(3, usuario.getTipo());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -41,17 +43,15 @@ public class EnderecoDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarEndereco(Endereco endereco) {
+    public boolean alterarUsuario(Usuario usuario) {
         boolean resultado = false;
-
-        String sql = "update clientes set nome = ?, endereco = ?, sexo = ?, telefone = ?, celular = ? where cpf = ?";
-
+        String sql = "UPDATE Usuarios SET login = ?, senha = ? tipo= ?, where login = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, endereco.getCep());
-            stmt.setString(2, endereco.getRua());
-            stmt.setString(3, endereco.getBairro());
-            stmt.execute();
+            stmt.setString(1, usuario.getLogin());
+            stmt.setString(2, usuario.getSenha());
+            stmt.setString(3, usuario.getTipo());
+            stmt.executeUpdate();
             stmt.close();
             resultado = true;
         } catch (SQLException ex) {
@@ -67,12 +67,12 @@ public class EnderecoDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirEndereco(Endereco endereco) {
+    public boolean excluirUsuario(Usuario usuario) {
         boolean resultado = false;
-        String sql = "DELETE FROM Enderecos WHERE cep = ?";
+        String sql = "DELETE FROM Usuarios WHERE usuario = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, endereco.getCep());
+            stmt.setString(1, usuario.getLogin());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
@@ -86,5 +86,35 @@ public class EnderecoDAO {
             }
         }
         return resultado;
+    }
+
+    public Usuario fazerLogin(String login, String senha) {
+        String sql = "SELECT * FROM usuarios WHERE login = ? AND senha = ?";
+        Usuario usuario = null;
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, login);
+            stmt.setString(2, senha);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                usuario = new Usuario();
+                usuario.setLogin(rs.getString("login"));
+                usuario.setSenha(rs.getString("senha"));
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } finally {
+            try {
+                this.conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
+            }
+        }
+        return usuario;
     }
 }

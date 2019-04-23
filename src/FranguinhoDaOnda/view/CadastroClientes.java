@@ -1,14 +1,13 @@
 package FranguinhoDaOnda.view;
 
-import FranguinhoDaOnda.Cartao;
-import FranguinhoDaOnda.CartaoDAO;
-import FranguinhoDaOnda.ClienteDAO;
-import FranguinhoDaOnda.Cliente;
-import FranguinhoDaOnda.ClienteTableModel;
-import FranguinhoDaOnda.Endereco;
-import FranguinhoDaOnda.EnderecoDAO;
-import FranguinhoDaOnda.Telefone;
-import FranguinhoDaOnda.TelefoneDAO;
+import FranguinhoDaOnda.dao.CartaoDAO;
+import FranguinhoDaOnda.dao.ClienteDAO;
+import FranguinhoDaOnda.model.Cliente;
+import FranguinhoDaOnda.model.ClienteTableModel;
+import FranguinhoDaOnda.model.Endereco;
+import FranguinhoDaOnda.dao.EnderecoDAO;
+import FranguinhoDaOnda.model.Telefone;
+import FranguinhoDaOnda.dao.TelefoneDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -60,14 +59,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clbtInserir = new javax.swing.JButton();
         clBtAlterar = new javax.swing.JButton();
         clBtExcluir = new javax.swing.JButton();
-        cartNumero = new javax.swing.JLabel();
-        cartNumeroText = new javax.swing.JTextField();
-        cartBandeira = new javax.swing.JLabel();
-        cartBandeiraText = new javax.swing.JTextField();
-        cartValidade = new javax.swing.JLabel();
-        cartValidadeText = new javax.swing.JTextField();
-        cartCredeb = new javax.swing.JLabel();
-        cartCbDebcred = new javax.swing.JComboBox<>();
 
         CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -141,16 +132,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             }
         });
 
-        cartNumero.setText("Numero:");
-
-        cartBandeira.setText("Bandeira:");
-
-        cartValidade.setText("Validade:");
-
-        cartCredeb.setText("Tipo:");
-
-        cartCbDebcred.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Crédito", "Débito" }));
-
         javax.swing.GroupLayout CadastroClientesLayout = new javax.swing.GroupLayout(CadastroClientes);
         CadastroClientes.setLayout(CadastroClientesLayout);
         CadastroClientesLayout.setHorizontalGroup(
@@ -158,51 +139,45 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             .addGroup(CadastroClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(CadastroClientesLayout.createSequentialGroup()
                         .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(clRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                .addComponent(clCep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(clBairro)
-                            .addComponent(clComplemento)
-                            .addComponent(clPesquisar)
-                            .addComponent(cartNumero)
-                            .addComponent(cartBandeira)
-                            .addComponent(cartValidade)
-                            .addComponent(cartCredeb))
-                        .addGap(15, 15, 15)
-                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
-                                .addComponent(clPesquisarText)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(clBtProcurar))
-                            .addComponent(clRuaText, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(clCepText)
-                            .addComponent(clTelefoneText)
-                            .addComponent(clNomeText)
-                            .addComponent(clCpfText)
-                            .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-                            .addComponent(clNumeroText)
-                            .addComponent(clBairroText)
-                            .addComponent(clComplementoText)
-                            .addComponent(cartNumeroText)
-                            .addComponent(cartBandeiraText)
-                            .addComponent(cartValidadeText)
-                            .addComponent(cartCbDebcred, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(CadastroClientesLayout.createSequentialGroup()
+                                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(clRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                        .addComponent(clCep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(clBairro)
+                                    .addComponent(clComplemento)
+                                    .addComponent(clPesquisar))
+                                .addGap(15, 15, 15)
+                                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
+                                        .addComponent(clPesquisarText)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(clBtProcurar))
+                                    .addComponent(clRuaText, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(clCepText)
+                                    .addComponent(clTelefoneText)
+                                    .addComponent(clNomeText)
+                                    .addComponent(clCpfText)
+                                    .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                                    .addComponent(clNumeroText)
+                                    .addComponent(clBairroText)
+                                    .addComponent(clComplementoText))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(clBtExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clBtAlterar)
+                        .addGap(7, 7, 7)
+                        .addComponent(clbtInserir)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clbtInserir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clBtAlterar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clBtExcluir)
-                .addGap(12, 12, 12))
         );
         CadastroClientesLayout.setVerticalGroup(
             CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,28 +223,12 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clComplemento)
                     .addComponent(clComplementoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cartNumero)
-                    .addComponent(cartNumeroText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cartBandeira)
-                    .addComponent(cartBandeiraText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cartValidade)
-                    .addComponent(cartValidadeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cartCredeb)
-                    .addComponent(cartCbDebcred, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clBtExcluir)
                     .addComponent(clBtAlterar)
                     .addComponent(clbtInserir))
-                .addGap(12, 12, 12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,15 +242,14 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             .addComponent(CadastroClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setBounds(0, 0, 729, 612);
+        setBounds(0, 0, 729, 487);
     }// </editor-fold>//GEN-END:initComponents
 
     private void clBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtAlterarMouseClicked
         // ALTERAR CLIENTES
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
-                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
-                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // ALTERAR CLIENTE
@@ -311,20 +269,11 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             end.setRua(clRuaText.getText());
             end.setBairro(clBairroText.getText());
             cl.setEnd(end);
-            // COLETAR CARTÃO
-            Cartao cart = new Cartao();
-            cart.setNumero(cartNumeroText.getText());
-            cart.setBandeira(cartBandeiraText.getText());
-            cart.setValidade(cartValidadeText.getText());
-            cart.setDebcred(cartCbDebcred.getSelectedIndex());
-            cl.setCart(cart);
             //MUDAR DADOS DO CLIENTE
             EnderecoDAO enddao = new EnderecoDAO();
-            CartaoDAO cartdao = new CartaoDAO();
             ClienteDAO cldao = new ClienteDAO();
             TelefoneDAO teldao = new TelefoneDAO();
             enddao.alterarEndereco(end);
-            cartdao.alterarCartao(cart);
             cldao.alterarCliente(cl);
             teldao.alterarTelefone(cl);
             // INFORMAR A MUDANÇA DE DADOS
@@ -335,8 +284,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         // INSERIR CLIENTE
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
-                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
-                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // INSERIR CLIENTE
@@ -356,20 +304,11 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             end.setRua(clRuaText.getText());
             end.setBairro(clBairroText.getText());
             cl.setEnd(end);
-            // COLETAR CARTÃO
-            Cartao cart = new Cartao();
-            cart.setNumero(cartNumeroText.getText());
-            cart.setBandeira(cartBandeiraText.getText());
-            cart.setValidade(cartValidadeText.getText());
-            cart.setDebcred(cartCbDebcred.getSelectedIndex());
-            cl.setCart(cart);
             //INSERIR DADOS DO CLIENTE
             EnderecoDAO enddao = new EnderecoDAO();
-            CartaoDAO cartdao = new CartaoDAO();
             ClienteDAO cldao = new ClienteDAO();
             TelefoneDAO teldao = new TelefoneDAO();
             enddao.inserirEndereco(end);
-            cartdao.inserirCartao(cart);
             cldao.inserirCliente(cl);
             teldao.inserirTelefone(cl);
             // INFORMAR INSERÇÂO DE DADOS
@@ -395,8 +334,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         // EXCLUIR CLIENTE
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
-                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")
-                || cartNumeroText.getText().equals("") || cartBandeiraText.getText().equals("") || cartValidadeText.getText().equals("")) {
+                || clCpfText.getText().equals("") || clNomeText.getText().equals("") || clNumeroText.getText().equals("") || clComplementoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // COLETAR DADOS DO CLIENTE
@@ -415,20 +353,12 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             end.setRua(clRuaText.getText());
             end.setBairro(clBairroText.getText());
             cl.setEnd(end);
-            // COLETAR CARTÃO
-            Cartao cart = new Cartao();
-            cart.setNumero(cartNumeroText.getText());
-            cart.setBandeira(cartBandeiraText.getText());
-            cart.setValidade(cartValidadeText.getText());
-            cart.setDebcred(cartCbDebcred.getSelectedIndex());
-            cl.setCart(cart);
             //EXCLUIR DADOS DO CLIENTE
             EnderecoDAO enddao = new EnderecoDAO();
             CartaoDAO cartdao = new CartaoDAO();
             ClienteDAO cldao = new ClienteDAO();
             TelefoneDAO teldao = new TelefoneDAO();
             enddao.excluirEndereco(end);
-            cartdao.excluirCartao(cart);
             cldao.excluirCliente(cl);
             teldao.excluirTelefone(cl);
             // INFORMAR EXCLUSÃO DE DADOS
@@ -453,9 +383,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             clNumeroText.setText(cliente1.getNumero_residencial());
             clBairroText.setText(cliente1.getEnd().getBairro());
             clComplementoText.setText(cliente1.getComplemento());
-            cartNumeroText.setText(cliente1.getCart().getNumero());
-            cartBandeiraText.setText(cliente1.getCart().getBandeira());
-            cartValidadeText.setText(cliente1.getCart().getValidade());
         }
     }//GEN-LAST:event_clJTMouseClicked
 
@@ -497,14 +424,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cadastro;
     private javax.swing.JPanel CadastroClientes;
-    private javax.swing.JLabel cartBandeira;
-    private javax.swing.JTextField cartBandeiraText;
-    private javax.swing.JComboBox<String> cartCbDebcred;
-    private javax.swing.JLabel cartCredeb;
-    private javax.swing.JLabel cartNumero;
-    private javax.swing.JTextField cartNumeroText;
-    private javax.swing.JLabel cartValidade;
-    private javax.swing.JTextField cartValidadeText;
     private javax.swing.JLabel clBairro;
     private javax.swing.JTextField clBairroText;
     private javax.swing.JButton clBtAlterar;

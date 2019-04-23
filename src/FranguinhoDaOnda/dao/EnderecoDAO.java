@@ -1,30 +1,31 @@
-package FranguinhoDaOnda;
+package FranguinhoDaOnda.dao;
 
+import FranguinhoDaOnda.model.Endereco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class UsuarioDAO {
+public class EnderecoDAO {
 
     private Connection conexao;
 
     // MÉTODO CONSTRUTOR
-    public UsuarioDAO() {
+    public EnderecoDAO() {
         conexao = ConnectionFactory.getConnection();
     }
 
     // MÉTODO INSERIR
-    public boolean inserirUsuario(Usuario usuario) {
+    public boolean inserirEndereco(Endereco endereco) {
         boolean resultado = false;
-        String sql = "INSERT INTO Usuarios(login,senha,tipo) "
+        String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, usuario.getUsuario());
-            stmt.setString(2, usuario.getSenha());
-            stmt.setString(3, usuario.getTipo());
+            stmt.setString(1, endereco.getCep());
+            stmt.setString(2, endereco.getRua());
+            stmt.setString(3, endereco.getBairro());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -41,15 +42,17 @@ public class UsuarioDAO {
     }
 
     // MÉTODO ALTERAR
-    public boolean alterarUsuario(Usuario usuario) {
+    public boolean alterarEndereco(Endereco endereco) {
         boolean resultado = false;
-        String sql = "UPDATE Usuarios SET login = ?, senha = ? tipo= ?, where login = ?";
+
+        String sql = "update clientes set nome = ?, endereco = ?, sexo = ?, telefone = ?, celular = ? where cpf = ?";
+
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, usuario.getUsuario());
-            stmt.setString(2, usuario.getSenha());
-            stmt.setString(3, usuario.getTipo());
-            stmt.executeUpdate();
+            stmt.setString(1, endereco.getCep());
+            stmt.setString(2, endereco.getRua());
+            stmt.setString(3, endereco.getBairro());
+            stmt.execute();
             stmt.close();
             resultado = true;
         } catch (SQLException ex) {
@@ -65,12 +68,12 @@ public class UsuarioDAO {
     }
 
     // MÉTODO EXCLUIR
-    public boolean excluirUsuario(Usuario usuario) {
+    public boolean excluirEndereco(Endereco endereco) {
         boolean resultado = false;
-        String sql = "DELETE FROM Usuarios WHERE usuario = ?";
+        String sql = "DELETE FROM Enderecos WHERE cep = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, usuario.getUsuario());
+            stmt.setString(1, endereco.getCep());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
