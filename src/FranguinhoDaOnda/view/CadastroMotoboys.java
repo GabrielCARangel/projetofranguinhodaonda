@@ -47,7 +47,7 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motBtAlterar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
 
-        motCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        motCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         motCadastrar.setText("Cadastro de Motoboys");
         motCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

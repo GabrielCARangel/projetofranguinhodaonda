@@ -47,7 +47,7 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdDescricaoText = new javax.swing.JTextField();
         prdPreco1 = new javax.swing.JLabel();
 
-        prdCadastrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        prdCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prdCadastrar.setText("Cadastro de Produtos");
 

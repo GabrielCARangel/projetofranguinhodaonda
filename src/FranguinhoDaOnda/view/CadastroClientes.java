@@ -62,7 +62,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
 
         CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Cadastro.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        Cadastro.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         Cadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Cadastro.setText("Cadastro de Clientes");
         Cadastro.setToolTipText("");
@@ -100,6 +100,8 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clNome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         clTelefone.setText("Telefone:");
+
+        clTelefoneText.setToolTipText("");
 
         clCep.setText("CEP:");
 
@@ -139,37 +141,34 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             .addGroup(CadastroClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(CadastroClientesLayout.createSequentialGroup()
                         .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CadastroClientesLayout.createSequentialGroup()
-                                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(clRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(clNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(clTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                        .addComponent(clCep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(clCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(clNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(clBairro)
-                                    .addComponent(clComplemento)
-                                    .addComponent(clPesquisar))
-                                .addGap(15, 15, 15)
-                                .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
-                                        .addComponent(clPesquisarText)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(clBtProcurar))
-                                    .addComponent(clRuaText, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(clCepText)
-                                    .addComponent(clTelefoneText)
-                                    .addComponent(clNomeText)
-                                    .addComponent(clCpfText)
-                                    .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-                                    .addComponent(clNumeroText)
-                                    .addComponent(clBairroText)
-                                    .addComponent(clComplementoText))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(clRua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                .addComponent(clCep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(clBairro)
+                            .addComponent(clComplemento)
+                            .addComponent(clPesquisar))
+                        .addGap(15, 15, 15)
+                        .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
+                                .addComponent(clPesquisarText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clBtProcurar))
+                            .addComponent(clRuaText, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(clCepText)
+                            .addComponent(clTelefoneText)
+                            .addComponent(clNomeText)
+                            .addComponent(clCpfText)
+                            .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addComponent(clNumeroText)
+                            .addComponent(clBairroText)
+                            .addComponent(clComplementoText)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(clBtExcluir)
@@ -177,7 +176,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                         .addComponent(clBtAlterar)
                         .addGap(7, 7, 7)
                         .addComponent(clbtInserir)))
-                .addContainerGap())
+                .addGap(11, 11, 11))
         );
         CadastroClientesLayout.setVerticalGroup(
             CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
