@@ -1,7 +1,7 @@
 package FranguinhoDaOnda.model;
 
 public class Telefone {
-
+    
     private String numero;
 
     public Telefone() {

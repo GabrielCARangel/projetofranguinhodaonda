@@ -16,6 +16,7 @@ import javax.swing.ListSelectionModel;
 public class CadastroProdutos extends javax.swing.JInternalFrame {
 
     private ProdutoTableModel produtoTableModel;
+    private Produto produto1;
 
     public CadastroProdutos() {
         initComponents();
@@ -35,8 +36,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdBtPesquisar = new javax.swing.JButton();
         prdScPesquisar = new javax.swing.JScrollPane();
         prdTbPesquisar = new javax.swing.JTable();
-        prdCodigo = new javax.swing.JLabel();
-        prdCodigoText = new javax.swing.JTextField();
         prdNome = new javax.swing.JLabel();
         prdNomeText = new javax.swing.JTextField();
         prdPreco = new javax.swing.JLabel();
@@ -74,8 +73,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             }
         });
         prdScPesquisar.setViewportView(prdTbPesquisar);
-
-        prdCodigo.setText("Código:");
 
         prdNome.setText("Nome:");
 
@@ -122,7 +119,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
                     .addGroup(CadastroProdutosLayout.createSequentialGroup()
                         .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(prdCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(prdNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(prdPreco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(prdPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,7 +126,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(prdNomeText, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(prdCodigoText)
                             .addComponent(prdPrecoText)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroProdutosLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -155,10 +150,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
                     .addComponent(prdPesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(prdScPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prdCodigo)
-                    .addComponent(prdCodigoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prdNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,18 +183,17 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             .addComponent(CadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setBounds(0, 0, 718, 455);
+        setBounds(0, 0, 718, 430);
     }// </editor-fold>//GEN-END:initComponents
 
     private void prdBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtInserirMouseClicked
         // INSERIR PRODUTO
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
-        if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
+        if (prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // COLETAR DADOS DO PRODUTO
             Produto prd = new Produto();
-            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
             prd.setNome(prdNomeText.getText());
             prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
             prd.setDescricao(prdDescricaoText.getText());
@@ -232,12 +222,12 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
     private void prdBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtAlterarMouseClicked
         // ALTERAR PRODUTOS
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
-        if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
+        if (prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
             // COLETAR DADOS DO PRODUTO
             Produto prd = new Produto();
-            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
+            prd.setCodigo(produto1.getCodigo());
             prd.setNome(prdNomeText.getText());
             prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
             prd.setDescricao(prdDescricaoText.getText());
@@ -252,18 +242,12 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
     private void prdBtExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtExcluirMouseClicked
         // EXCLUIR PRODUTOS
         // VERIFICAR SE AS LACUNAS ESTÃO PREENCHIDAS
-        if (prdCodigoText.getText().equals("") || prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
+        if (prdNomeText.getText().equals("") || prdPrecoText.getText().equals("") || prdDescricaoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            // COLETAR DADOS DO PRODUTO
-            Produto prd = new Produto();
-            prd.setCodigo(Integer.parseInt(prdCodigoText.getText()));
-            prd.setNome(prdNomeText.getText());
-            prd.setPreco(Double.parseDouble(prdPrecoText.getText()));
-            prd.setDescricao(prdDescricaoText.getText());
             // EXCLUIR DADOS DO PRODUTO
             ProdutoDAO prddao = new ProdutoDAO();
-            prddao.excluirProduto(prd);
+            prddao.excluirProduto(produto1);
             // INFORMAR A EXCLUSÃO DE DADOS
             JOptionPane.showMessageDialog(null, "Dados excluidos com sucesso!");
         }
@@ -275,9 +259,8 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Necessário selecionar um registro para editar.");
         } else {
             //BUSCAR DADOS DA LINHA SELECIONADA
-            Produto produto1 = produtoTableModel.getProduto(linha);
+            produto1 = produtoTableModel.getProduto(linha);
             //CARREGAR A JANELA DE EXIBIÇÃO
-            prdCodigoText.setText(String.valueOf(produto1.getCodigo()));
             prdNomeText.setText(produto1.getNome());
             prdPrecoText.setText(String.valueOf(produto1.getPreco()));
             prdDescricaoText.setText(produto1.getDescricao());
@@ -326,8 +309,6 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
     private javax.swing.JButton prdBtInserir;
     private javax.swing.JButton prdBtPesquisar;
     private javax.swing.JLabel prdCadastrar;
-    private javax.swing.JLabel prdCodigo;
-    private javax.swing.JTextField prdCodigoText;
     private javax.swing.JTextField prdDescricaoText;
     private javax.swing.JLabel prdNome;
     private javax.swing.JTextField prdNomeText;

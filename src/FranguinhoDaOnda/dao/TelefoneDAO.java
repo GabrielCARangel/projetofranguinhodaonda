@@ -18,7 +18,7 @@ public class TelefoneDAO {
     // MÉTODO INSERIR
     public boolean inserirTelefone(Cliente cliente) {
         boolean resultado = false;
-        String sql = "INSERT INTO Telefones(numero, Clientes_cpf) "
+        String sql = "INSERT INTO telefones(numero, Clientes_cpf) "
                 + "VALUES(?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -42,11 +42,12 @@ public class TelefoneDAO {
     // MÉTODO ALTERAR
     public boolean alterarTelefone(Cliente cliente) {
         boolean resultado = false;
-        String sql = "UPDATE Telefones SET numero = ?, Clientes_cpf = ? WHERE numero = ?";
+        String sql = "UPDATE telefones SET numero = ?, Clientes_cpf = ? WHERE numero = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getTel().getNumero());
             stmt.setString(2, cliente.getCpf());
+            stmt.setString(3, cliente.getTel().getNumero());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -65,7 +66,7 @@ public class TelefoneDAO {
     // MÉTODO EXCLUIR
     public boolean excluirTelefone(Cliente cliente) {
         boolean resultado = false;
-        String sql = "DELETE FROM Telefones WHERE numero = ?";
+        String sql = "DELETE FROM telefones WHERE numero = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getTel().getNumero());

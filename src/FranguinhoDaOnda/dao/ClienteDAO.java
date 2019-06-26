@@ -22,8 +22,8 @@ public class ClienteDAO {
     // MÉTODO INSERIR
     public boolean inserirCliente(Cliente cliente) {
         boolean resultado = false;
-        String sql = "INSERT INTO Clientes(cpf,nome,numero_residencial,complemento,Enderecos_cep,Cartoes_numero) "
-                + "VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO Clientes(cpf,nome,numero_residencial,complemento,Enderecos_cep) "
+                + "VALUES(?,?,?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -82,10 +82,10 @@ public class ClienteDAO {
     public ArrayList<Cliente> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
         ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT c.*, t.numero, e.*, car.* FROM franguinho_da_onda.clientes c\n"
+        String sql = "SELECT c.*, t.numero, e.* FROM franguinho_da_onda.clientes c\n"
                 + "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n"
                 + "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n"
-                + "INNER JOIN Cartoes car ON car.numero = c.Cartoes_numero WHERE nome LIKE ?";
+                + "WHERE nome LIKE ?"; 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
@@ -123,13 +123,14 @@ public class ClienteDAO {
     // MÉTODO ALTERAR
     public boolean alterarCliente(Cliente cliente) {
         boolean resultado = false;
-        String sql = "UPDATE clientes SET cpf = ?, nome = ?, numero_residencial = ?, complemento = ?, WHERE cpf = ?";
+        String sql = "UPDATE clientes SET cpf = ?, nome = ?, numero_residencial = ?, complemento = ? WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getCpf());
             stmt.setString(2, cliente.getNome());
             stmt.setString(3, cliente.getNumero_residencial());
             stmt.setString(4, cliente.getComplemento());
+            stmt.setString(5, cliente.getCpf());
             stmt.execute();
             stmt.close();
             resultado = true;

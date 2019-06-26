@@ -18,14 +18,14 @@ public class CartaoDAO {
     // MÉTODO INSERIR
     public boolean inserirCartao(Cartao cartao) {
         boolean resultado = false;
-        String sql = "INSERT INTO Cartoes(numero,bandeira,validade,debcred)"
+        String sql = "INSERT INTO cartoes(numero,bandeira,validade,debcred)"
                 + "VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cartao.getNumero());
             stmt.setString(2, cartao.getBandeira());
             stmt.setString(3, cartao.getValidade());
-            stmt.setInt(4, (int) cartao.getDebcred());
+            stmt.setInt(4, cartao.getDebcred());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -44,13 +44,13 @@ public class CartaoDAO {
     // MÉTODO ALTERAR
     public boolean alterarCartao(Cartao cartao) {
         boolean resultado = false;
-        String sql = "UPDATE Cartoes set numero = ?, bandeira = ?, validade = ?, debcred = ? WHERE numero = ?";
+        String sql = "UPDATE cartoes set numero = ?, bandeira = ?, validade = ?, debcred = ? WHERE numero = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cartao.getNumero());
             stmt.setString(2, cartao.getBandeira());
             stmt.setString(3, cartao.getValidade());
-            stmt.setInt(4, (int) cartao.getDebcred());
+            stmt.setInt(4, cartao.getDebcred());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -69,7 +69,7 @@ public class CartaoDAO {
     // MÉTODO EXCLUIR
     public boolean excluirCartao(Cartao cartao) {
         boolean resultado = false;
-        String sql = "DELETE FROM Cartoes WHERE numero = ?";
+        String sql = "DELETE FROM cartoes WHERE numero = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cartao.getNumero());

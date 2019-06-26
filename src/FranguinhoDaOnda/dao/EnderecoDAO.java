@@ -18,7 +18,7 @@ public class EnderecoDAO {
     // MÉTODO INSERIR
     public boolean inserirEndereco(Endereco endereco) {
         boolean resultado = false;
-        String sql = "INSERT INTO Enderecos(cep,rua,bairro) "
+        String sql = "INSERT INTO enderecos(cep,rua,bairro) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
@@ -45,13 +45,14 @@ public class EnderecoDAO {
     public boolean alterarEndereco(Endereco endereco) {
         boolean resultado = false;
 
-        String sql = "update clientes set nome = ?, endereco = ?, sexo = ?, telefone = ?, celular = ? where cpf = ?";
+        String sql = "UPDATE enderecos SET cep = ?, rua = ?, bairro = ? WHERE cep = ?";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, endereco.getCep());
             stmt.setString(2, endereco.getRua());
             stmt.setString(3, endereco.getBairro());
+            stmt.setString(4, endereco.getCep());
             stmt.execute();
             stmt.close();
             resultado = true;
@@ -70,7 +71,7 @@ public class EnderecoDAO {
     // MÉTODO EXCLUIR
     public boolean excluirEndereco(Endereco endereco) {
         boolean resultado = false;
-        String sql = "DELETE FROM Enderecos WHERE cep = ?";
+        String sql = "DELETE FROM enderecos WHERE cep = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, endereco.getCep());

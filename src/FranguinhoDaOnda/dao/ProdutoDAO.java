@@ -20,13 +20,13 @@ public class ProdutoDAO {
     // MÉTODO INSERIR
     public boolean inserirProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "INSERT INTO Produtos(codigo,nome,preco,descricao) "
+        String sql = "INSERT INTO produtos(codigo,nome,preco,descricao) "
                 + "VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produto.getCodigo());
+            stmt.setInt(1, produto.getCodigo());
             stmt.setString(2, produto.getNome());
-            stmt.setDouble(3, (double) produto.getPreco());
+            stmt.setDouble(3, produto.getPreco());
             stmt.setString(4, produto.getDescricao());
             stmt.execute();
             stmt.close();
@@ -47,7 +47,7 @@ public class ProdutoDAO {
     public ArrayList<Produto> getlist() {
         ArrayList<Produto> arrayProdutos = new ArrayList<>();
         // Comando SQL = SELECT * FROM Produtos ORDER BY nome"
-        String sql = "SELECT * FROM Produtos ORDER BY nome";
+        String sql = "SELECT * FROM produtos ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -76,7 +76,7 @@ public class ProdutoDAO {
     public ArrayList<Produto> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
         ArrayList<Produto> arrayProdutos = new ArrayList<>();
-        String sql = "SELECT * FROM Produtos WHERE nome LIKE ? ORDER BY nome";
+        String sql = "SELECT * FROM produtos WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
@@ -106,13 +106,13 @@ public class ProdutoDAO {
     // MÉTODO ALTERAR
     public boolean alterarProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "UPDATE Produtos SET codigo = ?, nome = ?, preco = ? WHERE codigo = ?, WHERE descricao = ?";
+        String sql = "UPDATE produtos SET nome = ?, preco = ?, descricao = ? WHERE codigo = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) produto.getCodigo());
-            stmt.setString(2, produto.getNome());
-            stmt.setDouble(3, (double) produto.getPreco());
-            stmt.setString(4, produto.getDescricao());
+            stmt.setString(1, produto.getNome());
+            stmt.setDouble(2, produto.getPreco());
+            stmt.setString(3, produto.getDescricao());
+            stmt.setInt(4, produto.getCodigo());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
@@ -131,7 +131,7 @@ public class ProdutoDAO {
     // MÉTODO EXCLUIR
     public boolean excluirProduto(Produto produto) {
         boolean resultado = false;
-        String sql = "DELETE FROM clientes WHERE cpf = ?";
+        String sql = "DELETE FROM produtos WHERE codigo = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, (int) produto.getCodigo());

@@ -20,7 +20,7 @@ public class MotoboyDAO {
     // MÉTODO INSERIR
     public boolean inserirMotoboy(Motoboy motoboys) {
         boolean resultado = false;
-        String sql = "INSERT INTO Motoboys(placa,nome,cpf,numero) "
+        String sql = "INSERT INTO motoboys(placa,nome,cpf,numero) "
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
         try {
@@ -48,7 +48,7 @@ public class MotoboyDAO {
     public ArrayList<Motoboy> getlist() {
         ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
         // Comando SQL = SELECT * FROM Motoboys ORDER BY nome"
-        String sql = "SELECT * FROM Motoboys ORDER BY nome";
+        String sql = "SELECT * FROM motoboys ORDER BY nome";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class MotoboyDAO {
     public ArrayList<Motoboy> getlistByNome(String nome) {
         nome = "%" + nome.trim() + "%";
         ArrayList<Motoboy> arrayMotoboys = new ArrayList<>();
-        String sql = "SELECT * FROM Motoboys WHERE nome LIKE ? ORDER BY nome";
+        String sql = "SELECT * FROM motoboys WHERE nome LIKE ? ORDER BY nome";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, nome);
@@ -108,7 +108,7 @@ public class MotoboyDAO {
     // MÉTODO ALTERAR
     public boolean alterarMotoboy(Motoboy motoboy) {
         boolean resultado = false;
-        String sql = "UPDATE Motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
+        String sql = "UPDATE motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, motoboy.getCpf());
@@ -133,7 +133,7 @@ public class MotoboyDAO {
     // MÉTODO EXCLUIR
     public boolean excluirMotoboy(Motoboy motoboy) {
         boolean resultado = false;
-        String sql = "DELETE FROM Motoboys WHERE cpf = ?";
+        String sql = "DELETE FROM motoboys WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, motoboy.getCpf());

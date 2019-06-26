@@ -19,7 +19,7 @@ public class UsuarioDAO {
     // MÉTODO INSERIR
     public boolean inserirUsuario(Usuario usuario) {
         boolean resultado = false;
-        String sql = "INSERT INTO Usuarios(login,senha,tipo) "
+        String sql = "INSERT INTO usuarios(login,senha,tipo) "
                 + "VALUES(?,?,?)";
         PreparedStatement stmt;
         try {
@@ -45,7 +45,7 @@ public class UsuarioDAO {
     // MÉTODO ALTERAR
     public boolean alterarUsuario(Usuario usuario) {
         boolean resultado = false;
-        String sql = "UPDATE Usuarios SET login = ?, senha = ? tipo= ?, where login = ?";
+        String sql = "UPDATE usuarios SET login = ?, senha = ? tipo= ?, where login = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario.getLogin());
@@ -69,7 +69,7 @@ public class UsuarioDAO {
     // MÉTODO EXCLUIR
     public boolean excluirUsuario(Usuario usuario) {
         boolean resultado = false;
-        String sql = "DELETE FROM Usuarios WHERE usuario = ?";
+        String sql = "DELETE FROM usuarios WHERE usuario = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario.getLogin());
