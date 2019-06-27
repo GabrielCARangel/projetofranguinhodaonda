@@ -115,6 +115,7 @@ public class MotoboyDAO {
             stmt.setString(2, motoboy.getNome());
             stmt.setString(3, motoboy.getPlaca());
             stmt.setString(4, motoboy.getNumero());
+            stmt.setString(5, motoboy.getCpf());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;
