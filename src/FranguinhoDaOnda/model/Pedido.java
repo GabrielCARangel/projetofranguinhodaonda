@@ -4,18 +4,12 @@ public class Pedido {
 
     private int numero;
     private double preco_final;
+    private String situacao;
 
-    public void finalizarPedido() {
-
-    }
-
-    public void realizarPagamento() {
-
-    }
-
-    public Pedido(int numero, double preco_final) {
+    public Pedido(int numero, double preco_final, String situacao) {
         this.numero = numero;
         this.preco_final = preco_final;
+        this.situacao = situacao;
     }
 
     public int getNumero() {
@@ -34,4 +28,11 @@ public class Pedido {
         this.preco_final = preco_final;
     }
 
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
 }

@@ -7,10 +7,6 @@ public class Produto {
     private Double preco;
     private String descricao;
 
-    public void registrarProdutos() {
-
-    }
-
     public Produto() {
     }
 
