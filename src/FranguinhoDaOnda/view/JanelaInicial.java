@@ -17,6 +17,7 @@ public class JanelaInicial extends javax.swing.JFrame {
     CadastroClientes cc = new CadastroClientes();
     CadastroMotoboys cm = new CadastroMotoboys();
     CadastroProdutos cp = new CadastroProdutos();
+    Pedidos pe = new Pedidos();
 
     /**
      * Creates new form JanelaInicial
@@ -45,6 +46,8 @@ public class JanelaInicial extends javax.swing.JFrame {
         MICadastrarClientes = new javax.swing.JMenuItem();
         MICadastrarMotoboys = new javax.swing.JMenuItem();
         MICadastrarProdutos = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        MIPedidos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,6 +124,18 @@ public class JanelaInicial extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setText("Pedidos...");
+
+        MIPedidos.setText("Lista de Pedidos");
+        MIPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MIPedidosMouseClicked(evt);
+            }
+        });
+        jMenu2.add(MIPedidos);
+
+        jMenuBar1.add(jMenu2);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,19 +163,21 @@ internalteste.setVisible(true);*/
 
     private void MICadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarClientesActionPerformed
         Desktop.add(cc);
-        if (cm.isVisible() || cp.isVisible()) {
+        if (cm.isVisible() || cp.isVisible() || pe.isVisible()) {
             cm.setVisible(false);
             cp.setVisible(false);
+            pe.setVisible(false);
         }
-        Desktop.setSize(716, 573);
+        Desktop.size();
         cc.setVisible(true);
     }//GEN-LAST:event_MICadastrarClientesActionPerformed
 
     private void MICadastrarMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarMotoboysActionPerformed
         Desktop.add(cm);
-        if (cc.isVisible() || cp.isVisible()) {
+        if (cc.isVisible() || cp.isVisible() || pe.isVisible()) {
             cc.setVisible(false);
             cp.setVisible(false);
+            pe.setVisible(false);
         }
         Desktop.size();
         cm.setVisible(true);
@@ -168,13 +185,25 @@ internalteste.setVisible(true);*/
 
     private void MICadastrarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarProdutosActionPerformed
         Desktop.add(cp);
-        if (cc.isVisible() || cm.isVisible()) {
+        if (cc.isVisible() || cm.isVisible() || pe.isVisible()) {
             cc.setVisible(false);
             cm.setVisible(false);
+            pe.setVisible(false);
         }
         Desktop.size();
         cp.setVisible(true);
     }//GEN-LAST:event_MICadastrarProdutosActionPerformed
+
+    private void MIPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MIPedidosMouseClicked
+        Desktop.add(pe);
+        if (cc.isVisible() || cm.isVisible() || pe.isVisible()) {
+            cc.setVisible(false);
+            cm.setVisible(false);
+            pe.setVisible(false);
+        }
+        Desktop.size();
+        pe.setVisible(true);
+    }//GEN-LAST:event_MIPedidosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -216,8 +245,10 @@ internalteste.setVisible(true);*/
     private javax.swing.JMenuItem MICadastrarClientes;
     private javax.swing.JMenuItem MICadastrarMotoboys;
     private javax.swing.JMenuItem MICadastrarProdutos;
+    private javax.swing.JMenuItem MIPedidos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

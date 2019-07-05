@@ -18,12 +18,15 @@ public class ItemDePedidoDAO {
 
     // MÉTODO INSERIR
     public boolean inserirCliente(ItemDePedido itemdepedido) {
-        String sql = "INSERT INTO ItemDePedido(quantidade) "
-                + "VALUES(?)";
+        String sql = "INSERT INTO ItemDePedido(codigo, quantidade, Pedidos_numero, Produtos_cdigo) "
+                + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setInt(1, (int) itemdepedido.getQuantidade());
+            stmt.setLong(1, itemdepedido.getCodigo());
+            stmt.setInt(2, itemdepedido.getQuantidade());
+            stmt.setInt(3, itemdepedido.getPrd().getCodigo());
+            stmt.setLong(4, itemdepedido.getPe().getNumero());
             stmt.execute();
             stmt.close();
             status = true;

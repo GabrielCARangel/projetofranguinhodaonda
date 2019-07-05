@@ -5,6 +5,9 @@
  */
 package FranguinhoDaOnda.view;
 
+import FranguinhoDaOnda.model.PedidoTableModel;
+import javax.swing.ListSelectionModel;
+
 /**
  *
  * @author sala302b
@@ -14,8 +17,11 @@ public class Pedidos extends javax.swing.JFrame {
     /**
      * Creates new form Pedidos
      */
+     private PedidoTableModel pedidoTableModel;
+    
     public Pedidos() {
         initComponents();
+        setarCaracteristicasTabela();
     }
 
     /**
@@ -43,9 +49,12 @@ public class Pedidos extends javax.swing.JFrame {
 
         pePesquisar.setText("Pesquisar:");
 
-        pePesquisarText.setPreferredSize(new java.awt.Dimension(4, 19));
-
         peBtPesquisar.setText("Procurar");
+        peBtPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                peBtPesquisarMouseClicked(evt);
+            }
+        });
 
         peJT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,10 +82,10 @@ public class Pedidos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PedidosLayout.createSequentialGroup()
-                                .addComponent(pePesquisarText, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pePesquisarText)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(peBtPesquisar))
-                            .addComponent(peSP))))
+                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         PedidosLayout.setVerticalGroup(
@@ -91,7 +100,7 @@ public class Pedidos extends javax.swing.JFrame {
                     .addComponent(pePesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(peSP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,11 +111,21 @@ public class Pedidos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+   private void setarCaracteristicasTabela() {
+        //seleção para a linha inteira
+        this.peJT.setCellSelectionEnabled(false);
+        this.peJT.setRowSelectionAllowed(true);
+        //selecionar apenas uma linha
+        this.peJT.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    }
+    private void peBtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peBtPesquisarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_peBtPesquisarMouseClicked
 
     /**
      * @param args the command line arguments

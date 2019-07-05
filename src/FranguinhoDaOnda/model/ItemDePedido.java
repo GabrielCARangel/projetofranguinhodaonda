@@ -2,19 +2,23 @@ package FranguinhoDaOnda.model;
 
 public class ItemDePedido {
     
-    private int codigo;
+    private long codigo;
     private int quantidade;
+    Produto prd;
+    Pedido pe;
 
-    public ItemDePedido(int codigo, int quantidade) {
+    public ItemDePedido(long codigo, int quantidade, Produto prd, Pedido pe) {
         this.codigo = codigo;
         this.quantidade = quantidade;
+        this.prd = prd;
+        this.pe = pe;
     }
 
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
@@ -25,4 +29,21 @@ public class ItemDePedido {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    public Produto getPrd() {
+        return prd;
+    }
+
+    public void setPrd(Produto prd) {
+        this.prd = prd;
+    }
+
+    public Pedido getPe() {
+        return pe;
+    }
+
+    public void setPe(Pedido pe) {
+        this.pe = pe;
+    }
+    
 }

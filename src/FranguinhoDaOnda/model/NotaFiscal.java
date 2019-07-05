@@ -22,6 +22,9 @@ public class NotaFiscal {
         this.iddest = iddest;
     }
 
+    public NotaFiscal() {
+    }
+    
     public int getSerie() {
         return serie;
     }
