@@ -27,7 +27,7 @@ public class PedidoTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 7;
+        return 11;
     }
 
     @Override
@@ -48,6 +48,15 @@ public class PedidoTableModel extends AbstractTableModel {
                 return pedido.nf.getNnf();
             case 6:
                 return pedido.cl.getCpf();
+            // TERMINAR!
+            case 7:
+            //    return itemdepedido.getCodigo();
+            case 8:
+            //    return itemdepedido.getQuantidade();
+            case 9:
+            //   return itemdepedido.prd.getCodigo();
+            case 10:
+            //    return itemdepedido.pe.getNumero();
             default:
                 return "";
         }
@@ -70,6 +79,14 @@ public class PedidoTableModel extends AbstractTableModel {
                 return "Nota Fiscal";
             case 6:
                 return "CPF";
+            case 7:
+                return "Código do Pedido";
+            case 8:
+                return "Quantidade";
+            case 9:
+                return "Código do Produto";
+            case 10:
+                return "Número";
             default:
                 return "";
         }

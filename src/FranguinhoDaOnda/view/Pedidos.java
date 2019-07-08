@@ -5,7 +5,10 @@
  */
 package FranguinhoDaOnda.view;
 
+import FranguinhoDaOnda.dao.PedidoDAO;
+import FranguinhoDaOnda.model.Pedido;
 import FranguinhoDaOnda.model.PedidoTableModel;
+import java.util.ArrayList;
 import javax.swing.ListSelectionModel;
 
 /**
@@ -116,7 +119,8 @@ public class Pedidos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   private void setarCaracteristicasTabela() {
+    // PREPARAR TABELAS
+    private void setarCaracteristicasTabela() {
         //seleção para a linha inteira
         this.peJT.setCellSelectionEnabled(false);
         this.peJT.setRowSelectionAllowed(true);
@@ -124,7 +128,12 @@ public class Pedidos extends javax.swing.JFrame {
         this.peJT.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
     private void peBtPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peBtPesquisarMouseClicked
-        // TODO add your handling code here:
+        // PESQUISAR PEDIDOS
+        PedidoDAO pedidodao = new PedidoDAO();
+        // Terminar!
+        //ArrayList<Pedido> pedidos = pedidodao.getlist(pePesquisarText.getText());
+        //pedidoTableModel = new PedidoTableModel(pedidos);
+        peJT.setModel(pedidoTableModel);
     }//GEN-LAST:event_peBtPesquisarMouseClicked
 
     /**

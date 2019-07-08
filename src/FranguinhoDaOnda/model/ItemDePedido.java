@@ -14,6 +14,9 @@ public class ItemDePedido {
         this.pe = pe;
     }
 
+    public ItemDePedido() {
+    }
+
     public long getCodigo() {
         return codigo;
     }

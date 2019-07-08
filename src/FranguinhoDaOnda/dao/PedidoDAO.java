@@ -6,12 +6,11 @@
 package FranguinhoDaOnda.dao;
 
 import FranguinhoDaOnda.model.Cliente;
-import FranguinhoDaOnda.model.Endereco;
 import FranguinhoDaOnda.model.ItemDePedido;
 import FranguinhoDaOnda.model.Motoboy;
 import FranguinhoDaOnda.model.NotaFiscal;
 import FranguinhoDaOnda.model.Pedido;
-import FranguinhoDaOnda.model.Telefone;
+import FranguinhoDaOnda.model.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -58,11 +57,11 @@ public class PedidoDAO {
     // MÉTODO LISTAR
     public ArrayList<Pedido> getlist() {
         ArrayList<Pedido> arrayPedidos = new ArrayList<>();
-        String sql = "SELECT numero, preco_final, situacao, formapagamento, m.placa FROM franguinho_da_onda.motoboys"
-                + "INNER JOIN Motoboys m ON p.cpf = t.Motoboys_placa"
-                + "INNER JOIN "
-                + "INNER JOIN "
-                + "SELECT * FROM Clientes WHERE nome LIKE ? ORDER BY nome";
+        String sql = "SELECT p.numero, p.preco_final, p.situacao, p.formapagamento, m.placa, nf.nnf, cl.cpf, idp.codigo, idp.quantidade "
+                + "FROM franguinho_da_onda.pedidos AS p, franguinho_da_onda.motoboys AS m, franguinho_da_onda.notasfiscais AS nf, franguinho_da_onda.clientes AS cl, "
+                + "franguinho_da_onda.itensdepedidos AS idp, franguinho_da_onda.produtos AS prd "
+                + "WHERE m.placa = p.Motoboys_placa AND nf.nnf = p.NotasFiscais_nnf AND cl.cpf = p.Clientes_cpf AND "
+                + "p.numero = idp.Pedidos_numero AND prd.codigo = idp.Produtos_codigo";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -71,10 +70,23 @@ public class PedidoDAO {
                 Motoboy motoboy = new Motoboy();
                 NotaFiscal notafiscal = new NotaFiscal();
                 Cliente cliente = new Cliente();
+                Produto produto = new Produto();
+                ItemDePedido itemdepedido = new ItemDePedido();
                 pedido.setNumero(rs.getLong("numero"));
                 pedido.setPreco_final(rs.getDouble("precofinal"));
                 pedido.setSituacao(rs.getString("situacao"));
                 pedido.setFormapagamento(rs.getString("formapagamento"));
+                motoboy.setPlaca(rs.getString("placa"));
+                notafiscal.setNnf(rs.getString("nnf"));
+                cliente.setCpf(rs.getString("cpf"));
+                itemdepedido.setCodigo(rs.getLong("codigo"));
+                itemdepedido.setQuantidade(rs.getInt("quantidade"));
+                produto.setCodigo(rs.getInt("codigo"));
+                pedido.setMot(motoboy);
+                pedido.setNf(notafiscal);
+                pedido.setCl(cliente);
+                itemdepedido.setPrd(produto);
+                itemdepedido.setPe(pedido);
                 arrayPedidos.add(pedido);
             }
             stmt.close();
@@ -89,46 +101,5 @@ public class PedidoDAO {
             }
         }
         return arrayPedidos;
-    }
-
-    public ArrayList<Cliente> getlistByNome(String nome) {
-        nome = "%" + nome.trim() + "%";
-        ArrayList<Cliente> arrayClientes = new ArrayList<>();
-        String sql = "SELECT c.*, t.numero, e.* FROM franguinho_da_onda.clientes c\n"
-                + "INNER JOIN Telefones t ON c.cpf = t.Clientes_cpf\n"
-                + "INNER JOIN Enderecos e ON e.cep = c.Enderecos_cep\n"
-                + "WHERE nome LIKE ?"; 
-        try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, nome);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                Cliente cliente = new Cliente();
-                Telefone telefone = new Telefone();
-                Endereco endereco = new Endereco();
-                cliente.setCpf(rs.getString("cpf"));
-                cliente.setNome(rs.getString("nome"));
-                telefone.setNumero(rs.getString("numero"));
-                endereco.setCep(rs.getString("cep"));
-                endereco.setRua(rs.getString("rua"));
-                cliente.setNumero_residencial(rs.getString("numero_residencial"));
-                endereco.setBairro(rs.getString("bairro"));
-                cliente.setComplemento(rs.getString("complemento"));
-                cliente.setTel(telefone);
-                cliente.setEnd(endereco);
-                arrayClientes.add(cliente);
-            }
-            stmt.close();
-            rs.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
-        } finally {
-            try {
-                conexao.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
-            }
-        }
-        return arrayClientes;
     }  
 }
