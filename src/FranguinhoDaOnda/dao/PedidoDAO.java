@@ -57,7 +57,7 @@ public class PedidoDAO {
     // MÉTODO LISTAR
     public ArrayList<Pedido> getlist() {
         ArrayList<Pedido> arrayPedidos = new ArrayList<>();
-        String sql = "SELECT p.numero, p.preco_final, p.situacao, p.formapagamento, m.placa, nf.nnf, cl.cpf, idp.codigo, idp.quantidade "
+        String sql = "SELECT p.numero, p.preco_final, p.situacao, p.formapagamento, m.placa, nf.nnf, cl.cpf, idp.codigo, idp.quantidade, prd.codigo "
                 + "FROM franguinho_da_onda.pedidos AS p, franguinho_da_onda.motoboys AS m, franguinho_da_onda.notasfiscais AS nf, franguinho_da_onda.clientes AS cl, "
                 + "franguinho_da_onda.itensdepedidos AS idp, franguinho_da_onda.produtos AS prd "
                 + "WHERE m.placa = p.Motoboys_placa AND nf.nnf = p.NotasFiscais_nnf AND cl.cpf = p.Clientes_cpf AND "

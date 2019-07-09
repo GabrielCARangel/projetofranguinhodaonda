@@ -37,26 +37,23 @@ public class PedidoTableModel extends AbstractTableModel {
             case 0:
                 return pedido.getNumero();
             case 1:
-                return pedido.getPreco_final();
+                return pedido.getIdp().getCodigo();
             case 2:
-                return pedido.getFormapagamento();
+                return pedido.getIdp().prd.getCodigo();
             case 3:
-                return pedido.getSituacao();
+                return pedido.getIdp().getQuantidade();
             case 4:
-                return pedido.mot.getPlaca();
+                return pedido.getPreco_final();
             case 5:
-                return pedido.nf.getNnf();
+                return pedido.getFormapagamento();
             case 6:
-                return pedido.cl.getCpf();
-            // TERMINAR!
+                return pedido.getSituacao();
             case 7:
-            //    return itemdepedido.getCodigo();
+                return pedido.cl.getCpf();
             case 8:
-            //    return itemdepedido.getQuantidade();
+                return pedido.mot.getPlaca();
             case 9:
-            //   return itemdepedido.prd.getCodigo();
-            case 10:
-            //    return itemdepedido.pe.getNumero();
+                return pedido.nf.getNnf();
             default:
                 return "";
         }
@@ -68,25 +65,23 @@ public class PedidoTableModel extends AbstractTableModel {
             case 0:
                 return "Número";
             case 1:
-                return "Preço Final";
-            case 2:
-                return "Forma do Pagamento";
-            case 3:
-                return "Situação";
-            case 4:
-                return "Placa do Motoby";
-            case 5:
-                return "Nota Fiscal";
-            case 6:
-                return "CPF";
-            case 7:
                 return "Código do Pedido";
-            case 8:
-                return "Quantidade";
-            case 9:
+            case 2:   
                 return "Código do Produto";
-            case 10:
-                return "Número";
+            case 3:
+                return "Quantidade";
+            case 4:
+                return "Preço Final";
+            case 5:
+                return "Forma de Pagamento";
+            case 6:
+                return "Situação";
+            case 7:
+                return "CPF";
+            case 8:
+                return "Placa do Motoboy";
+            case 9:
+                return "Nota Fiscal";
             default:
                 return "";
         }
