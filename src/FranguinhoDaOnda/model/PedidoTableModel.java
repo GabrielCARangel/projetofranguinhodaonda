@@ -27,7 +27,7 @@ public class PedidoTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 10;
     }
 
     @Override
