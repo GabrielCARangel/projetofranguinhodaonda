@@ -22,6 +22,7 @@ public class Pedidos extends javax.swing.JInternalFrame {
      */
     private PedidoTableModel pedidoTableModel;
     
+    
     public Pedidos() {
         initComponents();
         setarCaracteristicasTabela();
@@ -97,7 +98,7 @@ public class Pedidos extends javax.swing.JInternalFrame {
                                 .addComponent(pePesquisarText)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(peBtPesquisar))
-                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE))))
+                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,7 +113,7 @@ public class Pedidos extends javax.swing.JInternalFrame {
                     .addComponent(pePesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(peSP, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,7 +139,6 @@ public class Pedidos extends javax.swing.JInternalFrame {
     private void peBtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peBtPesquisarActionPerformed
         // PESQUISAR PEDIDOS
         PedidoDAO pedidodao = new PedidoDAO();
-        // Terminar!
         ArrayList<Pedido> pedidos = pedidodao.getlist();
         pedidoTableModel = new PedidoTableModel(pedidos);
         peJT.setModel(pedidoTableModel);

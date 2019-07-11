@@ -7,6 +7,7 @@ package FranguinhoDaOnda.view;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,11 +51,14 @@ public class JanelaInicial extends javax.swing.JFrame {
         MIPedidos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 84)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 960));
+
+        jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 64)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Franguino da Onda!");
+        jLabel1.setText("FranguinHo da Onda!");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,15 +66,15 @@ public class JanelaInicial extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(325, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(247, 247, 247)
                 .addComponent(jLabel1)
-                .addGap(300, 300, 300))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
 
         Desktop.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -79,11 +83,13 @@ public class JanelaInicial extends javax.swing.JFrame {
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cadastrar...");
@@ -132,6 +138,11 @@ public class JanelaInicial extends javax.swing.JFrame {
                 MIPedidosMouseClicked(evt);
             }
         });
+        MIPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MIPedidosActionPerformed(evt);
+            }
+        });
         jMenu2.add(MIPedidos);
 
         jMenuBar1.add(jMenu2);
@@ -162,48 +173,52 @@ internalteste.setVisible(true);*/
     }//GEN-LAST:event_jMenu1MouseClicked
 
     private void MICadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarClientesActionPerformed
-        Desktop.add(cc);
         if (cm.isVisible() || cp.isVisible() || pe.isVisible()) {
             cm.setVisible(false);
             cp.setVisible(false);
             pe.setVisible(false);
         }
+        Desktop.add(cc);
         Desktop.size();
         cc.setVisible(true);
     }//GEN-LAST:event_MICadastrarClientesActionPerformed
 
     private void MICadastrarMotoboysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarMotoboysActionPerformed
-        Desktop.add(cm);
         if (cc.isVisible() || cp.isVisible() || pe.isVisible()) {
             cc.setVisible(false);
             cp.setVisible(false);
             pe.setVisible(false);
         }
+        Desktop.add(cm);
         Desktop.size();
         cm.setVisible(true);
     }//GEN-LAST:event_MICadastrarMotoboysActionPerformed
 
     private void MICadastrarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MICadastrarProdutosActionPerformed
-        Desktop.add(cp);
         if (cc.isVisible() || cm.isVisible() || pe.isVisible()) {
             cc.setVisible(false);
             cm.setVisible(false);
             pe.setVisible(false);
         }
+        Desktop.add(cp);
         Desktop.size();
         cp.setVisible(true);
     }//GEN-LAST:event_MICadastrarProdutosActionPerformed
 
     private void MIPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MIPedidosMouseClicked
-        Desktop.add(pe);
-        if (cc.isVisible() || cm.isVisible() || pe.isVisible()) {
+
+    }//GEN-LAST:event_MIPedidosMouseClicked
+
+    private void MIPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIPedidosActionPerformed
+        if (cc.isVisible() || cm.isVisible() || cp.isVisible()) {
             cc.setVisible(false);
             cm.setVisible(false);
-            pe.setVisible(false);
+            cp.setVisible(false);
         }
+        Desktop.add(pe);
         Desktop.size();
         pe.setVisible(true);
-    }//GEN-LAST:event_MIPedidosMouseClicked
+    }//GEN-LAST:event_MIPedidosActionPerformed
 
     /**
      * @param args the command line arguments

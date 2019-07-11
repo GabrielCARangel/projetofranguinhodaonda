@@ -65,21 +65,21 @@ public class PedidoTableModel extends AbstractTableModel {
             case 0:
                 return "Número";
             case 1:
-                return "Código do Pedido";
+                return "Cód. Pedido";
             case 2:   
-                return "Código do Produto";
+                return "Cód. Produto";
             case 3:
                 return "Quantidade";
             case 4:
                 return "Preço Final";
             case 5:
-                return "Forma de Pagamento";
+                return "Pagamento";
             case 6:
                 return "Situação";
             case 7:
                 return "CPF";
             case 8:
-                return "Placa do Motoboy";
+                return "Plc. do Motoboy";
             case 9:
                 return "Nota Fiscal";
             default:
