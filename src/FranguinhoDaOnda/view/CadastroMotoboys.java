@@ -47,7 +47,10 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motBtAlterar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
 
+        CadastroMotoboys.setBackground(new java.awt.Color(255, 255, 255));
+
         motCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
+        motCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         motCadastrar.setText("Cadastro de Motoboys");
         motCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -194,7 +197,7 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             .addComponent(CadastroMotoboys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 721, 472);
+        setBounds(0, 0, 715, 472);
     }// </editor-fold>//GEN-END:initComponents
 
     private void motBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtInserirMouseClicked

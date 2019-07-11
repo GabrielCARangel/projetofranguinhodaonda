@@ -26,11 +26,11 @@ public class ProdutoTableModel extends AbstractTableModel {
         Produto produto = produtos.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return produto.getCodigo();
-            case 1:
                 return produto.getNome();
-            case 2:
+            case 1:
                 return produto.getPreco();
+            case 2:
+                return produto.getDescricao();
             default:
                 return "";
         }
@@ -40,11 +40,11 @@ public class ProdutoTableModel extends AbstractTableModel {
     public String getColumnName(int column) {
         switch (column) {
             case 0:
-                return "Codigo";
-            case 1:
                 return "Nome";
-            case 2:
+            case 1:
                 return "Preco";
+            case 2:
+                return "Descrição";
             default:
                 return "";
         }

@@ -11,6 +11,7 @@ import FranguinhoDaOnda.dao.TelefoneDAO;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 
@@ -21,11 +22,11 @@ import javax.swing.ListSelectionModel;
 public class CadastroClientes extends javax.swing.JInternalFrame {
 
     private ClienteTableModel clienteTableModel;
-
+    
     public CadastroClientes() {
         initComponents();
         Image img = Toolkit.getDefaultToolkit().getImage("src/images/icon.png");
-        setarCaracteristicasTabela();
+        setarCaracteristicasTabela();   
         //setIconImage(img);
     }
 
@@ -60,9 +61,13 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clBtAlterar = new javax.swing.JButton();
         clBtExcluir = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        CadastroClientes.setBackground(new java.awt.Color(255, 255, 255));
         CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Cadastro.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
+        Cadastro.setForeground(new java.awt.Color(0, 0, 0));
         Cadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Cadastro.setText("Cadastro de Clientes");
         Cadastro.setToolTipText("");
@@ -234,14 +239,14 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CadastroClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CadastroClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CadastroClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 729, 487);
+        setBounds(0, 0, 717, 479);
     }// </editor-fold>//GEN-END:initComponents
 
     private void clBtAlterarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtAlterarMouseClicked

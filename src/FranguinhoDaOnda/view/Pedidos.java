@@ -56,7 +56,10 @@ public class Pedidos extends javax.swing.JInternalFrame {
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         Pedido.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
+        Pedido.setForeground(new java.awt.Color(0, 0, 0));
         Pedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Pedido.setText("Pedidos");
 
@@ -98,7 +101,7 @@ public class Pedidos extends javax.swing.JInternalFrame {
                                 .addComponent(pePesquisarText)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(peBtPesquisar))
-                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE))))
+                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(

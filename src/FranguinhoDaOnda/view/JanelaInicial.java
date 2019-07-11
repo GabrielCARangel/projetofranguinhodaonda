@@ -53,10 +53,13 @@ public class JanelaInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        Desktop.setBackground(new java.awt.Color(204, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 960));
 
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 64)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("FranguinHo da Onda!");
 
@@ -178,7 +181,12 @@ internalteste.setVisible(true);*/
             cp.setVisible(false);
             pe.setVisible(false);
         }
-        Desktop.add(cc);
+        try {
+            Desktop.remove(cc);
+            Desktop.add(cc);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Desktop.size();
         cc.setVisible(true);
     }//GEN-LAST:event_MICadastrarClientesActionPerformed
@@ -189,7 +197,13 @@ internalteste.setVisible(true);*/
             cp.setVisible(false);
             pe.setVisible(false);
         }
-        Desktop.add(cm);
+        try {
+            Desktop.remove(cm);
+            Desktop.add(cm);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Desktop.size();
         cm.setVisible(true);
     }//GEN-LAST:event_MICadastrarMotoboysActionPerformed
@@ -200,7 +214,12 @@ internalteste.setVisible(true);*/
             cm.setVisible(false);
             pe.setVisible(false);
         }
-        Desktop.add(cp);
+        try {
+            Desktop.remove(cp);
+            Desktop.add(cp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Desktop.size();
         cp.setVisible(true);
     }//GEN-LAST:event_MICadastrarProdutosActionPerformed
@@ -215,7 +234,12 @@ internalteste.setVisible(true);*/
             cm.setVisible(false);
             cp.setVisible(false);
         }
-        Desktop.add(pe);
+        try {
+            Desktop.remove(pe);
+            Desktop.add(pe);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Desktop.size();
         pe.setVisible(true);
     }//GEN-LAST:event_MIPedidosActionPerformed

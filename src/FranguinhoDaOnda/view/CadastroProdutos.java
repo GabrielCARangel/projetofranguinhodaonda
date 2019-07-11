@@ -46,7 +46,10 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdDescricaoText = new javax.swing.JTextField();
         prdPreco1 = new javax.swing.JLabel();
 
+        CadastroProdutos.setBackground(new java.awt.Color(255, 255, 255));
+
         prdCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
+        prdCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prdCadastrar.setText("Cadastro de Produtos");
 
@@ -174,16 +177,14 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(CadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(CadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(CadastroProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setBounds(0, 0, 718, 430);
+        setBounds(0, 0, 712, 430);
     }// </editor-fold>//GEN-END:initComponents
 
     private void prdBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtInserirMouseClicked
