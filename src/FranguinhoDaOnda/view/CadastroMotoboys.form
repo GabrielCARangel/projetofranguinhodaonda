@@ -80,11 +80,13 @@
                                           <Component id="motPlacaText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
                                           <Component id="motTelefoneText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
+                                              <Component id="motBtLimpar" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="motBtAlterar" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
+                                              <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -134,6 +136,7 @@
                       <Component id="motBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="motBtLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -145,9 +148,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Showcard Gothic" size="36" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Motoboys"/>
@@ -222,12 +222,20 @@
         </Component>
         <Component class="javax.swing.JTextField" name="motTelefoneText">
         </Component>
-        <Component class="javax.swing.JButton" name="motBtInserir">
+        <Component class="javax.swing.JButton" name="motBtLimpar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
+            <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtInserirMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtLimparMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="motBtExcluir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtExcluirMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="motBtAlterar">
@@ -238,12 +246,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtAlterarMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="motBtExcluir">
+        <Component class="javax.swing.JButton" name="motBtInserir">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Excluir"/>
+            <Property name="text" type="java.lang.String" value="Inserir"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtExcluirMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="motBtInserirMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

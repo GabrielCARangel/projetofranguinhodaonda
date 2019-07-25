@@ -43,14 +43,14 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motPlacaText = new javax.swing.JTextField();
         motTelefone = new javax.swing.JLabel();
         motTelefoneText = new javax.swing.JTextField();
-        motBtInserir = new javax.swing.JButton();
-        motBtAlterar = new javax.swing.JButton();
+        motBtLimpar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
+        motBtAlterar = new javax.swing.JButton();
+        motBtInserir = new javax.swing.JButton();
 
         CadastroMotoboys.setBackground(new java.awt.Color(255, 255, 255));
 
         motCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        motCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         motCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         motCadastrar.setText("Cadastro de Motoboys");
         motCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -87,10 +87,17 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motTelefone.setText("Telefone:");
 
-        motBtInserir.setText("Inserir");
-        motBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+        motBtLimpar.setText("Limpar");
+        motBtLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                motBtInserirMouseClicked(evt);
+                motBtLimparMouseClicked(evt);
+            }
+        });
+
+        motBtExcluir.setText("Excluir");
+        motBtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                motBtExcluirMouseClicked(evt);
             }
         });
 
@@ -101,10 +108,10 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             }
         });
 
-        motBtExcluir.setText("Excluir");
-        motBtExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+        motBtInserir.setText("Inserir");
+        motBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                motBtExcluirMouseClicked(evt);
+                motBtInserirMouseClicked(evt);
             }
         });
 
@@ -143,11 +150,13 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
                                         .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(CadastroMotoboysLayout.createSequentialGroup()
-                                            .addComponent(motBtInserir)
+                                            .addComponent(motBtLimpar)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(motBtExcluir)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(motBtAlterar)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(motBtExcluir))))))
+                                            .addComponent(motBtInserir))))))
                         .addContainerGap())))
         );
         CadastroMotoboysLayout.setVerticalGroup(
@@ -182,7 +191,8 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(motBtExcluir)
                     .addComponent(motBtAlterar)
-                    .addComponent(motBtInserir))
+                    .addComponent(motBtInserir)
+                    .addComponent(motBtLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -206,17 +216,24 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         if (motCpfText.getText().equals("") || motNomeText.getText().equals("") || motPlacaText.getText().equals("") || motTelefoneText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, preencha todas as lacunas.");
         } else {
-            //COLETAR DADOS DO MOTOBOY
-            Motoboy mot = new Motoboy();
-            mot.setPlaca(motPlacaText.getText());
-            mot.setNome(motNomeText.getText());
-            mot.setCpf(motCpfText.getText());
-            mot.setNumero(motTelefoneText.getText());
-            //INSERIR DADOS DO MOTOBOY
+            //INSERIR MOTOBOYS
             MotoboyDAO motdao = new MotoboyDAO();
-            motdao.inserirMotoboy(mot);
-            // INFORMAR INSERÇÃO DE DADOS
-            JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
+            boolean resultado = motdao.verificarCPF(motCpfText.getText());
+            //VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
+            if (resultado == true) {
+                JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
+            } else {
+                //COLETAR DADOS DO MOTOBOY
+                Motoboy mot = new Motoboy();
+                mot.setPlaca(motPlacaText.getText());
+                mot.setNome(motNomeText.getText());
+                mot.setCpf(motCpfText.getText());
+                mot.setNumero(motTelefoneText.getText());
+                //INSERIR DADOS DO MOTOBOY
+                motdao.inserirMotoboy(mot);
+                // INFORMAR INSERÇÃO DE DADOS
+                JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
+            }
         }
     }//GEN-LAST:event_motBtInserirMouseClicked
     private void setarCaracteristicasTabela() {
@@ -286,8 +303,18 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             motNomeText.setText(motoboy1.getNome());
             motPlacaText.setText(motoboy1.getPlaca());
             motTelefoneText.setText(motoboy1.getNumero());
+            motCpfText.setEnabled(false);
         }
     }//GEN-LAST:event_motTbPesquisarMouseClicked
+
+    private void motBtLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_motBtLimparMouseClicked
+        // LIMPA A TELA DE CADASTRO
+        motCpfText.setText("");
+        motNomeText.setText("");
+        motPlacaText.setText("");
+        motTelefoneText.setText("");
+        motCpfText.setEnabled(true);
+    }//GEN-LAST:event_motBtLimparMouseClicked
 
     /**
      * @param args the command line arguments
@@ -329,6 +356,7 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
     private javax.swing.JButton motBtAlterar;
     private javax.swing.JButton motBtExcluir;
     private javax.swing.JButton motBtInserir;
+    private javax.swing.JButton motBtLimpar;
     private javax.swing.JButton motBtPesquisar;
     private javax.swing.JLabel motCadastrar;
     private javax.swing.JLabel motCpf;

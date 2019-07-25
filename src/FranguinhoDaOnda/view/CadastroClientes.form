@@ -94,13 +94,13 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbBtLimpar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="clBtExcluir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="clBtAlterar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                          <Component id="clbtInserir" min="-2" max="-2" attributes="0"/>
+                          <Component id="clBtInserir" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
@@ -164,8 +164,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="clBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="clbtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbBtLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -177,9 +177,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Showcard Gothic" size="36" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Clientes"/>
@@ -291,21 +288,12 @@
         </Component>
         <Component class="javax.swing.JTextField" name="clComplementoText">
         </Component>
-        <Component class="javax.swing.JButton" name="clbtInserir">
+        <Component class="javax.swing.JButton" name="cbBtLimpar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
+            <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clbtInserirMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clbtInserirActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="clBtAlterar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clBtAlterarMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cbBtLimparMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="clBtExcluir">
@@ -316,12 +304,21 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clBtExcluirMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="clBtAlterar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Limpar"/>
+            <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clBtAlterarMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="clBtInserir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inserir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clBtInserirMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clBtInserirActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -40,16 +40,16 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdNomeText = new javax.swing.JTextField();
         prdPreco = new javax.swing.JLabel();
         prdPrecoText = new javax.swing.JTextField();
-        prdBtInserir = new javax.swing.JButton();
-        prdBtAlterar = new javax.swing.JButton();
-        prdBtExcluir = new javax.swing.JButton();
-        prdDescricaoText = new javax.swing.JTextField();
         prdPreco1 = new javax.swing.JLabel();
+        prdDescricaoText = new javax.swing.JTextField();
+        prdBtLimpar = new javax.swing.JButton();
+        prdBtExcluir = new javax.swing.JButton();
+        prdBtAlterar = new javax.swing.JButton();
+        prdBtInserir = new javax.swing.JButton();
 
         CadastroProdutos.setBackground(new java.awt.Color(255, 255, 255));
 
         prdCadastrar.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        prdCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         prdCadastrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         prdCadastrar.setText("Cadastro de Produtos");
 
@@ -81,17 +81,12 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
 
         prdPreco.setText("Preço:");
 
-        prdBtInserir.setText("Inserir");
-        prdBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                prdBtInserirMouseClicked(evt);
-            }
-        });
+        prdPreco1.setText("Descrição:");
 
-        prdBtAlterar.setText("Alterar");
-        prdBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+        prdBtLimpar.setText("Limpar");
+        prdBtLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                prdBtAlterarMouseClicked(evt);
+                prdBtLimparMouseClicked(evt);
             }
         });
 
@@ -102,7 +97,19 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
             }
         });
 
-        prdPreco1.setText("Descrição:");
+        prdBtAlterar.setText("Alterar");
+        prdBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdBtAlterarMouseClicked(evt);
+            }
+        });
+
+        prdBtInserir.setText("Inserir");
+        prdBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prdBtInserirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CadastroProdutosLayout = new javax.swing.GroupLayout(CadastroProdutos);
         CadastroProdutos.setLayout(CadastroProdutosLayout);
@@ -114,6 +121,8 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
                     .addComponent(prdCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroProdutosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(prdBtLimpar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prdBtExcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(prdBtAlterar)
@@ -169,7 +178,8 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
                 .addGroup(CadastroProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prdBtInserir)
                     .addComponent(prdBtAlterar)
-                    .addComponent(prdBtExcluir))
+                    .addComponent(prdBtExcluir)
+                    .addComponent(prdBtLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -268,6 +278,13 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_prdTbPesquisarMouseClicked
 
+    private void prdBtLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prdBtLimparMouseClicked
+        // LIMPAR TELA DE CADASTRO
+        prdNomeText.setText("");
+        prdPrecoText.setText("");
+        prdDescricaoText.setText("");
+    }//GEN-LAST:event_prdBtLimparMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -308,6 +325,7 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
     private javax.swing.JButton prdBtAlterar;
     private javax.swing.JButton prdBtExcluir;
     private javax.swing.JButton prdBtInserir;
+    private javax.swing.JButton prdBtLimpar;
     private javax.swing.JButton prdBtPesquisar;
     private javax.swing.JLabel prdCadastrar;
     private javax.swing.JTextField prdDescricaoText;

@@ -49,6 +49,8 @@
                       <Component id="prdCadastrar" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="prdBtLimpar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="prdBtExcluir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="prdBtAlterar" min="-2" max="-2" attributes="0"/>
@@ -120,6 +122,7 @@
                       <Component id="prdBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="prdBtAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="prdBtExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prdBtLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -131,9 +134,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Showcard Gothic" size="36" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Cadastro de Produtos"/>
@@ -193,20 +193,19 @@
         </Component>
         <Component class="javax.swing.JTextField" name="prdPrecoText">
         </Component>
-        <Component class="javax.swing.JButton" name="prdBtInserir">
+        <Component class="javax.swing.JLabel" name="prdPreco1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
+            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtInserirMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="prdBtAlterar">
+        <Component class="javax.swing.JTextField" name="prdDescricaoText">
+        </Component>
+        <Component class="javax.swing.JButton" name="prdBtLimpar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar"/>
+            <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtAlterarMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtLimparMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="prdBtExcluir">
@@ -217,12 +216,21 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtExcluirMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="prdDescricaoText">
-        </Component>
-        <Component class="javax.swing.JLabel" name="prdPreco1">
+        <Component class="javax.swing.JButton" name="prdBtAlterar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+            <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtAlterarMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="prdBtInserir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inserir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="prdBtInserirMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

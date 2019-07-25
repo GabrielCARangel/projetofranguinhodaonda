@@ -57,10 +57,10 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clBairroText = new javax.swing.JTextField();
         clComplemento = new javax.swing.JLabel();
         clComplementoText = new javax.swing.JTextField();
-        clbtInserir = new javax.swing.JButton();
-        clBtAlterar = new javax.swing.JButton();
+        cbBtLimpar = new javax.swing.JButton();
         clBtExcluir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        clBtAlterar = new javax.swing.JButton();
+        clBtInserir = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -68,7 +68,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         CadastroClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Cadastro.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        Cadastro.setForeground(new java.awt.Color(0, 0, 0));
         Cadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Cadastro.setText("Cadastro de Clientes");
         Cadastro.setToolTipText("");
@@ -119,22 +118,10 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
 
         clComplemento.setText("Complemento:");
 
-        clbtInserir.setText("Inserir");
-        clbtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbBtLimpar.setText("Limpar");
+        cbBtLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clbtInserirMouseClicked(evt);
-            }
-        });
-        clbtInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clbtInserirActionPerformed(evt);
-            }
-        });
-
-        clBtAlterar.setText("Alterar");
-        clBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                clBtAlterarMouseClicked(evt);
+                cbBtLimparMouseClicked(evt);
             }
         });
 
@@ -145,10 +132,22 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Limpar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        clBtAlterar.setText("Alterar");
+        clBtAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                clBtAlterarMouseClicked(evt);
+            }
+        });
+
+        clBtInserir.setText("Inserir");
+        clBtInserir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clBtInserirMouseClicked(evt);
+            }
+        });
+        clBtInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clBtInserirActionPerformed(evt);
             }
         });
 
@@ -191,13 +190,13 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                             .addComponent(clComplementoText)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(cbBtLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clBtExcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clBtAlterar)
                         .addGap(7, 7, 7)
-                        .addComponent(clbtInserir)))
+                        .addComponent(clBtInserir)))
                 .addGap(11, 11, 11))
         );
         CadastroClientesLayout.setVerticalGroup(
@@ -248,8 +247,8 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clBtExcluir)
                     .addComponent(clBtAlterar)
-                    .addComponent(clbtInserir)
-                    .addComponent(jButton1))
+                    .addComponent(clBtInserir)
+                    .addComponent(cbBtLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -302,7 +301,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Dados alterados com sucesso!");
         }
     }//GEN-LAST:event_clBtAlterarMouseClicked
-    private void clbtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clbtInserirMouseClicked
+    private void clBtInserirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clBtInserirMouseClicked
         // INSERIR CLIENTE
         // VERIFICAR SE LACUNAS ESTÃO PREENCHIDAS
         if (clCepText.getText().equals("") || clRuaText.getText().equals("") || clBairroText.getText().equals("") || clTelefone.getText().equals("")
@@ -316,7 +315,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             boolean resultado = cldao.verificarCPF(clCpfText.getText());
             // VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
             if (resultado == true) {
-                JOptionPane.showMessageDialog(null, "CPF já cadastrado no sistema. Cadastro não realizado.");
+                JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
             } else {
                 // COLETAR DADOS DO CLIENTE
                 Cliente cl = new Cliente();
@@ -342,7 +341,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
             }
         }
-    }//GEN-LAST:event_clbtInserirMouseClicked
+    }//GEN-LAST:event_clBtInserirMouseClicked
     // PREPARAR TABELAS
 
     private void setarCaracteristicasTabela() {
@@ -416,12 +415,12 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_clJTMouseClicked
 
-    private void clbtInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clbtInserirActionPerformed
+    private void clBtInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clBtInserirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_clbtInserirActionPerformed
+    }//GEN-LAST:event_clBtInserirActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // LIMPA A TELA DE CADASTRO.
+    private void cbBtLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbBtLimparMouseClicked
+        // LIMPA A TELA DE CADASTRO
         clCpfText.setText("");
         clNomeText.setText("");
         clTelefoneText.setText("");
@@ -431,7 +430,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clBairroText.setText("");
         clComplementoText.setText("");
         clCpfText.setEnabled(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_cbBtLimparMouseClicked
 
     /**
      * @param args the command line arguments
@@ -471,10 +470,12 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cadastro;
     private javax.swing.JPanel CadastroClientes;
+    private javax.swing.JButton cbBtLimpar;
     private javax.swing.JLabel clBairro;
     private javax.swing.JTextField clBairroText;
     private javax.swing.JButton clBtAlterar;
     private javax.swing.JButton clBtExcluir;
+    private javax.swing.JButton clBtInserir;
     private javax.swing.JButton clBtProcurar;
     private javax.swing.JLabel clCep;
     private javax.swing.JTextField clCepText;
@@ -494,7 +495,5 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane clSP;
     private javax.swing.JLabel clTelefone;
     private javax.swing.JTextField clTelefoneText;
-    private javax.swing.JButton clbtInserir;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
