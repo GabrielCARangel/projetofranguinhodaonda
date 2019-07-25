@@ -64,7 +64,10 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Pedido" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="pePesquisar" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="pePesquisar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="pePedido" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -73,6 +76,7 @@
                                   <Component id="peBtPesquisar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="peSP" pref="749" max="32767" attributes="0"/>
+                              <Component id="cbPedido" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -93,7 +97,12 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="peSP" min="-2" pref="286" max="-2" attributes="0"/>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cbPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pePedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -145,6 +154,29 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="pePedido">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pedido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbPedido">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Aguardando Confirma&#xe7;&#xe3;o"/>
+                <StringItem index="1" value="Confirmado / Em produ&#xe7;&#xe3;o"/>
+                <StringItem index="2" value="Encaminhando"/>
+                <StringItem index="3" value="Finalizado"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPedidoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

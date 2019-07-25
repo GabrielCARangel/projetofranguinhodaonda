@@ -26,6 +26,9 @@ public class ClienteDAO {
                 + "VALUES(?,?,?,?,?)";
         PreparedStatement stmt;
         try {
+            if(conexao.isClosed()){
+                conexao = ConnectionFactory.getConnection();
+            }
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getCpf());
             stmt.setString(2, cliente.getNome());
@@ -168,4 +171,30 @@ public class ClienteDAO {
         }
         return resultado;
     }
+    
+    public boolean verificarCPF(String cpf) {
+      
+        boolean resultado = false;
+        String sql = "SELECT cpf FROM franguinho_da_onda.clientes WHERE cpf = ?"; 
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, cpf);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+               resultado = true;
+            }
+            stmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        return resultado;
+    }
+
 }

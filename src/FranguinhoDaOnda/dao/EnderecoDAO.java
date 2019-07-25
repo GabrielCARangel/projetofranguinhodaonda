@@ -30,7 +30,12 @@ public class EnderecoDAO {
             stmt.close();
             resultado = true;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            //Se der erro de chave primária duplicada
+            if(ex.getMessage().contains("Duplicate entry") && ex.getMessage().contains("for key 'PRIMARY")){
+                 resultado = true;
+            }else{
+                JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
         } finally {
             try {
                 conexao.close();

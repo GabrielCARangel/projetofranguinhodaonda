@@ -70,7 +70,6 @@ public class TelefoneDAO {
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cliente.getTel().getNumero());
-            stmt.setString(2, cliente.getCpf());
             stmt.executeUpdate();
             stmt.close();
             resultado = true;

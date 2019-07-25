@@ -49,6 +49,8 @@ public class Pedidos extends javax.swing.JInternalFrame {
         peBtPesquisar = new javax.swing.JButton();
         peSP = new javax.swing.JScrollPane();
         peJT = new javax.swing.JTable();
+        pePedido = new javax.swing.JLabel();
+        cbPedido = new javax.swing.JComboBox<>();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -85,6 +87,15 @@ public class Pedidos extends javax.swing.JInternalFrame {
         ));
         peSP.setViewportView(peJT);
 
+        pePedido.setText("Pedido:");
+
+        cbPedido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguardando Confirmação", "Confirmado / Em produção", "Encaminhando", "Finalizado" }));
+        cbPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPedidoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -94,14 +105,17 @@ public class Pedidos extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Pedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pePesquisar)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pePesquisar)
+                            .addComponent(pePedido))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(pePesquisarText)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(peBtPesquisar))
-                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE))))
+                            .addComponent(peSP, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
+                            .addComponent(cbPedido, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -116,7 +130,11 @@ public class Pedidos extends javax.swing.JInternalFrame {
                     .addComponent(pePesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(peSP, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pePedido))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,15 +165,22 @@ public class Pedidos extends javax.swing.JInternalFrame {
         peJT.setModel(pedidoTableModel);
     }//GEN-LAST:event_peBtPesquisarActionPerformed
 
+    private void cbPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPedidoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cbPedidoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Pedido;
+    private javax.swing.JComboBox<String> cbPedido;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton peBtPesquisar;
     private javax.swing.JTable peJT;
+    private javax.swing.JLabel pePedido;
     private javax.swing.JLabel pePesquisar;
     private javax.swing.JTextField pePesquisarText;
     private javax.swing.JScrollPane peSP;
