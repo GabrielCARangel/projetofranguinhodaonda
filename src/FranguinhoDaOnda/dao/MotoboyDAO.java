@@ -24,6 +24,9 @@ public class MotoboyDAO {
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
         try {
+            if(conexao.isClosed()){
+                conexao = ConnectionFactory.getConnection();
+            }
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, motoboys.getPlaca());
             stmt.setString(2, motoboys.getNome());
