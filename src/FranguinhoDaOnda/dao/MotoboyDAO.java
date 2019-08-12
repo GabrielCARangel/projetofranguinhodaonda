@@ -24,7 +24,7 @@ public class MotoboyDAO {
                 + "VALUES(?,?,?,?)";
         PreparedStatement stmt;
         try {
-            if(conexao.isClosed()){
+            if (conexao.isClosed()) {
                 conexao = ConnectionFactory.getConnection();
             }
             stmt = conexao.prepareStatement(sql);
@@ -139,6 +139,9 @@ public class MotoboyDAO {
         boolean resultado = false;
         String sql = "DELETE FROM motoboys WHERE cpf = ?";
         try {
+            if (conexao.isClosed()) {
+                conexao = ConnectionFactory.getConnection();
+            }
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, motoboy.getCpf());
             stmt.executeUpdate();
@@ -153,18 +156,20 @@ public class MotoboyDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
+        System.out.println(resultado);
         return resultado;
     }
-        public boolean verificarCPF(String cpf) {
-      
+
+    public boolean verificarCPF(String cpf) {
+
         boolean resultado = false;
-        String sql = "SELECT cpf FROM franguinho_da_onda.motoboys WHERE cpf = ?"; 
+        String sql = "SELECT cpf FROM franguinho_da_onda.motoboys WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cpf);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-               resultado = true;
+                resultado = true;
             }
             stmt.close();
             rs.close();
