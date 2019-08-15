@@ -45,6 +45,7 @@ public class MotoboyDAO {
             }
         }
         return resultado;
+
     }
 
     // MÉTODO LISTAR
@@ -113,6 +114,9 @@ public class MotoboyDAO {
         boolean resultado = false;
         String sql = "UPDATE motoboys SET cpf = ?, nome = ?, placa = ?, numero = ? WHERE cpf = ?";
         try {
+            if (conexao.isClosed()) {
+                conexao = ConnectionFactory.getConnection();
+            }
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, motoboy.getCpf());
             stmt.setString(2, motoboy.getNome());
@@ -120,6 +124,7 @@ public class MotoboyDAO {
             stmt.setString(4, motoboy.getNumero());
             stmt.setString(5, motoboy.getCpf());
             stmt.executeUpdate();
+            System.out.println("TESTE DAO");
             stmt.close();
             resultado = true;
         } catch (SQLException ex) {
@@ -156,7 +161,6 @@ public class MotoboyDAO {
                 JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         }
-        System.out.println(resultado);
         return resultado;
     }
 
