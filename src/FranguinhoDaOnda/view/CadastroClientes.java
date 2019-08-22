@@ -412,6 +412,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             clBairroText.setText(cliente1.getEnd().getBairro());
             clComplementoText.setText(cliente1.getComplemento());
             clCpfText.setEnabled(false);
+            clCepText.setEnabled(false);
         }
     }//GEN-LAST:event_clJTMouseClicked
 
@@ -430,6 +431,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clBairroText.setText("");
         clComplementoText.setText("");
         clCpfText.setEnabled(true);
+        clCepText.setEnabled(true);
     }//GEN-LAST:event_cbBtLimparMouseClicked
 
     /**
