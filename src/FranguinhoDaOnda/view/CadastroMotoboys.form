@@ -200,6 +200,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motCpfText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="motCpfTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="motNome">
           <Properties>
@@ -214,6 +217,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motPlacaText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="motPlacaTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="motTelefone">
           <Properties>
@@ -221,6 +227,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="motTelefoneText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="motTelefoneTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="motBtLimpar">
           <Properties>

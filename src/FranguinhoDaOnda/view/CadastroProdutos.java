@@ -3,6 +3,7 @@ package FranguinhoDaOnda.view;
 import FranguinhoDaOnda.model.Produto;
 import FranguinhoDaOnda.dao.ProdutoDAO;
 import FranguinhoDaOnda.model.ProdutoTableModel;
+import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -80,6 +81,12 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdNome.setText("Nome:");
 
         prdPreco.setText("Preço:");
+
+        prdPrecoText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                prdPrecoTextKeyTyped(evt);
+            }
+        });
 
         prdPreco1.setText("Descrição:");
 
@@ -284,6 +291,14 @@ public class CadastroProdutos extends javax.swing.JInternalFrame {
         prdPrecoText.setText("");
         prdDescricaoText.setText("");
     }//GEN-LAST:event_prdBtLimparMouseClicked
+
+    private void prdPrecoTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prdPrecoTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_prdPrecoTextKeyTyped
 
     /**
      * @param args the command line arguments

@@ -8,6 +8,7 @@ import FranguinhoDaOnda.model.Endereco;
 import FranguinhoDaOnda.dao.EnderecoDAO;
 import FranguinhoDaOnda.model.Telefone;
 import FranguinhoDaOnda.dao.TelefoneDAO;
+import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -101,18 +102,41 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clCpf.setText("CPF:");
         clCpf.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
+        clCpfText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                clCpfTextKeyTyped(evt);
+            }
+        });
+
         clNome.setText("Nome:");
         clNome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         clTelefone.setText("Telefone:");
 
         clTelefoneText.setToolTipText("");
+        clTelefoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                clTelefoneTextKeyTyped(evt);
+            }
+        });
 
         clCep.setText("CEP:");
+
+        clCepText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                clCepTextKeyTyped(evt);
+            }
+        });
 
         clRua.setText("Rua:");
 
         clNumero.setText("Numero:");
+
+        clNumeroText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                clNumeroTextKeyTyped(evt);
+            }
+        });
 
         clBairro.setText("Bairro:");
 
@@ -312,13 +336,15 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             EnderecoDAO enddao = new EnderecoDAO();
             ClienteDAO cldao = new ClienteDAO();
             TelefoneDAO teldao = new TelefoneDAO();
+            Cliente cl = new Cliente();
             boolean resultado = cldao.verificarCPF(clCpfText.getText());
+            boolean cpfcheck = cldao.checkCPF(clCpfText.getText());
             // VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
             if (resultado == true) {
                 JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
-            } else {
+            } else if (cpfcheck == true) {
+                JOptionPane.showMessageDialog(null, "CPF inválido.");
                 // COLETAR DADOS DO CLIENTE
-                Cliente cl = new Cliente();
                 cl.setCpf(clCpfText.getText());
                 cl.setNome(clNomeText.getText());
                 cl.setNumero_residencial(clNumeroText.getText());
@@ -433,6 +459,39 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clCpfText.setEnabled(true);
         clCepText.setEnabled(true);
     }//GEN-LAST:event_cbBtLimparMouseClicked
+
+    private void clCpfTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clCpfTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+
+    }//GEN-LAST:event_clCpfTextKeyTyped
+
+    private void clTelefoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clTelefoneTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_clTelefoneTextKeyTyped
+
+    private void clCepTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clCepTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_clCepTextKeyTyped
+
+    private void clNumeroTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clNumeroTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_clNumeroTextKeyTyped
 
     /**
      * @param args the command line arguments

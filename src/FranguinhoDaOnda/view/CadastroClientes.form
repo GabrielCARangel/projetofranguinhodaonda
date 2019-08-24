@@ -234,6 +234,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clCpfText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clCpfTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clNome">
           <Properties>
@@ -252,6 +255,9 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clTelefoneTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clCep">
           <Properties>
@@ -259,6 +265,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clCepText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clCepTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clRua">
           <Properties>
@@ -273,6 +282,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="clNumeroText">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clNumeroTextKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clBairro">
           <Properties>

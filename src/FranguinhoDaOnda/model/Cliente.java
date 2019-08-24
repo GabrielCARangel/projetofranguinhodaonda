@@ -8,14 +8,6 @@ public class Cliente {
     Cartao cart;
     Usuario login;
 
-    public void cadastrarCliente() {
-
-    }
-
-    public void ValidarCpf() {
-
-    }
-
     public Cliente() {
 
     }

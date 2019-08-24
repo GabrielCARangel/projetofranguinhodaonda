@@ -3,6 +3,7 @@ package FranguinhoDaOnda.view;
 import FranguinhoDaOnda.model.Motoboy;
 import FranguinhoDaOnda.dao.MotoboyDAO;
 import FranguinhoDaOnda.model.MotoboyTableModel;
+import com.sun.glass.events.KeyEvent;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -81,11 +82,29 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motCpf.setText("CPF:");
 
+        motCpfText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                motCpfTextKeyTyped(evt);
+            }
+        });
+
         motNome.setText("Nome:");
 
         motPlaca.setText("Placa:");
 
+        motPlacaText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                motPlacaTextKeyTyped(evt);
+            }
+        });
+
         motTelefone.setText("Telefone:");
+
+        motTelefoneText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                motTelefoneTextKeyTyped(evt);
+            }
+        });
 
         motBtLimpar.setText("Limpar");
         motBtLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -315,6 +334,30 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motTelefoneText.setText("");
         motCpfText.setEnabled(true);
     }//GEN-LAST:event_motBtLimparMouseClicked
+
+    private void motCpfTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motCpfTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_motCpfTextKeyTyped
+
+    private void motPlacaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motPlacaTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_motPlacaTextKeyTyped
+
+    private void motTelefoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motTelefoneTextKeyTyped
+        // Lacuna não pode aceitar letras
+        char c = evt.getKeyChar();
+        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_motTelefoneTextKeyTyped
 
     /**
      * @param args the command line arguments
