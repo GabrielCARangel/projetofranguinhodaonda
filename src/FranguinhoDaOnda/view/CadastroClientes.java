@@ -342,8 +342,9 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             // VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
             if (resultado == true) {
                 JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
-            } else if (cpfcheck == true) {
+            } else if (cpfcheck == false) {
                 JOptionPane.showMessageDialog(null, "CPF inválido.");
+            } else {
                 // COLETAR DADOS DO CLIENTE
                 cl.setCpf(clCpfText.getText());
                 cl.setNome(clNomeText.getText());

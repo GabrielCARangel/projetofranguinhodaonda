@@ -92,12 +92,6 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motPlaca.setText("Placa:");
 
-        motPlacaText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                motPlacaTextKeyTyped(evt);
-            }
-        });
-
         motTelefone.setText("Telefone:");
 
         motTelefoneText.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -238,9 +232,12 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             //INSERIR MOTOBOYS
             MotoboyDAO motdao = new MotoboyDAO();
             boolean resultado = motdao.verificarCPF(motCpfText.getText());
+            boolean cpfcheck = motdao.checarCPF(motCpfText.getText());
             //VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
             if (resultado == true) {
                 JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
+            } else if (cpfcheck == false) {
+                JOptionPane.showMessageDialog(null, "CPF inválido.");
             } else {
                 //COLETAR DADOS DO MOTOBOY
                 Motoboy mot = new Motoboy();
@@ -342,14 +339,6 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             evt.consume();
         }
     }//GEN-LAST:event_motCpfTextKeyTyped
-
-    private void motPlacaTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motPlacaTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_motPlacaTextKeyTyped
 
     private void motTelefoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motTelefoneTextKeyTyped
         // Lacuna não pode aceitar letras

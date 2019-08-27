@@ -197,7 +197,8 @@ public class ClienteDAO {
         }
         return resultado;
     }
-
+    
+    // Validar CPF
     public boolean checkCPF(String cpf) {
         // considera-se erro CPF's formados por uma sequencia de numeros iguais
         if (cpf.equals("00000000000")
@@ -215,7 +216,6 @@ public class ClienteDAO {
 
         // "try" - protege o codigo para eventuais erros de conversao de tipo (int)
         try {
-            // Calculo do 1o. Digito Verificador
             sm = 0;
             peso = 10;
             for (i = 0; i < 9; i++) {
