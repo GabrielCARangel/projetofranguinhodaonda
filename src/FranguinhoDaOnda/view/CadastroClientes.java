@@ -440,6 +440,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             clComplementoText.setText(cliente1.getComplemento());
             clCpfText.setEnabled(false);
             clCepText.setEnabled(false);
+            clTelefoneText.setEnabled(false);
         }
     }//GEN-LAST:event_clJTMouseClicked
 
@@ -459,6 +460,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clComplementoText.setText("");
         clCpfText.setEnabled(true);
         clCepText.setEnabled(true);
+        clTelefoneText.setEnabled(true);
     }//GEN-LAST:event_cbBtLimparMouseClicked
 
     private void clCpfTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clCpfTextKeyTyped
