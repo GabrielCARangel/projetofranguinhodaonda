@@ -46,55 +46,43 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="motCadastrar" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="motPesquisar" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="motCpf" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="motPlaca" alignment="0" max="32767" attributes="0"/>
                                   <Component id="motNome" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="motTelefone" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="motCadastrar" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="motPesquisar" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <Component id="motCpf" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="motPesquisarText" max="32767" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="motBtPesquisar" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="motNomeText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="motCpfText" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="motSpPesquiar" alignment="0" pref="600" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="motPlacaText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
-                                          <Component id="motTelefoneText" alignment="1" min="-2" pref="600" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="motBtLimpar" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="motBtAlterar" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="motPesquisarText" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="motBtPesquisar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="motNomeText" alignment="0" pref="600" max="32767" attributes="0"/>
+                              <Component id="motSpPesquiar" alignment="0" pref="600" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="motBtLimpar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="motBtExcluir" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="motBtAlterar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="motBtInserir" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="motCpfText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="motTelefoneText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="motPlacaText" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,8 +101,8 @@
                   <Component id="motSpPesquiar" min="-2" pref="181" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="motCpfText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="motCpfText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -123,13 +111,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="motPlacaText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="motPlacaText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="motTelefoneText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="motTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="motTelefone" min="-2" max="-2" attributes="0"/>
+                      <Component id="motTelefoneText" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -138,7 +126,7 @@
                       <Component id="motBtInserir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="motBtLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -199,10 +187,12 @@
             <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="motCpfText">
-          <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="motCpfTextKeyTyped"/>
-          </Events>
+        <Component class="javax.swing.JFormattedTextField" name="motCpfText">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="###.###.###-##" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="motNome">
           <Properties>
@@ -216,17 +206,24 @@
             <Property name="text" type="java.lang.String" value="Placa:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="motPlacaText">
+        <Component class="javax.swing.JFormattedTextField" name="motPlacaText">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="???-####" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="motTelefone">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="motTelefoneText">
-          <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="motTelefoneTextKeyTyped"/>
-          </Events>
+        <Component class="javax.swing.JFormattedTextField" name="motTelefoneText">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="(##) #####-####" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="motBtLimpar">
           <Properties>

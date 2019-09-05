@@ -37,13 +37,13 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motSpPesquiar = new javax.swing.JScrollPane();
         motTbPesquisar = new javax.swing.JTable();
         motCpf = new javax.swing.JLabel();
-        motCpfText = new javax.swing.JTextField();
+        motCpfText = new javax.swing.JFormattedTextField();
         motNome = new javax.swing.JLabel();
         motNomeText = new javax.swing.JTextField();
         motPlaca = new javax.swing.JLabel();
-        motPlacaText = new javax.swing.JTextField();
+        motPlacaText = new javax.swing.JFormattedTextField();
         motTelefone = new javax.swing.JLabel();
-        motTelefoneText = new javax.swing.JTextField();
+        motTelefoneText = new javax.swing.JFormattedTextField();
         motBtLimpar = new javax.swing.JButton();
         motBtExcluir = new javax.swing.JButton();
         motBtAlterar = new javax.swing.JButton();
@@ -82,23 +82,29 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
 
         motCpf.setText("CPF:");
 
-        motCpfText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                motCpfTextKeyTyped(evt);
-            }
-        });
+        try {
+            motCpfText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         motNome.setText("Nome:");
 
         motPlaca.setText("Placa:");
 
+        try {
+            motPlacaText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("???-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         motTelefone.setText("Telefone:");
 
-        motTelefoneText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                motTelefoneTextKeyTyped(evt);
-            }
-        });
+        try {
+            motTelefoneText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         motBtLimpar.setText("Limpar");
         motBtLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,42 +141,36 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
             .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(motCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(CadastroMotoboysLayout.createSequentialGroup()
                         .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(motPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(motCpf)
                             .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(motPlaca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(motNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(motTelefone))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(CadastroMotoboysLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(motCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(CadastroMotoboysLayout.createSequentialGroup()
-                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(motPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(motCpf))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
-                                        .addComponent(motPesquisarText)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(motBtPesquisar))
-                                    .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(motNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(motCpfText, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(motSpPesquiar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE))
-                                        .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(CadastroMotoboysLayout.createSequentialGroup()
-                                            .addComponent(motBtLimpar)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(motBtExcluir)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(motBtAlterar)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(motBtInserir))))))
-                        .addContainerGap())))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                                .addComponent(motPesquisarText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(motBtPesquisar))
+                            .addComponent(motNomeText, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addComponent(motSpPesquiar, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroMotoboysLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(motBtLimpar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(motBtExcluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(motBtAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(motBtInserir))
+                            .addComponent(motCpfText)
+                            .addComponent(motTelefoneText)
+                            .addComponent(motPlacaText))))
+                .addContainerGap())
         );
         CadastroMotoboysLayout.setVerticalGroup(
             CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,27 +186,27 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
                 .addComponent(motSpPesquiar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(motCpf))
+                    .addComponent(motCpf)
+                    .addComponent(motCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(motNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(motNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(motPlaca))
+                    .addComponent(motPlaca)
+                    .addComponent(motPlacaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(motTelefone))
+                .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(motTelefone)
+                    .addComponent(motTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroMotoboysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(motBtExcluir)
                     .addComponent(motBtAlterar)
                     .addComponent(motBtInserir)
                     .addComponent(motBtLimpar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,6 +249,11 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
                 motdao.inserirMotoboy(mot);
                 // INFORMAR INSERÇÃO DE DADOS
                 JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
+                // LIMPAR AS LACUNAS
+                motPlacaText.setText("");
+                motNomeText.setText("");
+                motCpfText.setText("");
+                motTelefoneText.setText("");
             }
         }
     }//GEN-LAST:event_motBtInserirMouseClicked
@@ -332,22 +337,6 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
         motCpfText.setEnabled(true);
     }//GEN-LAST:event_motBtLimparMouseClicked
 
-    private void motCpfTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motCpfTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_motCpfTextKeyTyped
-
-    private void motTelefoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_motTelefoneTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_motTelefoneTextKeyTyped
-
     /**
      * @param args the command line arguments
      */
@@ -392,16 +381,16 @@ public class CadastroMotoboys extends javax.swing.JInternalFrame {
     private javax.swing.JButton motBtPesquisar;
     private javax.swing.JLabel motCadastrar;
     private javax.swing.JLabel motCpf;
-    private javax.swing.JTextField motCpfText;
+    private javax.swing.JFormattedTextField motCpfText;
     private javax.swing.JLabel motNome;
     private javax.swing.JTextField motNomeText;
     private javax.swing.JLabel motPesquisar;
     private javax.swing.JTextField motPesquisarText;
     private javax.swing.JLabel motPlaca;
-    private javax.swing.JTextField motPlacaText;
+    private javax.swing.JFormattedTextField motPlacaText;
     private javax.swing.JScrollPane motSpPesquiar;
     private javax.swing.JTable motTbPesquisar;
     private javax.swing.JLabel motTelefone;
-    private javax.swing.JTextField motTelefoneText;
+    private javax.swing.JFormattedTextField motTelefoneText;
     // End of variables declaration//GEN-END:variables
 }

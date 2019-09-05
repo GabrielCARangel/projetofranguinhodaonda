@@ -43,13 +43,13 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clSP = new javax.swing.JScrollPane();
         clJT = new javax.swing.JTable();
         clCpf = new javax.swing.JLabel();
-        clCpfText = new javax.swing.JTextField();
+        clCpfText = new javax.swing.JFormattedTextField();
         clNome = new javax.swing.JLabel();
         clNomeText = new javax.swing.JTextField();
         clTelefone = new javax.swing.JLabel();
-        clTelefoneText = new javax.swing.JTextField();
+        clTelefoneText = new javax.swing.JFormattedTextField();
         clCep = new javax.swing.JLabel();
-        clCepText = new javax.swing.JTextField();
+        clCepText = new javax.swing.JFormattedTextField();
         clRua = new javax.swing.JLabel();
         clRuaText = new javax.swing.JTextField();
         clNumero = new javax.swing.JLabel();
@@ -102,9 +102,14 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clCpf.setText("CPF:");
         clCpf.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        clCpfText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                clCpfTextKeyTyped(evt);
+        try {
+            clCpfText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        clCpfText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clCpfTextActionPerformed(evt);
             }
         });
 
@@ -113,20 +118,19 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
 
         clTelefone.setText("Telefone:");
 
-        clTelefoneText.setToolTipText("");
-        clTelefoneText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                clTelefoneTextKeyTyped(evt);
-            }
-        });
+        try {
+            clTelefoneText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         clCep.setText("CEP:");
 
-        clCepText.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                clCepTextKeyTyped(evt);
-            }
-        });
+        try {
+            clCepText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         clRua.setText("Rua:");
 
@@ -184,7 +188,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CadastroClientesLayout.createSequentialGroup()
                         .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addGap(0, 5, Short.MAX_VALUE))
                     .addGroup(CadastroClientesLayout.createSequentialGroup()
                         .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -204,14 +208,14 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(clBtProcurar))
                             .addComponent(clRuaText, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(clCepText)
-                            .addComponent(clTelefoneText)
                             .addComponent(clNomeText)
-                            .addComponent(clCpfText)
                             .addComponent(clSP, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                             .addComponent(clNumeroText)
                             .addComponent(clBairroText)
-                            .addComponent(clComplementoText)))
+                            .addComponent(clComplementoText)
+                            .addComponent(clCpfText)
+                            .addComponent(clTelefoneText)
+                            .addComponent(clCepText)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroClientesLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(cbBtLimpar)
@@ -237,20 +241,20 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 .addComponent(clSP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clCpf))
+                    .addComponent(clCpf)
+                    .addComponent(clCpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clNomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clTelefone))
+                    .addComponent(clTelefone)
+                    .addComponent(clTelefoneText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clCepText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clCep))
+                    .addComponent(clCep)
+                    .addComponent(clCepText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clRuaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,6 +346,7 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             // VERIFICA SE CPF JÁ EXISTE NO BANCO DE DADOS
             if (resultado == true) {
                 JOptionPane.showMessageDialog(null, "CPF inserido já foi cadastrado.");
+            // VERIFICA SE O CPF É VÁLIDO    
             } else if (cpfcheck == false) {
                 JOptionPane.showMessageDialog(null, "CPF inválido.");
             } else {
@@ -364,8 +369,17 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
                 enddao.inserirEndereco(end);
                 cldao.inserirCliente(cl);
                 teldao.inserirTelefone(cl);
-                // INFORMAR INSERÇÂO DE DADOS
+                // INFORMAR INSERÇÃO DE DADOS
                 JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso!");
+                // LIMPAR AS LACUNAS
+                clCpfText.setText("");
+                clNomeText.setText("");
+                clNumeroText.setText("");
+                clComplementoText.setText("");
+                clTelefoneText.setText("");
+                clCepText.setText("");
+                clRuaText.setText("");
+                clBairroText.setText("");
             }
         }
     }//GEN-LAST:event_clBtInserirMouseClicked
@@ -463,31 +477,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
         clTelefoneText.setEnabled(true);
     }//GEN-LAST:event_cbBtLimparMouseClicked
 
-    private void clCpfTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clCpfTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-
-    }//GEN-LAST:event_clCpfTextKeyTyped
-
-    private void clTelefoneTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clTelefoneTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_clTelefoneTextKeyTyped
-
-    private void clCepTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clCepTextKeyTyped
-        // Lacuna não pode aceitar letras
-        char c = evt.getKeyChar();
-        if (!(Character.isDigit(c) || (c == KeyEvent.VK_BACKSPACE) || c == KeyEvent.VK_DELETE)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_clCepTextKeyTyped
-
     private void clNumeroTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clNumeroTextKeyTyped
         // Lacuna não pode aceitar letras
         char c = evt.getKeyChar();
@@ -495,6 +484,10 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
             evt.consume();
         }
     }//GEN-LAST:event_clNumeroTextKeyTyped
+
+    private void clCpfTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clCpfTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clCpfTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -542,11 +535,11 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton clBtInserir;
     private javax.swing.JButton clBtProcurar;
     private javax.swing.JLabel clCep;
-    private javax.swing.JTextField clCepText;
+    private javax.swing.JFormattedTextField clCepText;
     private javax.swing.JLabel clComplemento;
     private javax.swing.JTextField clComplementoText;
     private javax.swing.JLabel clCpf;
-    private javax.swing.JTextField clCpfText;
+    private javax.swing.JFormattedTextField clCpfText;
     private javax.swing.JTable clJT;
     private javax.swing.JLabel clNome;
     private javax.swing.JTextField clNomeText;
@@ -558,6 +551,6 @@ public class CadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField clRuaText;
     private javax.swing.JScrollPane clSP;
     private javax.swing.JLabel clTelefone;
-    private javax.swing.JTextField clTelefoneText;
+    private javax.swing.JFormattedTextField clTelefoneText;
     // End of variables declaration//GEN-END:variables
 }

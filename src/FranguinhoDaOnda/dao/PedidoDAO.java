@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
  * @author sala302b
  */
 public class PedidoDAO {
+
     private Connection conexao;
     boolean status;
 
@@ -31,9 +32,9 @@ public class PedidoDAO {
     public PedidoDAO() {
         conexao = ConnectionFactory.getConnection();
     }
-    
-        // MÉTODO INSERIR
-        public boolean inserirPedido(Pedido pedido) {
+
+    // MÉTODO INSERIR
+    public boolean inserirPedido(Pedido pedido) {
         String sql = "INSERT INTO pedido(numero, preco_final, situacao, formapagamento, Motoboys_placa, NotaFiscal_nnf, Clientes_cpf) "
                 + "VALUES(?,?,?,?,?,?,?)";
         PreparedStatement stmt;
@@ -54,6 +55,7 @@ public class PedidoDAO {
         }
         return status;
     }
+
     // MÉTODO LISTAR
     public ArrayList<Pedido> getlist() {
         ArrayList<Pedido> arrayPedidos = new ArrayList<>();
@@ -101,5 +103,29 @@ public class PedidoDAO {
             }
         }
         return arrayPedidos;
-    }  
+    }
+
+    // MÉTODO ALTERAR
+    public boolean alterarPedido(Pedido pedido) {
+        boolean resultado = false;
+        String sql = "UPDATE pedidos SET situacao = ? WHERE numero = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, pedido.getSituacao());
+            stmt.setLong(2, pedido.getNumero());
+            stmt.execute();
+            stmt.close();
+            resultado = true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no acesso ao banco de dados - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao fechar conexão - " + ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+
+        return resultado;
+    }
 }

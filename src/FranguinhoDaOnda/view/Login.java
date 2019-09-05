@@ -8,8 +8,6 @@ package FranguinhoDaOnda.view;
 import FranguinhoDaOnda.dao.UsuarioDAO;
 import FranguinhoDaOnda.model.Usuario;
 import com.sun.glass.events.KeyEvent;
-import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author Gabriel C. A. Rangel
  */
 public class Login extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form Login
@@ -53,20 +52,20 @@ public class Login extends javax.swing.JFrame {
 
         logSenha.setText("Senha:");
 
+        logSenhaText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                logSenhaTextKeyPressed(evt);
+            }
+        });
+
         logBtEntrar.setText("Entrar");
         logBtEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logBtEntrarMouseClicked(evt);
             }
         });
-        logBtEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                logBtEntrarKeyPressed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Franguinho da Onda!");
 
@@ -152,11 +151,12 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }
-    private void logBtEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logBtEntrarKeyPressed
+    private void logSenhaTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logSenhaTextKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            logBtEntrar.doClick();
             fazerLogin();
         }
-    }//GEN-LAST:event_logBtEntrarKeyPressed
+    }//GEN-LAST:event_logSenhaTextKeyPressed
 
     /**
      * @param args the command line arguments

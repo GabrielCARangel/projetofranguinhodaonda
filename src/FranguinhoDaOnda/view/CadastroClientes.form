@@ -58,7 +58,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Cadastro" min="-2" pref="689" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -82,14 +82,14 @@
                                   <Component id="clBtProcurar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="clRuaText" alignment="1" max="32767" attributes="0"/>
-                              <Component id="clCepText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="clTelefoneText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clNomeText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="clCpfText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clSP" alignment="0" pref="600" max="32767" attributes="0"/>
                               <Component id="clNumeroText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clBairroText" alignment="0" max="32767" attributes="0"/>
                               <Component id="clComplementoText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="clCpfText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="clTelefoneText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="clCepText" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -122,8 +122,8 @@
                   <Component id="clSP" min="-2" pref="102" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="clCpfText" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="clCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clCpfText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -132,13 +132,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="clTelefoneText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clTelefoneText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="clCepText" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="clCep" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="clCepText" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -233,9 +233,14 @@
             <Property name="horizontalTextPosition" type="int" value="2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="clCpfText">
+        <Component class="javax.swing.JFormattedTextField" name="clCpfText">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="###.###.###-##" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clCpfTextKeyTyped"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clCpfTextActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clNome">
@@ -251,23 +256,24 @@
             <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="clTelefoneText">
+        <Component class="javax.swing.JFormattedTextField" name="clTelefoneText">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="(##) ####-####" subtype="-1" type="5"/>
+            </Property>
           </Properties>
-          <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clTelefoneTextKeyTyped"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="clCep">
           <Properties>
             <Property name="text" type="java.lang.String" value="CEP:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="clCepText">
-          <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="clCepTextKeyTyped"/>
-          </Events>
+        <Component class="javax.swing.JFormattedTextField" name="clCepText">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="#####-###" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="clRua">
           <Properties>

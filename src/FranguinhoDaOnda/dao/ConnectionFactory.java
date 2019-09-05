@@ -10,7 +10,7 @@ public class ConnectionFactory {
     public static Connection getConnection() {
         Connection conexao = null;
         try {
-            String url = "jdbc:mysql://localhost/franguinho_da_onda";
+            String url = "jdbc:mysql://localhost/franguinho_da_onda?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             String user = "root";
             String pass = "123456";
             conexao = DriverManager.getConnection(url, user, pass);
